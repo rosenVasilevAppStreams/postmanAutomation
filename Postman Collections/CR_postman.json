@@ -26366,7 +26366,7 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\r\n    \"name\": \"UPDATED integration\",\r\n    \"webhookUrl\": \"https://a.com\",\r\n    \"id\": \"{{webhookId}}\",\r\n    \"responseTimeOutMinutes\": 0,\r\n     \"integrationType\": \"External\",\r\n    \"integrationRestrictionLists\": [\r\n        {\r\n            \"name\": \"a-test\",\r\n            \"notes\": \"1\"\r\n        }\r\n    ],\r\n    \r\n    \"webhooks\": [\r\n        {\r\n            \"id\" : \"{{Id}}\",\r\n            \"webhookDefinitionId\": \"{{definitionId}}\",\r\n            \"webhookSubscriptionId\": \"{{webhookId}}\"\r\n        }\r\n    ]\r\n}",
+                          "raw": "{\r\n    \"name\": \"UPDATED integration\",\r\n    \"webhookUrl\": \"https://a.com\",\r\n    \"id\": \"{{webhookId}}\",\r\n    \"responseTimeOutMinutes\": 11,\r\n     \"integrationType\": \"External\",\r\n    \"integrationRestrictionLists\": [\r\n        {\r\n            \"name\": \"a-test\",\r\n            \"notes\": \"1\"\r\n        }\r\n    ],\r\n    \r\n    \"webhooks\": [\r\n        {\r\n            \"id\" : \"{{Id}}\",\r\n            \"webhookDefinitionId\": \"{{definitionId}}\",\r\n            \"webhookSubscriptionId\": \"{{webhookId}}\"\r\n        }\r\n    ]\r\n}",
                           "options": {
                             "raw": {
                               "language": "json"
