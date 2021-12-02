@@ -24539,80 +24539,81 @@
                 },
                 {
                   "name": "getAll",
-                  "item": [],
-                  "id": "9e6c2c5a-f7ba-4b57-a7da-7080e820d4ca"
-                },
-                {
-                  "name": "getAll",
-                  "event": [
+                  "item": [
                     {
-                      "listen": "test",
-                      "script": {
-                        "id": "5643a8b9-5b1b-4dfc-a542-f70bdd37085e",
-                        "exec": [
-                          "// Test 1\r",
-                          "pm.test(\"Status code is 200\", function () {\r",
-                          "    pm.response.to.have.status(200);\r",
-                          "});\r",
-                          "\r",
-                          "var schema = {\r",
-                          "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
-                          "  \"type\": \"object\",\r",
-                          "  \"properties\": {\r",
-                          "    \"@odata.context\": {\r",
-                          "      \"type\": \"string\"\r",
-                          "    },\r",
-                          "    \"value\": {\r",
-                          "      \"type\": \"array\",\r",
-                          "      \"items\": {}\r",
-                          "    }\r",
-                          "  },\r",
-                          "  \"required\": [\r",
-                          "    \"@odata.context\",\r",
-                          "    \"value\"\r",
-                          "  ]\r",
-                          "}\r",
-                          "\r",
-                          "// Test 2\r",
-                          "pm.test(\"Schema is valid\", function(){\r",
-                          "    var json= pm.response.json()\r",
-                          "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
-                          "\r",
-                          "})\r",
-                          "\r",
-                          "var jsonData= pm.response.json()\r",
-                          "postman.setEnvironmentVariable(\"webhookSubsId\", jsonData.value[0].webhooks[0].id)\r",
-                          ""
-                        ],
-                        "type": "text/javascript"
-                      }
+                      "name": "getAll",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "5643a8b9-5b1b-4dfc-a542-f70bdd37085e",
+                            "exec": [
+                              "// Test 1\r",
+                              "pm.test(\"Status code is 200\", function () {\r",
+                              "    pm.response.to.have.status(200);\r",
+                              "});\r",
+                              "\r",
+                              "var schema = {\r",
+                              "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                              "  \"type\": \"object\",\r",
+                              "  \"properties\": {\r",
+                              "    \"@odata.context\": {\r",
+                              "      \"type\": \"string\"\r",
+                              "    },\r",
+                              "    \"value\": {\r",
+                              "      \"type\": \"array\",\r",
+                              "      \"items\": {}\r",
+                              "    }\r",
+                              "  },\r",
+                              "  \"required\": [\r",
+                              "    \"@odata.context\",\r",
+                              "    \"value\"\r",
+                              "  ]\r",
+                              "}\r",
+                              "\r",
+                              "// Test 2\r",
+                              "pm.test(\"Schema is valid\", function(){\r",
+                              "    var json= pm.response.json()\r",
+                              "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+                              "\r",
+                              "})\r",
+                              "\r",
+                              "var jsonData= pm.response.json()\r",
+                              "postman.setEnvironmentVariable(\"webhookSubsId\", jsonData.value[0].webhooks[0].id)\r",
+                              ""
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "id": "f1d4e12b-7ff0-45c6-9f2e-9459563992c6",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{ApiBaseUrl}}/v1/webhook-integrations?$expand=webhooks,IntegrationRestrictionLists",
+                          "host": [
+                            "{{ApiBaseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "webhook-integrations"
+                          ],
+                          "query": [
+                            {
+                              "key": "$expand",
+                              "value": "webhooks,IntegrationRestrictionLists"
+                            }
+                          ]
+                        }
+                      },
+                      "response": []
                     }
                   ],
-                  "id": "f1d4e12b-7ff0-45c6-9f2e-9459563992c6",
-                  "protocolProfileBehavior": {
-                    "disableBodyPruning": true
-                  },
-                  "request": {
-                    "method": "GET",
-                    "header": [],
-                    "url": {
-                      "raw": "{{ApiBaseUrl}}/v1/webhook-integrations?$expand=webhooks,IntegrationRestrictionLists",
-                      "host": [
-                        "{{ApiBaseUrl}}"
-                      ],
-                      "path": [
-                        "v1",
-                        "webhook-integrations"
-                      ],
-                      "query": [
-                        {
-                          "key": "$expand",
-                          "value": "webhooks,IntegrationRestrictionLists"
-                        }
-                      ]
-                    }
-                  },
-                  "response": []
+                  "id": "9e6c2c5a-f7ba-4b57-a7da-7080e820d4ca"
                 }
               ],
               "id": "3a9442a6-9682-40c0-9c20-d06166133f7e"
