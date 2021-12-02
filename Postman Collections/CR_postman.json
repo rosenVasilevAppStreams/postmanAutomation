@@ -25633,7 +25633,7 @@
                   "id": "d0a82e1b-59cf-4b52-8a31-faf8d90b8078"
                 },
                 {
-                  "name": "create  with \"integrationType\": \"External\"",
+                  "name": "create with integrationRestrictionLists Copy",
                   "item": [
                     {
                       "name": "create",
