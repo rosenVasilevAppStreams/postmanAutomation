@@ -26105,7 +26105,8 @@
                               "\r",
                               "var jsonData = pm.response.json();\r",
                               "postman.setEnvironmentVariable(\"Id\", jsonData.webhooks[0].id)\r",
-                              "postman.setEnvironmentVariable(\"integrationRestrictionListID\", jsonData.integrationRestrictionLists[0].id)"
+                              "postman.setEnvironmentVariable(\"integrationRestrictionListID\", jsonData.integrationRestrictionLists[0].id)\r",
+                              "postman.setEnvironmentVariable(\"definitionId\", jsonData.webhooks[0].webhookDefinitionId)"
                             ],
                             "type": "text/javascript"
                           }
