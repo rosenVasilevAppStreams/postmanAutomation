@@ -26422,7 +26422,12 @@
                               "        var requestId = pm.request.url.path[3];\r",
                               "        pm.expect(jsonData.queryable[0].id).to.eql(requestId);\r",
                               "    }\r",
-                              "})"
+                              "})\r",
+                              "\r",
+                              "var jsonData = pm.response.json();\r",
+                              "postman.setEnvironmentVariable(\"Id\", jsonData.webhooks[0].id)\r",
+                              "postman.setEnvironmentVariable(\"integrationRestrictionListID\", jsonData.integrationRestrictionLists[0].id)\r",
+                              "postman.setEnvironmentVariable(\"definitionId\", jsonData.webhooks[0].webhookDefinitionId)"
                             ],
                             "type": "text/javascript"
                           }
