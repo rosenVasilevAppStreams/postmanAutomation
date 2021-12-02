@@ -26139,7 +26139,7 @@
                       "response": []
                     },
                     {
-                      "name": "put Copy",
+                      "name": "put",
                       "id": "b66e56ab-acc8-4b15-a8ac-506cf107b5e3",
                       "protocolProfileBehavior": {
                         "disableBodyPruning": true
