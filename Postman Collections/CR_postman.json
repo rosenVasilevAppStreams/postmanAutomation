@@ -26077,7 +26077,7 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\r\n    \"responseTimeOutMinutes\": 60,\r\n    \"name\": \"Test WebHook QA\",\r\n    \"webhookUrl\": \"http://test.com\",\r\n    \"status\": \"Active\",\r\n    \"webhooks\": [\r\n         {\r\n             \"webhookDefinitionId\": \"0367C8B3-594B-EC11-AB22-0EAFC1B4DB39\"\r\n          \r\n        }\r\n    ],\r\n    \"integrationRestrictionLists\": [\r\n        {\r\n            \"name\": \"Test integrationRestrictionLists QA\",\r\n            \"notes\": \"QA\"\r\n        }\r\n    ]\r\n}",
+                          "raw": "{\r\n    \"name\": \"test-edit-integration\",\r\n    \"status\": \"Active\",\r\n    \"responseTimeOutMinutes\": 60,\r\n    \"webhookUrl\": \"https://a.com\",\r\n    \"integrationType\": \"EmployeeCompliance\",\r\n    \"integrationRestrictionLists\": [\r\n        {\r\n            \"name\": \"A\",\r\n            \"notes\": \"1\"\r\n        }\r\n    ],\r\n    \"webhooks\": [\r\n        {\r\n            \"webhookDefinitionId\": \"37575620-7F48-EC11-AB22-0EAFC1B4DB39\"\r\n            \r\n        }\r\n    ]\r\n}",
                           "options": {
                             "raw": {
                               "language": "json"
