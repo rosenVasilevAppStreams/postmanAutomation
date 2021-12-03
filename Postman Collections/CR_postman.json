@@ -25580,56 +25580,6 @@
                       "response": []
                     },
                     {
-                      "name": "getById",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "id": "7d72a3ca-4190-4412-bad5-83b60553d4a5",
-                            "exec": [
-                              "// Test 1\r",
-                              "pm.test(\"Status code is 200\", function () {\r",
-                              "    pm.response.to.have.status(200);\r",
-                              "});\r",
-                              "\r",
-                              "    var jsonData =pm.response.json();\r",
-                              "pm.test(\"There are no restriction lists\", function(){\r",
-                              "pm.expect(jsonData.integrationRestrictionLists[0].name).to.contain(\"Test\");\r",
-                              "});\r",
-                              ""
-                            ],
-                            "type": "text/javascript"
-                          }
-                        }
-                      ],
-                      "id": "02c4da7d-1c3c-4aff-97b9-fc69f842b9bc",
-                      "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                      },
-                      "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                          "raw": "{{ApiBaseUrl}}/v1/webhook-integrations/{{webhookId}}?$expand=webhooks($expand=webhookDefinition($select=name)),integrationRestrictionLists",
-                          "host": [
-                            "{{ApiBaseUrl}}"
-                          ],
-                          "path": [
-                            "v1",
-                            "webhook-integrations",
-                            "{{webhookId}}"
-                          ],
-                          "query": [
-                            {
-                              "key": "$expand",
-                              "value": "webhooks($expand=webhookDefinition($select=name)),integrationRestrictionLists"
-                            }
-                          ]
-                        }
-                      },
-                      "response": []
-                    },
-                    {
                       "name": "create Copy",
                       "event": [
                         {
@@ -25760,6 +25710,56 @@
                           }
                         },
                         "url": "{{ApiBaseUrl}}/v1/webhook-integrations"
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "getById",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "7d72a3ca-4190-4412-bad5-83b60553d4a5",
+                            "exec": [
+                              "// Test 1\r",
+                              "pm.test(\"Status code is 200\", function () {\r",
+                              "    pm.response.to.have.status(200);\r",
+                              "});\r",
+                              "\r",
+                              "    var jsonData =pm.response.json();\r",
+                              "pm.test(\"There are no restriction lists\", function(){\r",
+                              "pm.expect(jsonData.integrationRestrictionLists[0].name).to.contain(\"Test\");\r",
+                              "});\r",
+                              ""
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "id": "02c4da7d-1c3c-4aff-97b9-fc69f842b9bc",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{ApiBaseUrl}}/v1/webhook-integrations/{{webhookId}}?$expand=webhooks($expand=webhookDefinition($select=name)),integrationRestrictionLists",
+                          "host": [
+                            "{{ApiBaseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "webhook-integrations",
+                            "{{webhookId}}"
+                          ],
+                          "query": [
+                            {
+                              "key": "$expand",
+                              "value": "webhooks($expand=webhookDefinition($select=name)),integrationRestrictionLists"
+                            }
+                          ]
+                        }
                       },
                       "response": []
                     }
