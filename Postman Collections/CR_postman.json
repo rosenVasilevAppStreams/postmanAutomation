@@ -15018,47 +15018,6 @@
                       "response": []
                     },
                     {
-                      "name": "getAll",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "id": "248a76e4-f783-4ee0-983d-d71e9fed34cb",
-                            "exec": [
-                              "var jsonData = JSON.parse(responseBody);\r",
-                              "postman.setEnvironmentVariable(\"recordTypeDeal\", \"Deal\");"
-                            ],
-                            "type": "text/javascript"
-                          }
-                        }
-                      ],
-                      "id": "9bdb43ba-8422-400d-b27a-5476c49b763a",
-                      "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                      },
-                      "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                          "raw": "{{ApiBaseUrl}}/v1/deals?$expand=restrictions,dealMembers,companies",
-                          "host": [
-                            "{{ApiBaseUrl}}"
-                          ],
-                          "path": [
-                            "v1",
-                            "deals"
-                          ],
-                          "query": [
-                            {
-                              "key": "$expand",
-                              "value": "restrictions,dealMembers,companies"
-                            }
-                          ]
-                        }
-                      },
-                      "response": []
-                    },
-                    {
                       "name": "Create a new deal",
                       "event": [
                         {
