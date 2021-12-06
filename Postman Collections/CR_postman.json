@@ -15322,6 +15322,67 @@
                   "name": "update non existing deal",
                   "item": [
                     {
+                      "name": "getById",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "8be3fbc3-4728-4a5e-b46e-bf06bdf5c8ac",
+                            "exec": [
+                              "var jsonData = JSON.parse(responseBody);\r",
+                              "postman.setEnvironmentVariable(\"clientId\", jsonData.clientId)\r",
+                              "postman.setEnvironmentVariable(\"recordType\", jsonData.recordType)\r",
+                              "postman.setEnvironmentVariable(\"lastModifiedByUserId\", jsonData.lastModifiedByUserId)\r",
+                              "postman.setEnvironmentVariable(\"lastModifiedTimestamp\", jsonData.lastModifiedTimestamp)\r",
+                              "postman.setEnvironmentVariable(\"createdByUserId\", jsonData.createdByUserId)\r",
+                              "postman.setEnvironmentVariable(\"createdTimestamp\", jsonData.createdTimestamp)\r",
+                              "postman.setEnvironmentVariable(\"company1Id\", jsonData.companies[0].id) //it is ok if only 1 company\r",
+                              "postman.setEnvironmentVariable(\"company2Id\", jsonData.companies[1] ? \r",
+                              "jsonData.companies[1].id : null)\r",
+                              "postman.setEnvironmentVariable(\"company3Id\", jsonData.companies[1] ? \r",
+                              "jsonData.companies[2].id : null)\r",
+                              "postman.setEnvironmentVariable(\"contactsUnderTent1Id\", jsonData.companies[0].contactsUnderTent[0] ? jsonData.companies[0].contactsUnderTent[0].id : null)\r",
+                              "postman.setEnvironmentVariable(\"contactsUnderTent2Id\", jsonData.companies[0].contactsUnderTent[1] ? jsonData.companies[0].contactsUnderTent[1].id : null)\r",
+                              "postman.setEnvironmentVariable(\"dealMemberVisibilityId\", jsonData.dealMembers[0].id)\r",
+                              "postman.setEnvironmentVariable(\"dealMemberInternalId\", jsonData.dealMembers[1].id) //might cause issues when more than one visibility user\r",
+                              "postman.setEnvironmentVariable(\"restriction1Id\", jsonData.restrictions[0].id) //for the 1st restriction only\r",
+                              "postman.setEnvironmentVariable(\"isSyncToMarketAbuse1\", jsonData.restrictions[0].isSyncToMarketAbuse) \r",
+                              "postman.setEnvironmentVariable(\"companyRestrictions1Id\", jsonData.restrictions[0].companyRestrictions[0].id) \r",
+                              "postman.setEnvironmentVariable(\"memberRestrictions1Id\", jsonData.restrictions[0].memberRestrictions[0].id) \r",
+                              "postman.setEnvironmentVariable(\"isDraftAlwaysFalse\", \"false\")"
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "id": "3c8c12cf-f25b-48f8-b42a-6581166bb05f",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{ApiBaseUrl}}/v1/deals/{{dealId}}?$expand=restrictions($expand=companyRestrictions,memberRestrictions),dealMembers,companies($expand=contactsUnderTent)",
+                          "host": [
+                            "{{ApiBaseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "deals",
+                            "{{dealId}}"
+                          ],
+                          "query": [
+                            {
+                              "key": "$expand",
+                              "value": "restrictions($expand=companyRestrictions,memberRestrictions),dealMembers,companies($expand=contactsUnderTent)"
+                            }
+                          ]
+                        }
+                      },
+                      "response": []
+                    },
+                    {
                       "name": "update",
                       "event": [
                         {
@@ -15371,6 +15432,67 @@
                           }
                         },
                         "url": "{{ApiBaseUrl}}/v1/deals/(24099e5e-c6e2-4a8f-ea5d-08d9b8b00000)"
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "getById",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "fb55befc-490a-4454-89ac-a00877891a28",
+                            "exec": [
+                              "var jsonData = JSON.parse(responseBody);\r",
+                              "\r",
+                              "pm.test(\"The deal name contains updated\", function(){\r",
+                              "    var jsonData =pm.response.json();\r",
+                              "pm.expect(jsonData.name).to.contain(\"Updated\")\r",
+                              "});\r",
+                              "\r",
+                              "pm.test(\"The deal status is paused\", function(){\r",
+                              "    var jsonData =pm.response.json();\r",
+                              "pm.expect(jsonData.status).to.contain(\"Paused\")\r",
+                              "});\r",
+                              "\r",
+                              "pm.test(\"The deal is urgent\", function(){\r",
+                              "    var jsonData =pm.response.json();\r",
+                              "pm.expect(jsonData.isUrgent).to.eq(true)\r",
+                              "});\r",
+                              "\r",
+                              "pm.test(\"The deal is not draft\", function(){\r",
+                              "    var jsonData =pm.response.json();\r",
+                              "pm.expect(jsonData.isDraft).to.eq(false)\r",
+                              "});"
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "id": "bdb57eb1-89a5-4f53-a56b-9b3c2f494a64",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{ApiBaseUrl}}/v1/deals/{{dealId}}?$expand=restrictions($expand=companyRestrictions,memberRestrictions),dealMembers,companies($expand=contactsUnderTent)",
+                          "host": [
+                            "{{ApiBaseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "deals",
+                            "{{dealId}}"
+                          ],
+                          "query": [
+                            {
+                              "key": "$expand",
+                              "value": "restrictions($expand=companyRestrictions,memberRestrictions),dealMembers,companies($expand=contactsUnderTent)"
+                            }
+                          ]
+                        }
                       },
                       "response": []
                     }
