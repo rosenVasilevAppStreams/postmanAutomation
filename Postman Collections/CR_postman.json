@@ -15337,7 +15337,7 @@
                   "id": "cb64e1c0-45e2-4db2-a2fc-7d3de70aade6"
                 },
                 {
-                  "name": "update step 2 - Add new deal member",
+                  "name": "update the completion date to be before start date",
                   "item": [
                     {
                       "name": "getAll",
