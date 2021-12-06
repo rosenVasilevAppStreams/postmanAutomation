@@ -16570,7 +16570,7 @@
                   "id": "f508c5f4-6e27-410a-956b-210e12f46b7d"
                 },
                 {
-                  "name": "update the complianceStatus",
+                  "name": "update the complianceStatus and acceptance status",
                   "item": [
                     {
                       "name": "getAll",
