@@ -16966,66 +16966,6 @@
                   "id": "657a1915-82cc-43ca-bb92-0fd40d5b18d4"
                 },
                 {
-                  "name": "update non existing deal",
-                  "item": [
-                    {
-                      "name": "update",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "id": "3b330c1f-a1f1-4bb4-aa4f-516d952e748e",
-                            "exec": [
-                              "// Test 1\r",
-                              "pm.test(\"Status code is 204 or 404\", function () {\r",
-                              "    if (pm.response.code == 204) {\r",
-                              "        pm.response.to.have.status(204);\r",
-                              "    }\r",
-                              "    else {\r",
-                              "        pm.response.to.have.status(404);\r",
-                              "    }\r",
-                              "});\r",
-                              "\r",
-                              ""
-                            ],
-                            "type": "text/javascript"
-                          }
-                        },
-                        {
-                          "listen": "prerequest",
-                          "script": {
-                            "id": "0b6bfe53-7f9c-4312-911f-b4038b918bd8",
-                            "exec": [
-                              "pm.environment.set(\"randomUpdatedDealName\", _.random(1, 1000) +\" \" + \"Updated API deal\")"
-                            ],
-                            "type": "text/javascript"
-                          }
-                        }
-                      ],
-                      "id": "84d4e70f-d6e7-4450-84f5-5902fc4380b3",
-                      "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                      },
-                      "request": {
-                        "method": "PUT",
-                        "header": [],
-                        "body": {
-                          "mode": "raw",
-                          "raw": "{\r\n    \"id\": \"{{dealId}}\",\r\n    \"clientId\": {{clientId}},\r\n    \"recordType\": \"{{recordType}}\",\r\n    \"name\": \"{{randomUpdatedDealName}}\",\r\n    \"description\": \"{{randomDealDescription}}\",\r\n    \"categoryId\": \"{{categoryId}}\",\r\n    \"status\": \"{{dealStatus}}\",\r\n    \"complianceStatus\": \"{{complianceStatus}}\",\r\n    \"startDate\": \"{{startDate}}\",\r\n    \"completionDate\": \"{{completionDate}}\",\r\n    \"isUrgent\": {{isUrgent}},\r\n    \"isDraft\": \"{{isDraftAlwaysFalse}}\",\r\n    \"lastModifiedByUserId\": \"{{lastModifiedByUserId}}\",\r\n    \"lastModifiedTimestamp\": \"{{lastModifiedTimestamp}}\",\r\n    \"createdByUserId\": \"{{createdByUserId}}\",\r\n    \"createdTimestamp\": \"{{createdTimestamp}}\",\r\n    \"companies\": [\r\n        {\r\n            \"id\": \"{{company1Id}}\",\r\n            \"clientId\": {{clientId}},\r\n            \"dealId\": \"{{dealId}}\",\r\n            \"name\": \"{{securitySearchCompanyName}}\",\r\n            \"externalId\": \"{{securitySearchCompanyExtarnalId}}\",\r\n            \"cusip\": \"{{cusip}}\",\r\n            \"isin\": \"{{isin}}\",\r\n            \"externalIdentifierType\": \"SecMasterSecurityId\",\r\n            \"dataDestructionCompletedDate\": \"{{dataDestructionCompletedDate}}\",\r\n            \"dataDestructionRequestedDate\": \"{{dataDestructionRequestedDate}}\",\r\n            \"dataDestructionStatus\": \"{{dataDestructionStatus}}\",\r\n            \"ndaCompletedDate\": \"{{ndaCompletedDate}}\",\r\n            \"ndaRequestedDate\": \"{{ndaRequestedDate}}\",\r\n            \"ndaStatus\": \"{{ndaStatus}}\",\r\n            \"status\": \"{{companyStatus}}\",\r\n            \"typeId\": \"{{typeId}}\",\r\n            \"contactsUnderTent\": [\r\n                {\r\n                    \"id\": \"{{contactsUnderTent1Id}}\",\r\n                    \"clientId\": {{clientId}},\r\n                    \"companyId\": \"{{company1Id}}\",\r\n                    \"lastModifiedByUserId\": \"{{lastModifiedByUserId}}\",\r\n                    \"lastModifiedTimestamp\": \"{{lastModifiedTimestamp}}\",\r\n                    \"createdByUserId\": \"{{createdByUserId}}\",\r\n                    \"createdTimestamp\": \"{{createdTimestamp}}\",\r\n                    \"name\": \"{{contactsUnderTentName}}\",\r\n                    \"title\": \"{{contactsUnderTentTitle}}\",\r\n                    \"email\": \"{{$randomEmail}}\",\r\n                    \"addedDate\": \"{{contactAddedDate}}\"\r\n                }\r\n            ]\r\n        }\r\n        \r\n    ],\r\n    \"dealMembers\": [\r\n        {\r\n            \"memberId\": \"{{memberIdRecordVisibility}}\",\r\n            \"memberType\": \"{{memberTypeRecordVisibility}}\",\r\n            \"id\": \"{{dealMemberVisibilityId}}\",\r\n            \"clientId\": {{clientId}},\r\n            \"dealId\": \"{{dealId}}\",\r\n            \"lastModifiedByUserId\": \"{{lastModifiedByUserId}}\",\r\n            \"lastModifiedTimestamp\": \"{{lastModifiedTimestamp}}\",\r\n            \"createdByUserId\": \"{{createdByUserId}}\",\r\n            \"createdTimestamp\": \"{{createdTimestamp}}\"\r\n        },\r\n        \r\n        {\r\n            \"memberId\": \"{{memberId}}\",\r\n            \"memberType\": \"{{memberTypeInternalDealLead}}\",\r\n            \"id\": \"{{dealMemberInternalId}}\",\r\n            \"clientId\": {{clientId}},\r\n            \"dealId\": \"{{dealId}}\",\r\n            \"lastModifiedByUserId\": \"{{lastModifiedByUserId}}\",\r\n            \"lastModifiedTimestamp\": \"{{lastModifiedTimestamp}}\",\r\n            \"createdByUserId\": \"{{createdByUserId}}\",\r\n            \"createdTimestamp\": \"{{createdTimestamp}}\"\r\n        }\r\n    ],\r\n    \"restrictions\": [\r\n        {\r\n            \"name\": \"{{restrictionName}}\",\r\n            \"endDate\": \"{{restrictionEndDate}}\",\r\n            \"startDate\": \"{{startDate}}\",\r\n            \"employeeRestriction\": \"{{employeeRestriction}}\",\r\n            \"id\": \"{{restriction1Id}}\",\r\n            \"clientId\": {{clientId}},\r\n            \"dealId\": \"{{dealId}}\",\r\n            \"isSyncToMarketAbuse\": {{isSyncToMarketAbuse1}},\r\n            \"lastModifiedByUserId\": \"{{lastModifiedByUserId}}\",\r\n            \"lastModifiedTimestamp\": \"{{lastModifiedTimestamp}}\",\r\n            \"createdByUserId\": \"{{createdByUserId}}\",\r\n            \"createdTimestamp\": \"{{createdTimestamp}}\",\r\n            \"companyRestrictions\": [\r\n                {\r\n                    \"id\": \"{{companyRestrictions1Id}}\",\r\n                    \"clientId\": {{clientId}},\r\n                    \"restrictionId\": \"{{restriction1Id}}\",\r\n                    \"companyId\": \"{{company1Id}}\",\r\n                    \"lastModifiedByUserId\": \"{{lastModifiedByUserId}}\",\r\n                    \"lastModifiedTimestamp\": \"{{lastModifiedTimestamp}}\",\r\n                    \"createdByUserId\": \"{{createdByUserId}}\",\r\n                    \"createdTimestamp\": \"{{createdTimestamp}}\"\r\n                }\r\n            ],\r\n            \"memberRestrictions\": [\r\n                {\r\n                    \"id\": \"{{memberRestrictions1Id}}\",\r\n                    \"clientId\": {{clientId}},\r\n                    \"restrictionId\": \"{{restriction1Id}}\",\r\n                    \"dealMemberId\": \"{{dealMemberInternalId}}\",\r\n                    \"lastModifiedByUserId\": \"{{lastModifiedByUserId}}\",\r\n                    \"lastModifiedTimestamp\": \"{{lastModifiedTimestamp}}\",\r\n                    \"createdByUserId\": \"{{createdByUserId}}\",\r\n                    \"createdTimestamp\": \"{{createdTimestamp}}\"\r\n                },\r\n                 {\r\n                    \"dealMember\":\r\n                    {\r\n                        \"memberId\": \"{{memberIdRecordVisibility}}\",\r\n                         \"memberType\": \"{{memberTypeRecordVisibility}}\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
-                          "options": {
-                            "raw": {
-                              "language": "json"
-                            }
-                          }
-                        },
-                        "url": "{{ApiBaseUrl}}/v1/deals/(123456)"
-                      },
-                      "response": []
-                    }
-                  ],
-                  "id": "49cbb9be-6234-4bbe-b2b0-9ecf48454adb"
-                },
-                {
                   "name": "update MNPI record",
                   "item": [
                     {
