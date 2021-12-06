@@ -15793,7 +15793,7 @@
                   "id": "e85e526a-9544-45e3-a11e-5fa154b54cde"
                 },
                 {
-                  "name": "isDraft change",
+                  "name": "isDraft update",
                   "item": [
                     {
                       "name": "getAll",
