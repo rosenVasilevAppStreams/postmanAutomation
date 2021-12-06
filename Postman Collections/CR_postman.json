@@ -16082,16 +16082,9 @@
                           "script": {
                             "id": "e3e9e6f3-8205-41b1-8939-52453c08cff2",
                             "exec": [
-                              "// Test 1\r",
-                              "pm.test(\"Status code is 204 or 404\", function () {\r",
-                              "    if (pm.response.code == 204) {\r",
-                              "        pm.response.to.have.status(204);\r",
-                              "    }\r",
-                              "    else {\r",
-                              "        pm.response.to.have.status(404);\r",
-                              "    }\r",
-                              "});\r",
-                              ""
+                              "pm.test(\"Status code is 400\", function () {\r",
+                              "    pm.response.to.have.status(400);\r",
+                              "});"
                             ],
                             "type": "text/javascript"
                           }
