@@ -16901,7 +16901,7 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\r\n    \"complianceStatus\": \"Reviewed\"\r\n}",
+                          "raw": "{\r\n    \"complianceStatus\": \"Reviewed\",\r\n    \"acceptanceStatus\": \"No\"\r\n}",
                           "options": {
                             "raw": {
                               "language": "json"
