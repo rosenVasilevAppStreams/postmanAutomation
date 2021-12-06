@@ -15615,14 +15615,7 @@
                               "        pm.response.to.have.status(404);\r",
                               "    }\r",
                               "});\r",
-                              "\r",
-                              "// Test 2\r",
-                              "pm.test(\"Response body is valid\", function () {\r",
-                              "    if (pm.response.code == 404) {\r",
-                              "        pm.expect(pm.response.text()).to.include(\"Entity of type\");\r",
-                              "        pm.expect(pm.response.text()).to.include(\"was not found.\");\r",
-                              "    }\r",
-                              "});"
+                              ""
                             ],
                             "type": "text/javascript"
                           }
@@ -15643,7 +15636,7 @@
                         "disableBodyPruning": true
                       },
                       "request": {
-                        "method": "PUT",
+                        "method": "PATCH",
                         "header": [],
                         "body": {
                           "mode": "raw",
@@ -15654,7 +15647,7 @@
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v1/deals/{{dealId}}"
+                        "url": "{{ApiBaseUrl}}/v1/deals/(24099e5e-c6e2-4a8f-ea5d-08d9b8b00000)"
                       },
                       "response": []
                     },
