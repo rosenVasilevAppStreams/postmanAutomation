@@ -14886,7 +14886,7 @@
               "name": "patch",
               "item": [
                 {
-                  "name": "update an existing deal",
+                  "name": "update the name of an existing deal",
                   "item": [
                     {
                       "name": "getAll",
@@ -15371,67 +15371,6 @@
                           }
                         },
                         "url": "{{ApiBaseUrl}}/v1/deals/(24099e5e-c6e2-4a8f-ea5d-08d9b8b00000)"
-                      },
-                      "response": []
-                    },
-                    {
-                      "name": "getById",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "id": "fb55befc-490a-4454-89ac-a00877891a28",
-                            "exec": [
-                              "var jsonData = JSON.parse(responseBody);\r",
-                              "\r",
-                              "pm.test(\"The deal name contains updated\", function(){\r",
-                              "    var jsonData =pm.response.json();\r",
-                              "pm.expect(jsonData.name).to.contain(\"Updated\")\r",
-                              "});\r",
-                              "\r",
-                              "pm.test(\"The deal status is paused\", function(){\r",
-                              "    var jsonData =pm.response.json();\r",
-                              "pm.expect(jsonData.status).to.contain(\"Paused\")\r",
-                              "});\r",
-                              "\r",
-                              "pm.test(\"The deal is urgent\", function(){\r",
-                              "    var jsonData =pm.response.json();\r",
-                              "pm.expect(jsonData.isUrgent).to.eq(true)\r",
-                              "});\r",
-                              "\r",
-                              "pm.test(\"The deal is not draft\", function(){\r",
-                              "    var jsonData =pm.response.json();\r",
-                              "pm.expect(jsonData.isDraft).to.eq(false)\r",
-                              "});"
-                            ],
-                            "type": "text/javascript"
-                          }
-                        }
-                      ],
-                      "id": "bdb57eb1-89a5-4f53-a56b-9b3c2f494a64",
-                      "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                      },
-                      "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                          "raw": "{{ApiBaseUrl}}/v1/deals/{{dealId}}?$expand=restrictions($expand=companyRestrictions,memberRestrictions),dealMembers,companies($expand=contactsUnderTent)",
-                          "host": [
-                            "{{ApiBaseUrl}}"
-                          ],
-                          "path": [
-                            "v1",
-                            "deals",
-                            "{{dealId}}"
-                          ],
-                          "query": [
-                            {
-                              "key": "$expand",
-                              "value": "restrictions($expand=companyRestrictions,memberRestrictions),dealMembers,companies($expand=contactsUnderTent)"
-                            }
-                          ]
-                        }
                       },
                       "response": []
                     }
