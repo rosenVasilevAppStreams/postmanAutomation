@@ -15680,56 +15680,6 @@
                       "response": []
                     },
                     {
-                      "name": "getById",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "id": "3d3993fc-60e2-4f00-98d8-e18dd54c3cbb",
-                            "exec": [
-                              "var jsonData = JSON.parse(responseBody);\r",
-                              "\r",
-                              "\r",
-                              "\r",
-                              "pm.test(\"New deal member is added\", function(){\r",
-                              "    var jsonData =pm.response.json();\r",
-                              "pm.expect(jsonData.dealMembers[2].memberId).to.eq(\"980d61d4-7833-4161-9646-1e40063440d9\")\r",
-                              "});\r",
-                              "\r",
-                              ""
-                            ],
-                            "type": "text/javascript"
-                          }
-                        }
-                      ],
-                      "id": "c6a92667-d94c-4fa0-b8c0-a782df5d3fdf",
-                      "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                      },
-                      "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                          "raw": "{{ApiBaseUrl}}/v1/deals/{{dealId}}?$expand=restrictions($expand=companyRestrictions,memberRestrictions),dealMembers,companies($expand=contactsUnderTent)",
-                          "host": [
-                            "{{ApiBaseUrl}}"
-                          ],
-                          "path": [
-                            "v1",
-                            "deals",
-                            "{{dealId}}"
-                          ],
-                          "query": [
-                            {
-                              "key": "$expand",
-                              "value": "restrictions($expand=companyRestrictions,memberRestrictions),dealMembers,companies($expand=contactsUnderTent)"
-                            }
-                          ]
-                        }
-                      },
-                      "response": []
-                    },
-                    {
                       "name": "update Copy",
                       "event": [
                         {
@@ -15786,6 +15736,56 @@
                           }
                         },
                         "url": "{{ApiBaseUrl}}/v1/deals/{{dealId}}"
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "getById",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "3d3993fc-60e2-4f00-98d8-e18dd54c3cbb",
+                            "exec": [
+                              "var jsonData = JSON.parse(responseBody);\r",
+                              "\r",
+                              "\r",
+                              "\r",
+                              "pm.test(\"New deal member is added\", function(){\r",
+                              "    var jsonData =pm.response.json();\r",
+                              "pm.expect(jsonData.dealMembers[2].memberId).to.eq(\"980d61d4-7833-4161-9646-1e40063440d9\")\r",
+                              "});\r",
+                              "\r",
+                              ""
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "id": "c6a92667-d94c-4fa0-b8c0-a782df5d3fdf",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{ApiBaseUrl}}/v1/deals/{{dealId}}?$expand=restrictions($expand=companyRestrictions,memberRestrictions),dealMembers,companies($expand=contactsUnderTent)",
+                          "host": [
+                            "{{ApiBaseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "deals",
+                            "{{dealId}}"
+                          ],
+                          "query": [
+                            {
+                              "key": "$expand",
+                              "value": "restrictions($expand=companyRestrictions,memberRestrictions),dealMembers,companies($expand=contactsUnderTent)"
+                            }
+                          ]
+                        }
                       },
                       "response": []
                     }
