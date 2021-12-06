@@ -15319,7 +15319,7 @@
                   "id": "d5231e58-391c-4606-9a00-a9a268a476cb"
                 },
                 {
-                  "name": "update step 1",
+                  "name": "update non existing deal",
                   "item": [
                     {
                       "name": "getAll",
