@@ -14886,7 +14886,7 @@
               "name": "patch",
               "item": [
                 {
-                  "name": "update all steps",
+                  "name": "update an existing deal",
                   "item": [
                     {
                       "name": "getAll",
