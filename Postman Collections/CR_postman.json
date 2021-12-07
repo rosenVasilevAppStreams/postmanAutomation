@@ -27831,7 +27831,7 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\r\n    \"name\": \"test-edit-integration\",\r\n    \"status\": \"Active\",\r\n    \"responseTimeOutMinutes\": 60,\r\n    \"webhookUrl\": \"https://a.com\",\r\n    \"integrationType\": \"EmployeeCompliance\",\r\n    \"integrationRestrictionLists\": [\r\n        \r\n    ],\r\n    \"webhooks\": [\r\n        {\r\n            \"webhookDefinitionId\": \"37575620-7F48-EC11-AB22-0EAFC1B4DB39\"\r\n            \r\n        }\r\n    ]\r\n}",
+                          "raw": "{\r\n    \"name\": \"test-edit-integration\",\r\n    \"status\": \"Active\",\r\n    \"responseTimeOutMinutes\": 60,\r\n    \"webhookUrl\": \"https://a.com\",\r\n    \"integrationType\": \"EmployeeCompliance\",\r\n    \"integrationRestrictionLists\": [\r\n        \r\n    ],\r\n    \"webhooks\": [\r\n        {\r\n            \"webhookDefinitionId\": \"EC305C02-7954-EC11-AB22-0EEE3F322EB9\"\r\n            \r\n        }\r\n    ]\r\n}",
                           "options": {
                             "raw": {
                               "language": "json"
@@ -28021,7 +28021,7 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\r\n    \"name\": \"test-edit-integration\",\r\n    \"status\": \"Active\",\r\n    \"responseTimeOutMinutes\": 60,\r\n    \"webhookUrl\": \"https://a.com\",\r\n    \"integrationType\": \"EmployeeCompliance\",\r\n    \"integrationRestrictionLists\": [\r\n        {\r\n            \"name\": \"A\",\r\n            \"notes\": \"1\"\r\n        }\r\n    ],\r\n    \"webhooks\": [\r\n        {\r\n            \"webhookDefinitionId\": \"37575620-7F48-EC11-AB22-0EAFC1B4DB39\"\r\n            \r\n        }\r\n    ]\r\n}",
+                          "raw": "{\r\n    \"name\": \"test-edit-integration\",\r\n    \"status\": \"Active\",\r\n    \"responseTimeOutMinutes\": 60,\r\n    \"webhookUrl\": \"https://a.com\",\r\n    \"integrationType\": \"EmployeeCompliance\",\r\n    \"integrationRestrictionLists\": [\r\n        {\r\n            \"name\": \"A\",\r\n            \"notes\": \"1\"\r\n        }\r\n    ],\r\n    \"webhooks\": [\r\n        {\r\n            \"webhookDefinitionId\": \"EC305C02-7954-EC11-AB22-0EEE3F322EB9\"\r\n            \r\n        }\r\n    ]\r\n}",
                           "options": {
                             "raw": {
                               "language": "json"
@@ -28211,7 +28211,7 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\r\n    \"name\": \"test-edit-integration\",\r\n    \"status\": \"Active\",\r\n    \"responseTimeOutMinutes\": 88,\r\n    \"webhookUrl\": \"rosen.com\",\r\n    \"integrationType\": \"External\",\r\n    \"integrationRestrictionLists\": [\r\n        {\r\n            \"name\": \"A\",\r\n            \"notes\": \"1\"\r\n        }\r\n    ],\r\n    \"webhooks\": [\r\n        {\r\n            \"webhookDefinitionId\": \"37575620-7F48-EC11-AB22-0EAFC1B4DB39\"\r\n            \r\n        }\r\n    ]\r\n}",
+                          "raw": "{\r\n    \"name\": \"test-edit-integration\",\r\n    \"status\": \"Active\",\r\n    \"responseTimeOutMinutes\": 88,\r\n    \"webhookUrl\": \"rosen.com\",\r\n    \"integrationType\": \"External\",\r\n    \"integrationRestrictionLists\": [\r\n        {\r\n            \"name\": \"A\",\r\n            \"notes\": \"1\"\r\n        }\r\n    ],\r\n    \"webhooks\": [\r\n        {\r\n            \"webhookDefinitionId\": \"EC305C02-7954-EC11-AB22-0EEE3F322EB9\"\r\n            \r\n        }\r\n    ]\r\n}",
                           "options": {
                             "raw": {
                               "language": "json"
