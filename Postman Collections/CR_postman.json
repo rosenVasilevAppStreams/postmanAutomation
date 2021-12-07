@@ -27075,7 +27075,7 @@
               "name": "getDefinitions",
               "item": [
                 {
-                  "name": "getAll Copy",
+                  "name": "getAll",
                   "item": [
                     {
                       "name": "getAll",
