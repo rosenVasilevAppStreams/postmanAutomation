@@ -17305,22 +17305,8 @@
                           "script": {
                             "id": "1a985ecb-0038-484d-9f76-f7c2c7859957",
                             "exec": [
-                              "// Test 1\r",
-                              "pm.test(\"Status code is 204 or 404\", function () {\r",
-                              "    if (pm.response.code == 204) {\r",
-                              "        pm.response.to.have.status(204);\r",
-                              "    }\r",
-                              "    else {\r",
-                              "        pm.response.to.have.status(404);\r",
-                              "    }\r",
-                              "});\r",
-                              "\r",
-                              "// Test 2\r",
-                              "pm.test(\"Response body is valid\", function () {\r",
-                              "    if (pm.response.code == 404) {\r",
-                              "        pm.expect(pm.response.text()).to.include(\"Entity of type\");\r",
-                              "        pm.expect(pm.response.text()).to.include(\"was not found.\");\r",
-                              "    }\r",
+                              "pm.test(\"Status code is 400\", function () {\r",
+                              "    pm.response.to.have.status(400);\r",
                               "});"
                             ],
                             "type": "text/javascript"
@@ -17346,7 +17332,7 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\r\n     \r\n    \"categoryId\": \"4cfd53dc-8c1f-ec11-8408-0ebfb7f375ff\"\r\n}",
+                          "raw": "{\"recordType\": \r\n\"Deal\"\r\n}",
                           "options": {
                             "raw": {
                               "language": "json"
