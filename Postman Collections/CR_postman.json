@@ -17746,10 +17746,11 @@
                             "id": "2e320920-e3f3-4ac0-ba0d-fe7209bc80d8",
                             "exec": [
                               "var jsonData = JSON.parse(responseBody);\r",
-                              "postman.setEnvironmentVariable(\"categoryIdMNPI\", \"4cfd53dc-8c1f-ec11-8408-0ebfb7f375ff\");\r",
+                              "//postman.setEnvironmentVariable(\"categoryIdMNPI\", \"4cfd53dc-8c1f-ec11-8408-0ebfb7f375ff\");//QA\r",
                               "postman.setEnvironmentVariable(\"typeIdMNPI\", \"49870c48-e77b-4a64-8052-eedae585ac49\");\r",
                               "postman.setEnvironmentVariable(\"EmployeesInvolved\", \"EmployeesInvolved\");\r",
-                              "postman.setEnvironmentVariable(\"recordTypeMNPI\", \"MNPI\");"
+                              "postman.setEnvironmentVariable(\"recordTypeMNPI\", \"MNPI\");\r",
+                              "postman.setEnvironmentVariable(\"categoryIdMNPI\", \"e5994f98-9d25-ec11-8408-0e84430236e3\");"
                             ],
                             "type": "text/javascript"
                           }
