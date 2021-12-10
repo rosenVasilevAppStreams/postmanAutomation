@@ -11099,13 +11099,13 @@
                             "id": "caf2924b-49e4-4499-a4c1-1db7391c1c9d",
                             "exec": [
                               "var jsonData = JSON.parse(responseBody);\r",
-                              "postman.setEnvironmentVariable(\"categoryIdMNPI\", \"4cfd53dc-8c1f-ec11-8408-0ebfb7f375ff\"); //QA\r",
+                              "//postman.setEnvironmentVariable(\"categoryIdMNPI\", \"4cfd53dc-8c1f-ec11-8408-0ebfb7f375ff\"); //QA\r",
                               "//postman.setEnvironmentVariable(\"categoryIdMNPI\", \"e5994f98-9d25-ec11-8408-0e84430236e3\"); //UAT\r",
                               "postman.setEnvironmentVariable(\"typeIdMNPI\", \"49870c48-e77b-4a64-8052-eedae585ac49\");// QA\r",
                               "//postman.setEnvironmentVariable(\"typeIdMNPI\", \"1f92195e-40c1-4ca4-baa0-66599b567983\");// UAT\r",
                               "postman.setEnvironmentVariable(\"EmployeesInvolved\", \"EmployeesInvolved\");\r",
                               "postman.setEnvironmentVariable(\"recordTypeMNPI\", \"MNPI\");\r",
-                              ""
+                              "postman.setEnvironmentVariable(\"categoryIdMNPI\", \"e5994f98-9d25-ec11-8408-0e84430236e3\");"
                             ],
                             "type": "text/javascript"
                           }
