@@ -19024,7 +19024,7 @@
                         "method": "GET",
                         "header": [],
                         "url": {
-                          "raw": "{{ApiBaseUrl}}/v1/documents?$filter=EntityId eq 4fa02957-7cc6-4767-bec5-08d92c2971d8",
+                          "raw": "{{ApiBaseUrl}}/v1/documents?$filter=EntityId eq {{dealId}}",
                           "host": [
                             "{{ApiBaseUrl}}"
                           ],
@@ -19035,7 +19035,7 @@
                           "query": [
                             {
                               "key": "$filter",
-                              "value": "EntityId eq 4fa02957-7cc6-4767-bec5-08d92c2971d8"
+                              "value": "EntityId eq {{dealId}}"
                             }
                           ]
                         }
