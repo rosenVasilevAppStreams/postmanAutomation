@@ -6563,7 +6563,7 @@
                         "method": "GET",
                         "header": [],
                         "url": {
-                          "raw": "{{ApiBaseUrl}}/v1/deals/deals-by-employee/?$filter=(id%20eq%204A0FE6A5-C977-4213-7031-08D950031B25)",
+                          "raw": "{{ApiBaseUrl}}/v1/deals/deals-by-employee/?$filter=(id%20eq%20{{dealId}})",
                           "host": [
                             "{{ApiBaseUrl}}"
                           ],
@@ -6576,7 +6576,7 @@
                           "query": [
                             {
                               "key": "$filter",
-                              "value": "(id%20eq%204A0FE6A5-C977-4213-7031-08D950031B25)"
+                              "value": "(id%20eq%20{{dealId}})"
                             }
                           ]
                         }
