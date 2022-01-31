@@ -37983,6 +37983,7 @@
                 {
                   "listen": "test",
                   "script": {
+                    "id": "4ebc4970-1fa3-403b-a662-c5e2651966e6",
                     "exec": [
                       "// Test 1\r",
                       "pm.test(\"Status code is 204 or 404\", function () {\r",
@@ -38002,8 +38003,7 @@
                       "    }\r",
                       "});"
                     ],
-                    "type": "text/javascript",
-                    "id": "4ebc4970-1fa3-403b-a662-c5e2651966e6"
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -38023,24 +38023,7 @@
                     }
                   }
                 },
-                "url": {
-                  "raw": "{{ApiBaseUrl}}/v1/screening-lists/:screeningListId",
-                  "host": [
-                    "{{ApiBaseUrl}}"
-                  ],
-                  "path": [
-                    "v1",
-                    "screening-lists",
-                    ":screeningListId"
-                  ],
-                  "variable": [
-                    {
-                      "id": "c7ee194b-58f8-48a2-8440-eab21fa8f65e",
-                      "key": "screeningListId",
-                      "value": "140F256D-9309-428A-22EB-08D9DCC30D47"
-                    }
-                  ]
-                }
+                "url": "{{ApiBaseUrl}}/v1/screening-lists/012ae9ce-a818-40fa-1bb9-08d9e489a889"
               },
               "response": []
             }
