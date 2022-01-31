@@ -38329,6 +38329,7 @@
                 {
                   "listen": "test",
                   "script": {
+                    "id": "65cc3a58-9b48-4bb1-bebc-21db7fe65a21",
                     "exec": [
                       "// Test 1\r",
                       "pm.test(\"Status code is 201\", function () {\r",
@@ -38426,8 +38427,7 @@
                       "    pm.expect(cretedTimestamp).to.include(currTime);\r",
                       "})"
                     ],
-                    "type": "text/javascript",
-                    "id": "65cc3a58-9b48-4bb1-bebc-21db7fe65a21"
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -38440,7 +38440,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\r\n    \"screeningListId\": \"140F256D-9309-428A-22EB-08D9DCC30D47\",\r\n    \"isin\": \"some ISIN\",\r\n    \"cusip\": \"some CUSIP\",\r\n    \"dealId\": \"4FA02957-7CC6-4767-BEC5-08D92C2971D8\"\r\n}",
+                  "raw": "{\r\n    \"screeningListId\": \"140F256D-9309-428A-22EB-08D9DCC30D47\",\r\n    \"securityName\": \"Security Name\",\r\n    \"isin\": \"some ISIN\",\r\n    \"cusip\": \"some CUSIP\",\r\n    \"dealId\": \"4FA02957-7CC6-4767-BEC5-08D92C2971D8\",\r\n    \"externalIdentifierType\": \"Identifier Type\",\r\n    \"externalId\": \"External Id\"\r\n}",
                   "options": {
                     "raw": {
                       "language": "json"
