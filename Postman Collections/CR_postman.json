@@ -39068,6 +39068,899 @@
           "id": "52512eab-d915-4653-9fbd-c567b5f3e37b"
         },
         {
+          "name": "Security Master",
+          "item": [
+            {
+              "name": "look up",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "// Test 1\r",
+                      "pm.test(\"Status code is 200\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});\r",
+                      "\r",
+                      "var schema = {\r",
+                      "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                      "  \"type\": \"object\",\r",
+                      "  \"properties\": {\r",
+                      "    \"@odata.context\": {\r",
+                      "      \"type\": \"string\"\r",
+                      "    },\r",
+                      "    \"value\": {\r",
+                      "      \"type\": \"array\",\r",
+                      "      \"items\": {}\r",
+                      "    }\r",
+                      "  },\r",
+                      "  \"required\": [\r",
+                      "    \"@odata.context\",\r",
+                      "    \"value\"\r",
+                      "  ]\r",
+                      "}\r",
+                      "\r",
+                      "// Test 2\r",
+                      "pm.test(\"Schema is valid\", function(){\r",
+                      "    var json= pm.response.json()\r",
+                      "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+                      "})"
+                    ],
+                    "type": "text/javascript",
+                    "id": "d2d76041-3df4-4d1e-b781-9e0fab91526c"
+                  }
+                }
+              ],
+              "id": "310c0e42-8e80-4d42-8bd1-0b5973c252b2",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{ApiBaseUrl}}/v1/security-master/lookup?lookUpType=SecMasterSecurityId&lookUpValue=031df699-5502-eb11-8140-000c29887906",
+                  "host": [
+                    "{{ApiBaseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "security-master",
+                    "lookup"
+                  ],
+                  "query": [
+                    {
+                      "key": "lookUpType",
+                      "value": "SecMasterSecurityId"
+                    },
+                    {
+                      "key": "lookUpValue",
+                      "value": "031df699-5502-eb11-8140-000c29887906"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "look up Bug",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "// Test 1\r",
+                      "pm.test(\"Status code is 200\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});\r",
+                      "\r",
+                      "var schema = {\r",
+                      "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                      "  \"type\": \"object\",\r",
+                      "  \"properties\": {\r",
+                      "    \"@odata.context\": {\r",
+                      "      \"type\": \"string\"\r",
+                      "    },\r",
+                      "    \"value\": {\r",
+                      "      \"type\": \"array\",\r",
+                      "      \"items\": {}\r",
+                      "    }\r",
+                      "  },\r",
+                      "  \"required\": [\r",
+                      "    \"@odata.context\",\r",
+                      "    \"value\"\r",
+                      "  ]\r",
+                      "}\r",
+                      "\r",
+                      "// Test 2\r",
+                      "pm.test(\"Schema is valid\", function(){\r",
+                      "    var json= pm.response.json()\r",
+                      "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+                      "})"
+                    ],
+                    "type": "text/javascript",
+                    "id": "2b2a22c1-8762-4eec-b657-6e1cd19d703b"
+                  }
+                }
+              ],
+              "id": "3d537691-4a18-4067-a6bf-906dfc8b93d4",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{ApiBaseUrl}}/v1/security-master/lookup?lookUpType=1&lookUpValue=00846U101",
+                  "host": [
+                    "{{ApiBaseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "security-master",
+                    "lookup"
+                  ],
+                  "query": [
+                    {
+                      "key": "lookUpType",
+                      "value": "1"
+                    },
+                    {
+                      "key": "lookUpValue",
+                      "value": "00846U101"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "look up with no Bug",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "// Test 1\r",
+                      "pm.test(\"Status code is 200\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});\r",
+                      "\r",
+                      "var schema = {\r",
+                      "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                      "  \"type\": \"object\",\r",
+                      "  \"properties\": {\r",
+                      "    \"@odata.context\": {\r",
+                      "      \"type\": \"string\"\r",
+                      "    },\r",
+                      "    \"value\": {\r",
+                      "      \"type\": \"array\",\r",
+                      "      \"items\": {}\r",
+                      "    }\r",
+                      "  },\r",
+                      "  \"required\": [\r",
+                      "    \"@odata.context\",\r",
+                      "    \"value\"\r",
+                      "  ]\r",
+                      "}\r",
+                      "\r",
+                      "// Test 2\r",
+                      "pm.test(\"Schema is valid\", function(){\r",
+                      "    var json= pm.response.json()\r",
+                      "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+                      "})"
+                    ],
+                    "type": "text/javascript",
+                    "id": "85cb9d14-29ba-4c8d-bd94-79c1d22c2469"
+                  }
+                }
+              ],
+              "id": "d2488565-c230-4b2d-828d-6392e593901a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{ApiBaseUrl}}/v1/security-master/lookup?lookUpType=1&lookUpValue=4337829f-5502-eb11-8140-000c29887906",
+                  "host": [
+                    "{{ApiBaseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "security-master",
+                    "lookup"
+                  ],
+                  "query": [
+                    {
+                      "key": "lookUpType",
+                      "value": "1"
+                    },
+                    {
+                      "key": "lookUpValue",
+                      "value": "4337829f-5502-eb11-8140-000c29887906"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "look up Real IP",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "// Test 1\r",
+                      "pm.test(\"Status code is 200\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});\r",
+                      "\r",
+                      "var schema = {\r",
+                      "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                      "  \"type\": \"object\",\r",
+                      "  \"properties\": {\r",
+                      "    \"@odata.context\": {\r",
+                      "      \"type\": \"string\"\r",
+                      "    },\r",
+                      "    \"value\": {\r",
+                      "      \"type\": \"array\",\r",
+                      "      \"items\": {}\r",
+                      "    }\r",
+                      "  },\r",
+                      "  \"required\": [\r",
+                      "    \"@odata.context\",\r",
+                      "    \"value\"\r",
+                      "  ]\r",
+                      "}\r",
+                      "\r",
+                      "// Test 2\r",
+                      "pm.test(\"Schema is valid\", function(){\r",
+                      "    var json= pm.response.json()\r",
+                      "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+                      "})"
+                    ],
+                    "type": "text/javascript",
+                    "id": "4e180a6a-3061-4f7f-9ddc-91219d356e74"
+                  }
+                }
+              ],
+              "id": "984ba3d8-76f5-45e8-9b87-a4fe605fbe4a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"RequestId\": \"c081fdfa-2f51-44a1-889b-a3aca35e3bb0\",\r\n    \"IdentifiersByType\": {\r\n        \"SecMasterSecurityId\": \"031df699-5502-eb11-8140-000c29887906\"\r\n    }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://172.29.146.133:8082/api/1.0/ref/security/lookup?createIfMissing=false&fields=cusip&fields=isin&fields=*",
+                  "protocol": "http",
+                  "host": [
+                    "172",
+                    "29",
+                    "146",
+                    "133"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "1.0",
+                    "ref",
+                    "security",
+                    "lookup"
+                  ],
+                  "query": [
+                    {
+                      "key": "createIfMissing",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "cusip"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "isin"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "*"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "search",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "// Test 1\r",
+                      "pm.test(\"Status code is 200\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});\r",
+                      "\r",
+                      "var schema = {\r",
+                      "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                      "  \"type\": \"object\",\r",
+                      "  \"properties\": {\r",
+                      "    \"@odata.context\": {\r",
+                      "      \"type\": \"string\"\r",
+                      "    },\r",
+                      "    \"value\": {\r",
+                      "      \"type\": \"array\",\r",
+                      "      \"items\": {}\r",
+                      "    }\r",
+                      "  },\r",
+                      "  \"required\": [\r",
+                      "    \"@odata.context\",\r",
+                      "    \"value\"\r",
+                      "  ]\r",
+                      "}\r",
+                      "\r",
+                      "// Test 2\r",
+                      "pm.test(\"Schema is valid\", function(){\r",
+                      "    var json= pm.response.json()\r",
+                      "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+                      "})"
+                    ],
+                    "type": "text/javascript",
+                    "id": "fc18f8ca-3ef3-4740-87ed-c28fec4fafc8"
+                  }
+                }
+              ],
+              "id": "7edf4c38-9706-43a7-bc2c-a24c7f69f2bd",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{ApiBaseUrl}}/v1/security-master/search?term=googl&top=5&isFullSearch=false&supplementalFields=cusip",
+                  "host": [
+                    "{{ApiBaseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "security-master",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "key": "term",
+                      "value": "googl"
+                    },
+                    {
+                      "key": "top",
+                      "value": "5"
+                    },
+                    {
+                      "key": "isFullSearch",
+                      "value": "false"
+                    },
+                    {
+                      "key": "supplementalFields",
+                      "value": "cusip"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "search Bug",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "// Test 1\r",
+                      "pm.test(\"Status code is 200\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});\r",
+                      "\r",
+                      "var schema = {\r",
+                      "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                      "  \"type\": \"object\",\r",
+                      "  \"properties\": {\r",
+                      "    \"@odata.context\": {\r",
+                      "      \"type\": \"string\"\r",
+                      "    },\r",
+                      "    \"value\": {\r",
+                      "      \"type\": \"array\",\r",
+                      "      \"items\": {}\r",
+                      "    }\r",
+                      "  },\r",
+                      "  \"required\": [\r",
+                      "    \"@odata.context\",\r",
+                      "    \"value\"\r",
+                      "  ]\r",
+                      "}\r",
+                      "\r",
+                      "// Test 2\r",
+                      "pm.test(\"Schema is valid\", function(){\r",
+                      "    var json= pm.response.json()\r",
+                      "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+                      "})"
+                    ],
+                    "type": "text/javascript",
+                    "id": "8ffc770f-ecc1-4231-b173-bec7d8639c89"
+                  }
+                }
+              ],
+              "id": "730dc098-cc23-4b38-938d-2219ae335a9d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{ApiBaseUrl}}/v1/security-master/search?top=5&isFullSearch=false&term=a",
+                  "host": [
+                    "{{ApiBaseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "security-master",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "key": "top",
+                      "value": "5"
+                    },
+                    {
+                      "key": "isFullSearch",
+                      "value": "false"
+                    },
+                    {
+                      "key": "term",
+                      "value": "a"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "search QA",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "// Test 1\r",
+                      "pm.test(\"Status code is 200\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});\r",
+                      "\r",
+                      "var schema = {\r",
+                      "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                      "  \"type\": \"object\",\r",
+                      "  \"properties\": {\r",
+                      "    \"@odata.context\": {\r",
+                      "      \"type\": \"string\"\r",
+                      "    },\r",
+                      "    \"value\": {\r",
+                      "      \"type\": \"array\",\r",
+                      "      \"items\": {}\r",
+                      "    }\r",
+                      "  },\r",
+                      "  \"required\": [\r",
+                      "    \"@odata.context\",\r",
+                      "    \"value\"\r",
+                      "  ]\r",
+                      "}\r",
+                      "\r",
+                      "// Test 2\r",
+                      "pm.test(\"Schema is valid\", function(){\r",
+                      "    var json= pm.response.json()\r",
+                      "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+                      "})"
+                    ],
+                    "type": "text/javascript",
+                    "id": "77682902-c773-4e48-a86d-71978464483a"
+                  }
+                }
+              ],
+              "id": "dca0364d-1a59-4e94-be98-e7ef4c7a75fb",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://qa.platform.devacaalpha.com/api/control-room/v1/security-master/search?top=5&isFullSearch=false&term=a",
+                  "protocol": "https",
+                  "host": [
+                    "qa",
+                    "platform",
+                    "devacaalpha",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "control-room",
+                    "v1",
+                    "security-master",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "key": "top",
+                      "value": "5"
+                    },
+                    {
+                      "key": "isFullSearch",
+                      "value": "false"
+                    },
+                    {
+                      "key": "term",
+                      "value": "a"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "search Real",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "// Test 1\r",
+                      "pm.test(\"Status code is 200\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});\r",
+                      "\r",
+                      "var schema = {\r",
+                      "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                      "  \"type\": \"object\",\r",
+                      "  \"properties\": {\r",
+                      "    \"@odata.context\": {\r",
+                      "      \"type\": \"string\"\r",
+                      "    },\r",
+                      "    \"value\": {\r",
+                      "      \"type\": \"array\",\r",
+                      "      \"items\": {}\r",
+                      "    }\r",
+                      "  },\r",
+                      "  \"required\": [\r",
+                      "    \"@odata.context\",\r",
+                      "    \"value\"\r",
+                      "  ]\r",
+                      "}\r",
+                      "\r",
+                      "// Test 2\r",
+                      "pm.test(\"Schema is valid\", function(){\r",
+                      "    var json= pm.response.json()\r",
+                      "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+                      "})"
+                    ],
+                    "type": "text/javascript",
+                    "id": "4da55126-2565-48bb-a38c-6e74bdf17e3e"
+                  }
+                }
+              ],
+              "id": "d59aa7bb-182e-4fce-9acb-86be15f1a242",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://ec2-qa-sm.devaws.acats.com:8082/api/1.0/ref/security/search?supplementalFields=*&allowedSearchTypes=FindAsYouType&top=0&SearchTerm=googl&text=googl",
+                  "protocol": "http",
+                  "host": [
+                    "ec2-qa-sm",
+                    "devaws",
+                    "acats",
+                    "com"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "1.0",
+                    "ref",
+                    "security",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "key": "supplementalFields",
+                      "value": "*"
+                    },
+                    {
+                      "key": "allowedSearchTypes",
+                      "value": "FindAsYouType"
+                    },
+                    {
+                      "key": "top",
+                      "value": "0"
+                    },
+                    {
+                      "key": "SearchTerm",
+                      "value": "googl"
+                    },
+                    {
+                      "key": "text",
+                      "value": "googl"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "search Real IP",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "// Test 1\r",
+                      "pm.test(\"Status code is 200\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});\r",
+                      "\r",
+                      "var schema = {\r",
+                      "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                      "  \"type\": \"object\",\r",
+                      "  \"properties\": {\r",
+                      "    \"@odata.context\": {\r",
+                      "      \"type\": \"string\"\r",
+                      "    },\r",
+                      "    \"value\": {\r",
+                      "      \"type\": \"array\",\r",
+                      "      \"items\": {}\r",
+                      "    }\r",
+                      "  },\r",
+                      "  \"required\": [\r",
+                      "    \"@odata.context\",\r",
+                      "    \"value\"\r",
+                      "  ]\r",
+                      "}\r",
+                      "\r",
+                      "// Test 2\r",
+                      "pm.test(\"Schema is valid\", function(){\r",
+                      "    var json= pm.response.json()\r",
+                      "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+                      "})"
+                    ],
+                    "type": "text/javascript",
+                    "id": "a59c0f82-d1bf-4024-894e-b264ad6a1e2f"
+                  }
+                }
+              ],
+              "id": "2de7b484-9aca-43a5-9041-152848b31005",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://172.29.146.133:8082/api/1.0/ref/security/search?SearchTerm=googl&text=googl",
+                  "protocol": "http",
+                  "host": [
+                    "172",
+                    "29",
+                    "146",
+                    "133"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "1.0",
+                    "ref",
+                    "security",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "key": "SearchTerm",
+                      "value": "googl"
+                    },
+                    {
+                      "key": "text",
+                      "value": "googl"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "search Real IP Copy",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "// Test 1\r",
+                      "pm.test(\"Status code is 200\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});\r",
+                      "\r",
+                      "var schema = {\r",
+                      "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                      "  \"type\": \"object\",\r",
+                      "  \"properties\": {\r",
+                      "    \"@odata.context\": {\r",
+                      "      \"type\": \"string\"\r",
+                      "    },\r",
+                      "    \"value\": {\r",
+                      "      \"type\": \"array\",\r",
+                      "      \"items\": {}\r",
+                      "    }\r",
+                      "  },\r",
+                      "  \"required\": [\r",
+                      "    \"@odata.context\",\r",
+                      "    \"value\"\r",
+                      "  ]\r",
+                      "}\r",
+                      "\r",
+                      "// Test 2\r",
+                      "pm.test(\"Schema is valid\", function(){\r",
+                      "    var json= pm.response.json()\r",
+                      "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+                      "})"
+                    ],
+                    "type": "text/javascript",
+                    "id": "cde84ecd-09ec-4c3e-a69a-f6088ea88f36"
+                  }
+                }
+              ],
+              "id": "5cb2c6e3-9aff-45af-ade8-b6e742a9e1f5",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://172.29.146.133:8082/api/1.0/ref/security/search?SearchTerm=googl&text=googl&supplementalFields=cusip&supplementalFields=isin",
+                  "protocol": "http",
+                  "host": [
+                    "172",
+                    "29",
+                    "146",
+                    "133"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "1.0",
+                    "ref",
+                    "security",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "key": "SearchTerm",
+                      "value": "googl"
+                    },
+                    {
+                      "key": "text",
+                      "value": "googl"
+                    },
+                    {
+                      "key": "supplementalFields",
+                      "value": "cusip"
+                    },
+                    {
+                      "key": "supplementalFields",
+                      "value": "isin"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "search Koce",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "// Test 1\r",
+                      "pm.test(\"Status code is 200\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});\r",
+                      "\r",
+                      "var schema = {\r",
+                      "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                      "  \"type\": \"object\",\r",
+                      "  \"properties\": {\r",
+                      "    \"@odata.context\": {\r",
+                      "      \"type\": \"string\"\r",
+                      "    },\r",
+                      "    \"value\": {\r",
+                      "      \"type\": \"array\",\r",
+                      "      \"items\": {}\r",
+                      "    }\r",
+                      "  },\r",
+                      "  \"required\": [\r",
+                      "    \"@odata.context\",\r",
+                      "    \"value\"\r",
+                      "  ]\r",
+                      "}\r",
+                      "\r",
+                      "// Test 2\r",
+                      "pm.test(\"Schema is valid\", function(){\r",
+                      "    var json= pm.response.json()\r",
+                      "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+                      "})"
+                    ],
+                    "type": "text/javascript",
+                    "id": "da8dcfc9-1480-4973-bd8f-9011b267780b"
+                  }
+                }
+              ],
+              "id": "391754d7-a2d8-4d6a-b91e-2dca4cdc87d1",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{ApiBaseUrl}}/v1/security-master/search?term=googl&top=25&isFullSearch=true&supplementalFields=cusip,isin,tickerSymbol,country,sector,exchangeMic",
+                  "host": [
+                    "{{ApiBaseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "security-master",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "key": "term",
+                      "value": "googl"
+                    },
+                    {
+                      "key": "top",
+                      "value": "25"
+                    },
+                    {
+                      "key": "isFullSearch",
+                      "value": "true"
+                    },
+                    {
+                      "key": "supplementalFields",
+                      "value": "cusip,isin,tickerSymbol,country,sector,exchangeMic"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "64192ea4-6187-4e15-92ed-39a7382832bd"
+        },
+        {
           "name": "Conflict Check",
           "item": [
             {
