@@ -38440,6 +38440,7 @@
                 {
                   "listen": "test",
                   "script": {
+                    "id": "8dabb9e6-6118-41c7-ab38-8240ed504518",
                     "exec": [
                       "// Test 1\r",
                       "pm.test(\"Status code is 201\", function () {\r",
@@ -38537,8 +38538,7 @@
                       "    pm.expect(cretedTimestamp).to.include(currTime);\r",
                       "})"
                     ],
-                    "type": "text/javascript",
-                    "id": "8dabb9e6-6118-41c7-ab38-8240ed504518"
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -38551,32 +38551,14 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\r\n    \"screeningListId\": \"d8ece2ad-dc3e-46ef-0b85-08d9df3d846c\"\r\n}",
+                  "raw": "{\r\n    \"screeningListId\": \"5e6e6569-89bb-444f-4df1-08d9e54b50a4\"\r\n}",
                   "options": {
                     "raw": {
                       "language": "json"
                     }
                   }
                 },
-                "url": {
-                  "raw": "{{ApiBaseUrl}}/v1/screening-list-records/:screeningListRecordId/move-to-screening-list",
-                  "host": [
-                    "{{ApiBaseUrl}}"
-                  ],
-                  "path": [
-                    "v1",
-                    "screening-list-records",
-                    ":screeningListRecordId",
-                    "move-to-screening-list"
-                  ],
-                  "variable": [
-                    {
-                      "id": "5c366cdc-3d1a-46d8-8bb6-9a4da9208e15",
-                      "key": "screeningListRecordId",
-                      "value": "31efa0a4-2bb1-4e00-2fd1-08d9e258d835"
-                    }
-                  ]
-                }
+                "url": "{{ApiBaseUrl}}/v1/screening-list-records/99a20b64-19b2-4432-8461-08d9e54b5c2d/move-to-screening-list"
               },
               "response": []
             },
