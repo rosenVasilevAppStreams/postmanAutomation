@@ -37855,6 +37855,7 @@
                 {
                   "listen": "test",
                   "script": {
+                    "id": "80c82545-96fc-491c-848b-8191f8faf39e",
                     "exec": [
                       "// Test 1\r",
                       "pm.test(\"Status code is 201\", function () {\r",
@@ -37952,8 +37953,7 @@
                       "    pm.expect(cretedTimestamp).to.include(currTime);\r",
                       "})"
                     ],
-                    "type": "text/javascript",
-                    "id": "80c82545-96fc-491c-848b-8191f8faf39e"
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -37966,7 +37966,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\r\n    \"name\": \"ControlRoom ScreeningList\",\r\n    \"description\": \"<p>some description</p>\",\r\n    \"timeZone\": \"UTC\",\r\n    \"status\": \"Active\",\r\n    \"records\": [\r\n        {\r\n            \"isin\": \"some ISIN\",\r\n            \"cusip\": \"some CUSIP\",\r\n            \"dealId\": \"4FA02957-7CC6-4767-BEC5-08D92C2971D8\"\r\n        },\r\n        {\r\n            \"isin\": \"some ISIN 2\",\r\n            \"cusip\": \"some CUSIP 2\"\r\n        }\r\n    ]\r\n}",
+                  "raw": "{\r\n    \"name\": \"ControlRoom ScreeningList API test\",\r\n    \"description\": \"<p>some description</p>\",\r\n    \"timeZone\": \"UTC\",\r\n    \"status\": \"Active\",\r\n    \"records\": [\r\n        {\r\n            \"isin\": \"some ISIN\",\r\n            \"cusip\": \"some CUSIP\",\r\n            \"dealId\": \"756fdd79-f98a-40f7-8de0-08d95b03dc66\"\r\n        },\r\n        {\r\n            \"isin\": \"some ISIN 2\",\r\n            \"cusip\": \"some CUSIP 2\"\r\n        }\r\n    ]\r\n}",
                   "options": {
                     "raw": {
                       "language": "json"
