@@ -27160,66 +27160,65 @@
               "item": [
                 {
                   "name": "getAll",
-                  "item": [
+                  "item": [],
+                  "id": "aeaa00c3-d302-41b3-8828-077685245205"
+                },
+                {
+                  "name": "getAll",
+                  "event": [
                     {
-                      "name": "getAll",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "id": "39dfb376-0f5d-412f-bb27-2493b1baf3a4",
-                            "exec": [
-                              "// Test 1\r",
-                              "pm.test(\"Status code is 200\", function () {\r",
-                              "    pm.response.to.have.status(200);\r",
-                              "});\r",
-                              "\r",
-                              "var schema = {\r",
-                              "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
-                              "  \"type\": \"object\",\r",
-                              "  \"properties\": {\r",
-                              "    \"@odata.context\": {\r",
-                              "      \"type\": \"string\"\r",
-                              "    },\r",
-                              "    \"value\": {\r",
-                              "      \"type\": \"array\",\r",
-                              "      \"items\": {}\r",
-                              "    }\r",
-                              "  },\r",
-                              "  \"required\": [\r",
-                              "    \"@odata.context\",\r",
-                              "    \"value\"\r",
-                              "  ]\r",
-                              "}\r",
-                              "\r",
-                              "// Test 2\r",
-                              "pm.test(\"Schema is valid\", function(){\r",
-                              "    var json= pm.response.json()\r",
-                              "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
-                              "\r",
-                              "})\r",
-                              "\r",
-                              "var jsonData= pm.response.json()\r",
-                              "postman.setEnvironmentVariable(\"webhookSubsId\", jsonData.value[0].webhooks[0].id)\r",
-                              ""
-                            ],
-                            "type": "text/javascript"
-                          }
-                        }
-                      ],
-                      "id": "d8593e48-0e8a-458a-8872-f58a7bc9a76c",
-                      "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                      },
-                      "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/webhook-definitions"
-                      },
-                      "response": []
+                      "listen": "test",
+                      "script": {
+                        "id": "39dfb376-0f5d-412f-bb27-2493b1baf3a4",
+                        "exec": [
+                          "// Test 1\r",
+                          "pm.test(\"Status code is 200\", function () {\r",
+                          "    pm.response.to.have.status(200);\r",
+                          "});\r",
+                          "\r",
+                          "var schema = {\r",
+                          "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                          "  \"type\": \"object\",\r",
+                          "  \"properties\": {\r",
+                          "    \"@odata.context\": {\r",
+                          "      \"type\": \"string\"\r",
+                          "    },\r",
+                          "    \"value\": {\r",
+                          "      \"type\": \"array\",\r",
+                          "      \"items\": {}\r",
+                          "    }\r",
+                          "  },\r",
+                          "  \"required\": [\r",
+                          "    \"@odata.context\",\r",
+                          "    \"value\"\r",
+                          "  ]\r",
+                          "}\r",
+                          "\r",
+                          "// Test 2\r",
+                          "pm.test(\"Schema is valid\", function(){\r",
+                          "    var json= pm.response.json()\r",
+                          "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+                          "\r",
+                          "})\r",
+                          "\r",
+                          "var jsonData= pm.response.json()\r",
+                          "postman.setEnvironmentVariable(\"webhookSubsId\", jsonData.value[0].webhooks[0].id)\r",
+                          ""
+                        ],
+                        "type": "text/javascript"
+                      }
                     }
                   ],
-                  "id": "aeaa00c3-d302-41b3-8828-077685245205"
+                  "id": "d8593e48-0e8a-458a-8872-f58a7bc9a76c",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": "{{ApiBaseUrl}}/v1/webhook-definitions"
+                  },
+                  "response": []
                 }
               ],
               "id": "31e63e2f-a6fc-42f4-9bf0-9a2241dd8d2e"
