@@ -29952,7 +29952,7 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\r\n    \"responseTimeOutMinutes\": 60,\r\n    \"name\": \"Test WebHook QA\",\r\n    \"webhookUrl\": \"http://test.com\",\r\n    \"status\": \"Active\",\r\n    \"webhooks\": [\r\n        {\r\n           \"webhookDefinitionId\":\"ea305c02-7954-ec11-ab22-0eee3f322eb9\"\r\n        }\r\n    ],\r\n    \"integrationRestrictionLists\": [\r\n        {\r\n            \"name\": \"Test integrationRestrictionLists QA\",\r\n            \"notes\": \"QA\"\r\n        }\r\n    ]\r\n}",
+                          "raw": "{\r\n    \"responseTimeOutMinutes\": 60,\r\n    \"name\": \"Test WebHook QA\",\r\n    \"webhookUrl\": \"http://test.com\",\r\n    \"status\": \"Active\",\r\n    \"authenticationType\": \"ApiKey\",\r\n    \"authenticationDetails\" : { \r\n        \"apiKey\":\"TEST\"\r\n    },\r\n    \"webhooks\": [\r\n        {\r\n           \"webhookDefinitionId\":\"2a074cc9-bf53-ec11-ab22-0eafc1b4db39\"\r\n        }\r\n    ],\r\n    \"integrationRestrictionLists\": [\r\n        {\r\n            \"name\": \"Test integrationRestrictionLists QA\",\r\n            \"notes\": \"QA\"\r\n        }\r\n    ]\r\n}",
                           "options": {
                             "raw": {
                               "language": "json"
