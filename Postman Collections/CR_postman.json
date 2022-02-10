@@ -40772,7 +40772,6 @@
                     {
                       "listen": "test",
                       "script": {
-                        "id": "8c43ca04-0d60-422b-8916-a5c06a3e5065",
                         "exec": [
                           "// Test 1\r",
                           "pm.test(\"Status code is 200\", function () {\r",
@@ -40801,12 +40800,10 @@
                           "pm.test(\"Schema is valid\", function(){\r",
                           "    var json= pm.response.json()\r",
                           "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
-                          "})\r",
-                          "\r",
-                          "var jsonData =pm.response.json()\r",
-                          "postman.setEnvironmentVariable(\"screeningListId\", value[0].screeningListId)"
+                          "})"
                         ],
-                        "type": "text/javascript"
+                        "type": "text/javascript",
+                        "id": "8c43ca04-0d60-422b-8916-a5c06a3e5065"
                       }
                     }
                   ],
