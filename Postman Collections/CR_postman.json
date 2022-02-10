@@ -44218,56 +44218,6 @@
                       "response": []
                     },
                     {
-                      "name": "patch",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "id": "7fcc41aa-d844-48cb-ac62-5543985bd07d",
-                            "exec": [
-                              "// Test 1\r",
-                              "pm.test(\"Status code is 204 or 404\", function () {\r",
-                              "    if (pm.response.code == 204) {\r",
-                              "        pm.response.to.have.status(204);\r",
-                              "    }\r",
-                              "    else {\r",
-                              "        pm.response.to.have.status(404);\r",
-                              "    }\r",
-                              "});\r",
-                              "\r",
-                              "// Test 2\r",
-                              "pm.test(\"Response body is valid\", function () {\r",
-                              "    if (pm.response.code == 404) {\r",
-                              "        pm.expect(pm.response.text()).to.include(\"Entity of type\");\r",
-                              "        pm.expect(pm.response.text()).to.include(\"was not found.\");\r",
-                              "    }\r",
-                              "});"
-                            ],
-                            "type": "text/javascript"
-                          }
-                        }
-                      ],
-                      "id": "b31bf1dd-a8c1-4ad7-af44-8959f392c56d",
-                      "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                      },
-                      "request": {
-                        "method": "PATCH",
-                        "header": [],
-                        "body": {
-                          "mode": "raw",
-                          "raw": "{\r\n    \"isin\": \"{{isin}}\",\r\n    \"cusip\": \"{{cusip}}\",\r\n    \"dealId\": \"{{dealIdForScreeningList}}\"\r\n}",
-                          "options": {
-                            "raw": {
-                              "language": "json"
-                            }
-                          }
-                        },
-                        "url": "{{ApiBaseUrl}}/v1/screening-list-records/{{screeningListRecordId}}"
-                      },
-                      "response": []
-                    },
-                    {
                       "name": "delete",
                       "event": [
                         {
