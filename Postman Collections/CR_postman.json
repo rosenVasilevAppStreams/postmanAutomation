@@ -37994,44 +37994,50 @@
             },
             {
               "name": "delete",
-              "event": [
+              "item": [
                 {
-                  "listen": "test",
-                  "script": {
-                    "id": "dcb831e5-5783-4502-9176-8c95c8efba19",
-                    "exec": [
-                      "// Test 1\r",
-                      "pm.test(\"Status code is 204 or 404\", function () {\r",
-                      "    if (pm.response.code == 204) {\r",
-                      "        pm.response.to.have.status(204);\r",
-                      "    }\r",
-                      "    else {\r",
-                      "        pm.response.to.have.status(404);\r",
-                      "    }\r",
-                      "});\r",
-                      "\r",
-                      "// Test 2\r",
-                      "pm.test(\"Response body is valid\", function () {\r",
-                      "    if (pm.response.code == 404) {\r",
-                      "        pm.expect(pm.response.text()).to.include(\"Entity of type\");\r",
-                      "        pm.expect(pm.response.text()).to.include(\"was not found.\");\r",
-                      "    }\r",
-                      "});"
-                    ],
-                    "type": "text/javascript"
-                  }
+                  "name": "delete",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "id": "dcb831e5-5783-4502-9176-8c95c8efba19",
+                        "exec": [
+                          "// Test 1\r",
+                          "pm.test(\"Status code is 204 or 404\", function () {\r",
+                          "    if (pm.response.code == 204) {\r",
+                          "        pm.response.to.have.status(204);\r",
+                          "    }\r",
+                          "    else {\r",
+                          "        pm.response.to.have.status(404);\r",
+                          "    }\r",
+                          "});\r",
+                          "\r",
+                          "// Test 2\r",
+                          "pm.test(\"Response body is valid\", function () {\r",
+                          "    if (pm.response.code == 404) {\r",
+                          "        pm.expect(pm.response.text()).to.include(\"Entity of type\");\r",
+                          "        pm.expect(pm.response.text()).to.include(\"was not found.\");\r",
+                          "    }\r",
+                          "});"
+                        ],
+                        "type": "text/javascript"
+                      }
+                    }
+                  ],
+                  "id": "87ab421d-4b29-4eae-b68a-1c86f81325d2",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": "{{ApiBaseUrl}}/v1/screening-lists/5dbf4e1f-d3e8-4f87-f316-08d9e4898e93"
+                  },
+                  "response": []
                 }
               ],
-              "id": "87ab421d-4b29-4eae-b68a-1c86f81325d2",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "DELETE",
-                "header": [],
-                "url": "{{ApiBaseUrl}}/v1/screening-lists/5dbf4e1f-d3e8-4f87-f316-08d9e4898e93"
-              },
-              "response": []
+              "id": "5f0d7ff0-3923-4606-b5f6-304699a4df4a"
             }
           ],
           "id": "6e793f92-2d37-4dae-bea9-5fabda64d3de"
