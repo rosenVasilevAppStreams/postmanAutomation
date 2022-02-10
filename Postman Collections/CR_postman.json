@@ -39414,6 +39414,139 @@
                     }
                   ],
                   "id": "ccd5d4d2-0c11-48ba-8c89-f0a634e2008d"
+                },
+                {
+                  "name": "create a screening list without name Copy",
+                  "item": [
+                    {
+                      "name": "set vars for the screening list",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "exec": [
+                              "// Test 1\r",
+                              "pm.test(\"Status code is 200\", function () {\r",
+                              "    pm.response.to.have.status(200);\r",
+                              "});\r",
+                              "\r",
+                              "var schema = {\r",
+                              "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                              "  \"type\": \"object\",\r",
+                              "  \"properties\": {\r",
+                              "    \"@odata.context\": {\r",
+                              "      \"type\": \"string\"\r",
+                              "    },\r",
+                              "    \"value\": {\r",
+                              "      \"type\": \"array\",\r",
+                              "      \"items\": {}\r",
+                              "    }\r",
+                              "  },\r",
+                              "  \"required\": [\r",
+                              "    \"@odata.context\",\r",
+                              "    \"value\"\r",
+                              "  ]\r",
+                              "}\r",
+                              "\r",
+                              "// Test 2\r",
+                              "pm.test(\"Schema is valid\", function(){\r",
+                              "    var json= pm.response.json()\r",
+                              "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+                              "})"
+                            ],
+                            "type": "text/javascript",
+                            "id": "a3f6696b-fe6d-445a-a5f9-37feb8e39a0b"
+                          }
+                        }
+                      ],
+                      "id": "9e716a49-d42a-4446-a156-0ec7a64f570b",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{ApiBaseUrl}}/v1/screening-lists?$expand=Records($expand=Deal)",
+                          "host": [
+                            "{{ApiBaseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "screening-lists"
+                          ],
+                          "query": [
+                            {
+                              "key": "$expand",
+                              "value": "Records($expand=Deal)"
+                            }
+                          ]
+                        }
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "create a new list without company",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "f644bcc4-eef3-4d31-a146-655d6067189f",
+                            "exec": [
+                              "// Test 1\r",
+                              "pm.test(\"Status code is 400\", function () {\r",
+                              "    pm.response.to.have.status(400);\r",
+                              "});\r",
+                              ""
+                            ],
+                            "type": "text/javascript"
+                          }
+                        },
+                        {
+                          "listen": "prerequest",
+                          "script": {
+                            "id": "fd62526f-52b6-4df8-9733-81a6c584eb56",
+                            "exec": [
+                              "",
+                              "",
+                              "pm.environment.set(\"randomListName\", _.random(1, 1000) +\" \" + \"API screening list\")",
+                              "",
+                              "",
+                              "var dateNow= new Date();pm.environment.set(\"randomListDescription\", dateNow.toISOString() + \" \" + \"API screening list description\")",
+                              "",
+                              "",
+                              "// pm.sendRequest('https://qa.platform.devacaalpha.com/api/control-room/v1/deals?$expand=restrictions,dealMembers,companies', function (err, res) {",
+                              "//         pm.expect(err).to.not.be.ok;",
+                              "//         pm.expect(res).to.have.property('code', 200);",
+                              "//         pm.expect(res).to.have.property('status', 'OK');",
+                              "//     });"
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "id": "02510acf-6fdd-43e5-b342-2fc0b7423478",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\r\n    \"name\": \"\",\r\n    \"description\": \"{{randomListDescription}}\",\r\n    \"timeZone\": \"{{timeZone}}\",\r\n    \"status\": \"{{listStatus}}\"\r\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": "{{ApiBaseUrl}}/v1/screening-lists"
+                      },
+                      "response": []
+                    }
+                  ],
+                  "id": "e5f31e45-57c4-421a-b9de-38318b67a168"
                 }
               ],
               "id": "e6c5fb1a-72e9-4b86-91f2-e57948d51aba"
