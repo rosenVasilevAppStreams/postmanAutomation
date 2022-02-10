@@ -44265,7 +44265,7 @@
                   "name": "delete non existing record",
                   "item": [
                     {
-                      "name": "delete Copy",
+                      "name": "delete",
                       "event": [
                         {
                           "listen": "test",
