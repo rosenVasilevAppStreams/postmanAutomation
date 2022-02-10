@@ -5869,7 +5869,6 @@
                               "});\r",
                               "\r",
                               "\r",
-                              "\r",
                               "function getRandomInt(max) {\r",
                               "  return Math.floor(Math.random() * max);\r",
                               "}\r",
