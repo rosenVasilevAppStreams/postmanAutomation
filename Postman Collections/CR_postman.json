@@ -37634,73 +37634,6 @@
                     }
                   },
                   "response": []
-                },
-                {
-                  "name": "getAll Copy",
-                  "event": [
-                    {
-                      "listen": "test",
-                      "script": {
-                        "exec": [
-                          "// Test 1\r",
-                          "pm.test(\"Status code is 200\", function () {\r",
-                          "    pm.response.to.have.status(200);\r",
-                          "});\r",
-                          "\r",
-                          "var schema = {\r",
-                          "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
-                          "  \"type\": \"object\",\r",
-                          "  \"properties\": {\r",
-                          "    \"@odata.context\": {\r",
-                          "      \"type\": \"string\"\r",
-                          "    },\r",
-                          "    \"value\": {\r",
-                          "      \"type\": \"array\",\r",
-                          "      \"items\": {}\r",
-                          "    }\r",
-                          "  },\r",
-                          "  \"required\": [\r",
-                          "    \"@odata.context\",\r",
-                          "    \"value\"\r",
-                          "  ]\r",
-                          "}\r",
-                          "\r",
-                          "// Test 2\r",
-                          "pm.test(\"Schema is valid\", function(){\r",
-                          "    var json= pm.response.json()\r",
-                          "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
-                          "})"
-                        ],
-                        "type": "text/javascript",
-                        "id": "fb8f1f78-3aa5-48f8-a8fb-5569e75cd08e"
-                      }
-                    }
-                  ],
-                  "id": "141eb8bc-8f35-4184-845d-09058f48c9f7",
-                  "protocolProfileBehavior": {
-                    "disableBodyPruning": true
-                  },
-                  "request": {
-                    "method": "GET",
-                    "header": [],
-                    "url": {
-                      "raw": "{{ApiBaseUrl}}/v1/screening-lists?$expand=Records($expand=Deal)",
-                      "host": [
-                        "{{ApiBaseUrl}}"
-                      ],
-                      "path": [
-                        "v1",
-                        "screening-lists"
-                      ],
-                      "query": [
-                        {
-                          "key": "$expand",
-                          "value": "Records($expand=Deal)"
-                        }
-                      ]
-                    }
-                  },
-                  "response": []
                 }
               ],
               "id": "c4ec90c9-5494-4db6-a2df-90d1fb09aa57"
@@ -37928,6 +37861,73 @@
                           }
                         },
                         "url": "{{ApiBaseUrl}}/v1/deals"
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "getAll Copy",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "exec": [
+                              "// Test 1\r",
+                              "pm.test(\"Status code is 200\", function () {\r",
+                              "    pm.response.to.have.status(200);\r",
+                              "});\r",
+                              "\r",
+                              "var schema = {\r",
+                              "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                              "  \"type\": \"object\",\r",
+                              "  \"properties\": {\r",
+                              "    \"@odata.context\": {\r",
+                              "      \"type\": \"string\"\r",
+                              "    },\r",
+                              "    \"value\": {\r",
+                              "      \"type\": \"array\",\r",
+                              "      \"items\": {}\r",
+                              "    }\r",
+                              "  },\r",
+                              "  \"required\": [\r",
+                              "    \"@odata.context\",\r",
+                              "    \"value\"\r",
+                              "  ]\r",
+                              "}\r",
+                              "\r",
+                              "// Test 2\r",
+                              "pm.test(\"Schema is valid\", function(){\r",
+                              "    var json= pm.response.json()\r",
+                              "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+                              "})"
+                            ],
+                            "type": "text/javascript",
+                            "id": "fb8f1f78-3aa5-48f8-a8fb-5569e75cd08e"
+                          }
+                        }
+                      ],
+                      "id": "141eb8bc-8f35-4184-845d-09058f48c9f7",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{ApiBaseUrl}}/v1/screening-lists?$expand=Records($expand=Deal)",
+                          "host": [
+                            "{{ApiBaseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "screening-lists"
+                          ],
+                          "query": [
+                            {
+                              "key": "$expand",
+                              "value": "Records($expand=Deal)"
+                            }
+                          ]
+                        }
                       },
                       "response": []
                     },
