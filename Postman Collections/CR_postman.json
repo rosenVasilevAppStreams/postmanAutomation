@@ -40772,6 +40772,7 @@
                     {
                       "listen": "test",
                       "script": {
+                        "id": "8c43ca04-0d60-422b-8916-a5c06a3e5065",
                         "exec": [
                           "// Test 1\r",
                           "pm.test(\"Status code is 200\", function () {\r",
@@ -40800,10 +40801,12 @@
                           "pm.test(\"Schema is valid\", function(){\r",
                           "    var json= pm.response.json()\r",
                           "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
-                          "})"
+                          "})\r",
+                          "\r",
+                          "var jsonData =pm.response.json()\r",
+                          "postman.setEnvironmentVariable(\"screeningListId\", value[0].screeningListId)"
                         ],
-                        "type": "text/javascript",
-                        "id": "8c43ca04-0d60-422b-8916-a5c06a3e5065"
+                        "type": "text/javascript"
                       }
                     }
                   ],
@@ -40839,6 +40842,76 @@
             {
               "name": "getById",
               "item": [
+                {
+                  "name": "getAll Copy",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "id": "6009ae61-50ec-4b95-b23a-d757f3c809cc",
+                        "exec": [
+                          "// Test 1\r",
+                          "pm.test(\"Status code is 200\", function () {\r",
+                          "    pm.response.to.have.status(200);\r",
+                          "});\r",
+                          "\r",
+                          "var schema = {\r",
+                          "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                          "  \"type\": \"object\",\r",
+                          "  \"properties\": {\r",
+                          "    \"@odata.context\": {\r",
+                          "      \"type\": \"string\"\r",
+                          "    },\r",
+                          "    \"value\": {\r",
+                          "      \"type\": \"array\",\r",
+                          "      \"items\": {}\r",
+                          "    }\r",
+                          "  },\r",
+                          "  \"required\": [\r",
+                          "    \"@odata.context\",\r",
+                          "    \"value\"\r",
+                          "  ]\r",
+                          "}\r",
+                          "\r",
+                          "// Test 2\r",
+                          "pm.test(\"Schema is valid\", function(){\r",
+                          "    var json= pm.response.json()\r",
+                          "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+                          "})\r",
+                          "\r",
+                          "var jsonData =pm.response.json()\r",
+                          "postman.setEnvironmentVariable(\"screeningListId\", value[0].screeningListId)"
+                        ],
+                        "type": "text/javascript"
+                      }
+                    }
+                  ],
+                  "id": "732654a7-9637-4f22-a3d3-0b7e0f8806f1",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{ApiBaseUrl}}/v1/screening-list-records?$expand=Deal",
+                      "host": [
+                        "{{ApiBaseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "screening-list-records"
+                      ],
+                      "query": [
+                        {
+                          "key": "$expand",
+                          "value": "Deal"
+                        }
+                      ]
+                    }
+                  },
+                  "response": []
+                },
                 {
                   "name": "getById",
                   "event": [
