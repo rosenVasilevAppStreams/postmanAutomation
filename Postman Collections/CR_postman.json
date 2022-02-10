@@ -41480,15 +41480,9 @@
                         }
                       },
                       "response": []
-                    }
-                  ],
-                  "id": "518a9b65-7dbe-49b1-9de3-d9f934a851ec"
-                },
-                {
-                  "name": "getById non existing",
-                  "item": [
+                    },
                     {
-                      "name": "getById",
+                      "name": "getById Copy",
                       "event": [
                         {
                           "listen": "test",
@@ -41646,6 +41640,11 @@
                       "response": []
                     }
                   ],
+                  "id": "518a9b65-7dbe-49b1-9de3-d9f934a851ec"
+                },
+                {
+                  "name": "getById non existing",
+                  "item": [],
                   "id": "34660633-1a60-4d20-a49c-e1d9c7c55315"
                 }
               ],
