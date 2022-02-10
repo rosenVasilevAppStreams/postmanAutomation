@@ -38221,7 +38221,7 @@
               "name": "create",
               "item": [
                 {
-                  "name": "getExistingId Copy",
+                  "name": "create a screening list with a company",
                   "item": [
                     {
                       "name": "set vars for deal",
