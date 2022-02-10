@@ -37865,7 +37865,7 @@
                       "response": []
                     },
                     {
-                      "name": "getAll Copy",
+                      "name": "set vars for the screening list",
                       "event": [
                         {
                           "listen": "test",
