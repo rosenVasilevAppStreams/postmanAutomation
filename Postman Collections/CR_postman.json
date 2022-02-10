@@ -39416,7 +39416,7 @@
                   "id": "ccd5d4d2-0c11-48ba-8c89-f0a634e2008d"
                 },
                 {
-                  "name": "create a screening list without name Copy",
+                  "name": "create a screening list without description",
                   "item": [
                     {
                       "name": "set vars for the screening list",
