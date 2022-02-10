@@ -37609,8 +37609,7 @@
                           "var jsonData = JSON.parse(responseBody);\r",
                           "postman.setEnvironmentVariable(\"timeZone\", jsonData.value[0].timeZone);\r",
                           "postman.setEnvironmentVariable(\"listStatus\", jsonData.value[0].status);\r",
-                          "postman.setEnvironmentVariable(\"someISIN\", \"some ISIN\")\r",
-                          "postman.setEnvironmentVariable(\"someCUSIP\", \"some CUSIP\")"
+                          ""
                         ],
                         "type": "text/javascript"
                       }
