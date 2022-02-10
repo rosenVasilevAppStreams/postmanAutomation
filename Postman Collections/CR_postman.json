@@ -37642,7 +37642,7 @@
               "name": "getById",
               "item": [
                 {
-                  "name": "getExisting",
+                  "name": "getExistingId",
                   "item": [
                     {
                       "name": "set vars for deal",
