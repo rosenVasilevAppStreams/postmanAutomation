@@ -43596,7 +43596,7 @@
               "name": "delete",
               "item": [
                 {
-                  "name": "edit a screening list record Copy",
+                  "name": "delete existing record",
                   "item": [
                     {
                       "name": "set vars for deal",
