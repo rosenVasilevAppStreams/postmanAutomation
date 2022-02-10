@@ -42710,7 +42710,7 @@
               "name": "move to screening list",
               "item": [
                 {
-                  "name": "getAll Copy",
+                  "name": "getAll",
                   "event": [
                     {
                       "listen": "test",
