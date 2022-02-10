@@ -40764,7 +40764,7 @@
           "name": "Screening List Records",
           "item": [
             {
-              "name": "New Folder",
+              "name": "getAll",
               "item": [],
               "id": "b6dc8a86-dbf3-41fd-a697-4849b5fd00f7"
             },
