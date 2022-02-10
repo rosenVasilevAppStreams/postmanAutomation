@@ -40194,7 +40194,7 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\r\n    \"name\": \"ControlRoom ScreeningList PATCH\"\r\n}",
+                          "raw": "{\r\n    \"name\": \"API CR ScreeningList PATCH\"\r\n}",
                           "options": {
                             "raw": {
                               "language": "json"
