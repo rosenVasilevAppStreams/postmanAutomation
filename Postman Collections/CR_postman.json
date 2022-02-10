@@ -40954,6 +40954,7 @@
                           "postman.setEnvironmentVariable(\"memberTypeInternalDealLead\", \"InternalDealLeadUser\");\r",
                           "postman.setEnvironmentVariable(\"employeeRestriction\", \"AllEmployees\");\r",
                           "postman.setEnvironmentVariable(\"recordTypeDeal\", \"Deal\");\r",
+                          "postman.setEnvironmentVariable(\"dealIdforSL\", jsonData.value[0].id);\r",
                           "\r",
                           "// postman.setEnvironmentVariable(\"employeeRestriction\",\r",
                           "//      jsonData.value[valueId].restrictions[restrictionId] \r",
