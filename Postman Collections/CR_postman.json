@@ -41182,7 +41182,7 @@
                     "header": [],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\r\n   \"screeningListId\": \"140F256D-9309-428A-22EB-08D9DCC30D47\",\r\n    \"externalId\": \"{{securitySearchCompanyExtarnalId}}\",\r\n    \"cusip\": \"{{cusip}}\",\r\n    \"isin\": \"{{isin}}\",\r\n    \"externalIdentifierType\": \"SecMasterSecurityId\",\r\n    \"securityName\": \"{{securitySearchCompanyName}}\",\r\n    \"dealId\": \"{{dealId}}\"\r\n}",
+                      "raw": "{\r\n   \"screeningListId\": \"{{screeningListId}}\",\r\n    \"externalId\": \"{{securitySearchCompanyExtarnalId}}\",\r\n    \"cusip\": \"{{cusip}}\",\r\n    \"isin\": \"{{isin}}\",\r\n    \"externalIdentifierType\": \"SecMasterSecurityId\",\r\n    \"securityName\": \"{{securitySearchCompanyName}}\",\r\n    \"dealId\": \"{{dealIdforSL}}\"\r\n}",
                       "options": {
                         "raw": {
                           "language": "json"
