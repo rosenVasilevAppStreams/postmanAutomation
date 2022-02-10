@@ -38585,7 +38585,7 @@
                       "response": []
                     },
                     {
-                      "name": "create a new list with company",
+                      "name": "create a new list",
                       "event": [
                         {
                           "listen": "test",
