@@ -38758,7 +38758,7 @@
                   "id": "4a4bde99-e77e-425c-8d53-fa1767d4ea05"
                 },
                 {
-                  "name": "create a screening list with a company Copy",
+                  "name": "create a screening list without a company",
                   "item": [
                     {
                       "name": "set vars for deal",
