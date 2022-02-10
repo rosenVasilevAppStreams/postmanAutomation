@@ -42165,7 +42165,7 @@
                   "id": "d678d6c4-1484-45d4-9196-bd06244dc113"
                 },
                 {
-                  "name": "create a record and assign it to a deal Copy",
+                  "name": "create a record without assigning it to a deal",
                   "item": [
                     {
                       "name": "set vars for deal",
