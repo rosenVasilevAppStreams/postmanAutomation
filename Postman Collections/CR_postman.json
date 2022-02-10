@@ -41297,7 +41297,10 @@
                               "    var cretedTimestamp = jsonData.createdTimestamp;\r",
                               "    \r",
                               "    pm.expect(cretedTimestamp).to.include(currTime);\r",
-                              "})"
+                              "})\r",
+                              "\r",
+                              "var jsonData = pm.response.json()\r",
+                              "postman.setEnvironmentVariable(\"screeningListRecordId\", jsonData.id)"
                             ],
                             "type": "text/javascript"
                           }
