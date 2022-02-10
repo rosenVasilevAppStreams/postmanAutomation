@@ -43588,7 +43588,13 @@
                     }
                   ],
                   "id": "a902bee0-8339-4d5c-9800-473ef53ed136"
-                },
+                }
+              ],
+              "id": "17ea8fc1-c4fe-45f2-b527-f985df7a8673"
+            },
+            {
+              "name": "delete",
+              "item": [
                 {
                   "name": "edit a screening list record Copy",
                   "item": [
@@ -44263,13 +44269,7 @@
                     }
                   ],
                   "id": "413447d8-0ba8-4033-9268-e049accc8e19"
-                }
-              ],
-              "id": "17ea8fc1-c4fe-45f2-b527-f985df7a8673"
-            },
-            {
-              "name": "delete",
-              "item": [
+                },
                 {
                   "name": "delete",
                   "event": [
