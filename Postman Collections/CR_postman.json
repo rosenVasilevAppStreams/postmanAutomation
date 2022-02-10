@@ -40865,77 +40865,7 @@
               "name": "getById",
               "item": [
                 {
-                  "name": "getAll",
-                  "event": [
-                    {
-                      "listen": "test",
-                      "script": {
-                        "id": "6009ae61-50ec-4b95-b23a-d757f3c809cc",
-                        "exec": [
-                          "// Test 1\r",
-                          "pm.test(\"Status code is 200\", function () {\r",
-                          "    pm.response.to.have.status(200);\r",
-                          "});\r",
-                          "\r",
-                          "var schema = {\r",
-                          "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
-                          "  \"type\": \"object\",\r",
-                          "  \"properties\": {\r",
-                          "    \"@odata.context\": {\r",
-                          "      \"type\": \"string\"\r",
-                          "    },\r",
-                          "    \"value\": {\r",
-                          "      \"type\": \"array\",\r",
-                          "      \"items\": {}\r",
-                          "    }\r",
-                          "  },\r",
-                          "  \"required\": [\r",
-                          "    \"@odata.context\",\r",
-                          "    \"value\"\r",
-                          "  ]\r",
-                          "}\r",
-                          "\r",
-                          "// Test 2\r",
-                          "pm.test(\"Schema is valid\", function(){\r",
-                          "    var json= pm.response.json()\r",
-                          "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
-                          "})\r",
-                          "\r",
-                          "var jsonData =pm.response.json()\r",
-                          "postman.setEnvironmentVariable(\"screeningListId\", value[0].screeningListId)"
-                        ],
-                        "type": "text/javascript"
-                      }
-                    }
-                  ],
-                  "id": "732654a7-9637-4f22-a3d3-0b7e0f8806f1",
-                  "protocolProfileBehavior": {
-                    "disableBodyPruning": true
-                  },
-                  "request": {
-                    "method": "GET",
-                    "header": [],
-                    "url": {
-                      "raw": "{{ApiBaseUrl}}/v1/screening-list-records?$expand=Deal",
-                      "host": [
-                        "{{ApiBaseUrl}}"
-                      ],
-                      "path": [
-                        "v1",
-                        "screening-list-records"
-                      ],
-                      "query": [
-                        {
-                          "key": "$expand",
-                          "value": "Deal"
-                        }
-                      ]
-                    }
-                  },
-                  "response": []
-                },
-                {
-                  "name": "set vars for deal Copy",
+                  "name": "set vars for deal",
                   "event": [
                     {
                       "listen": "test",
@@ -41065,6 +40995,76 @@
                   "response": []
                 },
                 {
+                  "name": "getAll",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "id": "6009ae61-50ec-4b95-b23a-d757f3c809cc",
+                        "exec": [
+                          "// Test 1\r",
+                          "pm.test(\"Status code is 200\", function () {\r",
+                          "    pm.response.to.have.status(200);\r",
+                          "});\r",
+                          "\r",
+                          "var schema = {\r",
+                          "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                          "  \"type\": \"object\",\r",
+                          "  \"properties\": {\r",
+                          "    \"@odata.context\": {\r",
+                          "      \"type\": \"string\"\r",
+                          "    },\r",
+                          "    \"value\": {\r",
+                          "      \"type\": \"array\",\r",
+                          "      \"items\": {}\r",
+                          "    }\r",
+                          "  },\r",
+                          "  \"required\": [\r",
+                          "    \"@odata.context\",\r",
+                          "    \"value\"\r",
+                          "  ]\r",
+                          "}\r",
+                          "\r",
+                          "// Test 2\r",
+                          "pm.test(\"Schema is valid\", function(){\r",
+                          "    var json= pm.response.json()\r",
+                          "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+                          "})\r",
+                          "\r",
+                          "var jsonData =pm.response.json()\r",
+                          "postman.setEnvironmentVariable(\"screeningListId\", value[0].screeningListId)"
+                        ],
+                        "type": "text/javascript"
+                      }
+                    }
+                  ],
+                  "id": "732654a7-9637-4f22-a3d3-0b7e0f8806f1",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{ApiBaseUrl}}/v1/screening-list-records?$expand=Deal",
+                      "host": [
+                        "{{ApiBaseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "screening-list-records"
+                      ],
+                      "query": [
+                        {
+                          "key": "$expand",
+                          "value": "Deal"
+                        }
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
                   "name": "create",
                   "event": [
                     {
@@ -41181,7 +41181,7 @@
                     "header": [],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\r\n    \"screeningListId\": \"140F256D-9309-428A-22EB-08D9DCC30D47\",\r\n    \"securityName\": \"Security Name\",\r\n    \"isin\": \"some ISIN\",\r\n    \"cusip\": \"some CUSIP\",\r\n    \"dealId\": \"4FA02957-7CC6-4767-BEC5-08D92C2971D8\",\r\n    \"externalIdentifierType\": \"Identifier Type\",\r\n    \"externalId\": \"External Id\"\r\n}",
+                      "raw": "{\r\n   \"screeningListId\": \"140F256D-9309-428A-22EB-08D9DCC30D47\",\r\n    \"externalId\": \"{{securitySearchCompanyExtarnalId}}\",\r\n    \"cusip\": \"{{cusip}}\",\r\n    \"isin\": \"{{isin}}\",\r\n    \"externalIdentifierType\": \"SecMasterSecurityId\",\r\n    \"securityName\": \"{{securitySearchCompanyName}}\",\r\n    \"dealId\": \"{{dealId}}\"\r\n}",
                       "options": {
                         "raw": {
                           "language": "json"
