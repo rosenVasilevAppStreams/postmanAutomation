@@ -41326,6 +41326,7 @@
                     {
                       "listen": "test",
                       "script": {
+                        "id": "cbbfca55-70f7-4ee3-80e7-b344cf229662",
                         "exec": [
                           "// Test 1\r",
                           "pm.test(\"Status code is 200\", function () {\r",
@@ -41446,8 +41447,7 @@
                           "    }\r",
                           "})"
                         ],
-                        "type": "text/javascript",
-                        "id": "cbbfca55-70f7-4ee3-80e7-b344cf229662"
+                        "type": "text/javascript"
                       }
                     }
                   ],
@@ -41459,26 +41459,19 @@
                     "method": "GET",
                     "header": [],
                     "url": {
-                      "raw": "{{ApiBaseUrl}}/v1/screening-list-records/:screeningListRecordId?$expand=Deal",
+                      "raw": "{{ApiBaseUrl}}/v1/screening-list-records/{{screeningListRecordId}}?$expand=Deal",
                       "host": [
                         "{{ApiBaseUrl}}"
                       ],
                       "path": [
                         "v1",
                         "screening-list-records",
-                        ":screeningListRecordId"
+                        "{{screeningListRecordId}}"
                       ],
                       "query": [
                         {
                           "key": "$expand",
                           "value": "Deal"
-                        }
-                      ],
-                      "variable": [
-                        {
-                          "id": "d55f3c37-ac90-4672-b980-7dc28c6cdc18",
-                          "key": "screeningListRecordId",
-                          "value": "0945DE33-8EFB-415C-9413-08D9DCC30D4F"
                         }
                       ]
                     }
