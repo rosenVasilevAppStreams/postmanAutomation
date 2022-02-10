@@ -38319,23 +38319,7 @@
                       "request": {
                         "method": "GET",
                         "header": [],
-                        "url": {
-                          "raw": "{{ApiBaseUrl}}/v1/screening-lists/5dbf4e1f-d3e8-4f87-f316-08d9e4898e93?$expand=Records($expand=Deal)",
-                          "host": [
-                            "{{ApiBaseUrl}}"
-                          ],
-                          "path": [
-                            "v1",
-                            "screening-lists",
-                            "5dbf4e1f-d3e8-4f87-f316-08d9e4898e93"
-                          ],
-                          "query": [
-                            {
-                              "key": "$expand",
-                              "value": "Records($expand=Deal)"
-                            }
-                          ]
-                        }
+                        "url": "{{ApiBaseUrl}}/v1/screening-lists(1234567)"
                       },
                       "response": []
                     }
