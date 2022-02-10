@@ -44265,7 +44265,7 @@
                   "name": "delete non existing record",
                   "item": [
                     {
-                      "name": "delete",
+                      "name": "delete Copy",
                       "event": [
                         {
                           "listen": "test",
@@ -44301,7 +44301,7 @@
                       "request": {
                         "method": "DELETE",
                         "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/screening-list-records(123456789)"
+                        "url": "{{ApiBaseUrl}}/v1/screening-list-records/{{screeningListRecordId}}"
                       },
                       "response": []
                     }
