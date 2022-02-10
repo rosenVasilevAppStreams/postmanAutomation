@@ -40772,6 +40772,7 @@
                     {
                       "listen": "test",
                       "script": {
+                        "id": "8c43ca04-0d60-422b-8916-a5c06a3e5065",
                         "exec": [
                           "// Test 1\r",
                           "pm.test(\"Status code is 200\", function () {\r",
@@ -40800,10 +40801,12 @@
                           "pm.test(\"Schema is valid\", function(){\r",
                           "    var json= pm.response.json()\r",
                           "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
-                          "})"
+                          "})\r",
+                          "\r",
+                          "var jsonData =pm.response.json()\r",
+                          "postman.setEnvironmentVariable(\"screeningListId\", value[0].screeningListId)"
                         ],
-                        "type": "text/javascript",
-                        "id": "8c43ca04-0d60-422b-8916-a5c06a3e5065"
+                        "type": "text/javascript"
                       }
                     }
                   ],
@@ -41350,61 +41353,67 @@
             },
             {
               "name": "delete",
-              "event": [
+              "item": [
                 {
-                  "listen": "test",
-                  "script": {
-                    "exec": [
-                      "// Test 1\r",
-                      "pm.test(\"Status code is 204 or 404\", function () {\r",
-                      "    if (pm.response.code == 204) {\r",
-                      "        pm.response.to.have.status(204);\r",
-                      "    }\r",
-                      "    else {\r",
-                      "        pm.response.to.have.status(404);\r",
-                      "    }\r",
-                      "});\r",
-                      "\r",
-                      "// Test 2\r",
-                      "pm.test(\"Response body is valid\", function () {\r",
-                      "    if (pm.response.code == 404) {\r",
-                      "        pm.expect(pm.response.text()).to.include(\"Entity of type\");\r",
-                      "        pm.expect(pm.response.text()).to.include(\"was not found.\");\r",
-                      "    }\r",
-                      "});"
-                    ],
-                    "type": "text/javascript",
-                    "id": "8abaece8-007b-4d0c-8187-f3b58842e67d"
-                  }
+                  "name": "delete",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "exec": [
+                          "// Test 1\r",
+                          "pm.test(\"Status code is 204 or 404\", function () {\r",
+                          "    if (pm.response.code == 204) {\r",
+                          "        pm.response.to.have.status(204);\r",
+                          "    }\r",
+                          "    else {\r",
+                          "        pm.response.to.have.status(404);\r",
+                          "    }\r",
+                          "});\r",
+                          "\r",
+                          "// Test 2\r",
+                          "pm.test(\"Response body is valid\", function () {\r",
+                          "    if (pm.response.code == 404) {\r",
+                          "        pm.expect(pm.response.text()).to.include(\"Entity of type\");\r",
+                          "        pm.expect(pm.response.text()).to.include(\"was not found.\");\r",
+                          "    }\r",
+                          "});"
+                        ],
+                        "type": "text/javascript",
+                        "id": "8abaece8-007b-4d0c-8187-f3b58842e67d"
+                      }
+                    }
+                  ],
+                  "id": "5b1e9cba-71f1-4561-8206-269d39b8c82f",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{ApiBaseUrl}}/v1/screening-list-records/:screeningListRecordId",
+                      "host": [
+                        "{{ApiBaseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "screening-list-records",
+                        ":screeningListRecordId"
+                      ],
+                      "variable": [
+                        {
+                          "id": "dff5e796-dd31-45c0-905f-a5ec76ca69ae",
+                          "key": "screeningListRecordId",
+                          "value": null
+                        }
+                      ]
+                    }
+                  },
+                  "response": []
                 }
               ],
-              "id": "5b1e9cba-71f1-4561-8206-269d39b8c82f",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "DELETE",
-                "header": [],
-                "url": {
-                  "raw": "{{ApiBaseUrl}}/v1/screening-list-records/:screeningListRecordId",
-                  "host": [
-                    "{{ApiBaseUrl}}"
-                  ],
-                  "path": [
-                    "v1",
-                    "screening-list-records",
-                    ":screeningListRecordId"
-                  ],
-                  "variable": [
-                    {
-                      "id": "dff5e796-dd31-45c0-905f-a5ec76ca69ae",
-                      "key": "screeningListRecordId",
-                      "value": null
-                    }
-                  ]
-                }
-              },
-              "response": []
+              "id": "7dea407e-9ee4-4df0-a9e1-d0fecd91ecc3"
             }
           ],
           "id": "d78cabc1-c0f1-440e-a24e-3beb1d7d9e58"
