@@ -37862,7 +37862,7 @@
                   "response": []
                 },
                 {
-                  "name": "create Copy",
+                  "name": "create a new list with company",
                   "event": [
                     {
                       "listen": "test",
