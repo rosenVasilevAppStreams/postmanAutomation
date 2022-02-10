@@ -40861,6 +40861,11 @@
               "name": "getById",
               "item": [
                 {
+                  "name": "New Folder",
+                  "item": [],
+                  "id": "518a9b65-7dbe-49b1-9de3-d9f934a851ec"
+                },
+                {
                   "name": "set vars for deal",
                   "event": [
                     {
