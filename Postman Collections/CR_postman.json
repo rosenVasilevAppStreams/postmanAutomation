@@ -39115,7 +39115,7 @@
                       "response": []
                     },
                     {
-                      "name": "set vars for the screening list Copy 2",
+                      "name": "set vars for the screening list",
                       "event": [
                         {
                           "listen": "test",
