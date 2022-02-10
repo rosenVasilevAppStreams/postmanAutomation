@@ -40201,7 +40201,7 @@
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v1/screening-lists/5dbf4e1f-d3e8-4f87-f316-08d9e4898e93"
+                        "url": "{{ApiBaseUrl}}/v1/screening-lists/{{screeningListId}}"
                       },
                       "response": []
                     }
