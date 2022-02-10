@@ -37865,7 +37865,7 @@
                       "response": []
                     },
                     {
-                      "name": "set vars for the screening list",
+                      "name": "getAll Copy",
                       "event": [
                         {
                           "listen": "test",
@@ -38511,73 +38511,6 @@
                       "response": []
                     },
                     {
-                      "name": "set vars for the screening list",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "exec": [
-                              "// Test 1\r",
-                              "pm.test(\"Status code is 200\", function () {\r",
-                              "    pm.response.to.have.status(200);\r",
-                              "});\r",
-                              "\r",
-                              "var schema = {\r",
-                              "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
-                              "  \"type\": \"object\",\r",
-                              "  \"properties\": {\r",
-                              "    \"@odata.context\": {\r",
-                              "      \"type\": \"string\"\r",
-                              "    },\r",
-                              "    \"value\": {\r",
-                              "      \"type\": \"array\",\r",
-                              "      \"items\": {}\r",
-                              "    }\r",
-                              "  },\r",
-                              "  \"required\": [\r",
-                              "    \"@odata.context\",\r",
-                              "    \"value\"\r",
-                              "  ]\r",
-                              "}\r",
-                              "\r",
-                              "// Test 2\r",
-                              "pm.test(\"Schema is valid\", function(){\r",
-                              "    var json= pm.response.json()\r",
-                              "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
-                              "})"
-                            ],
-                            "type": "text/javascript",
-                            "id": "c34b26f3-3d9b-44de-b573-0e7dfeb53bc8"
-                          }
-                        }
-                      ],
-                      "id": "3c1adc73-88a4-443e-9a1a-01d9174e2905",
-                      "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                      },
-                      "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                          "raw": "{{ApiBaseUrl}}/v1/screening-lists?$expand=Records($expand=Deal)",
-                          "host": [
-                            "{{ApiBaseUrl}}"
-                          ],
-                          "path": [
-                            "v1",
-                            "screening-lists"
-                          ],
-                          "query": [
-                            {
-                              "key": "$expand",
-                              "value": "Records($expand=Deal)"
-                            }
-                          ]
-                        }
-                      },
-                      "response": []
-                    },
-                    {
                       "name": "create a new list with company",
                       "event": [
                         {
@@ -39111,73 +39044,6 @@
                           }
                         },
                         "url": "{{ApiBaseUrl}}/v1/deals"
-                      },
-                      "response": []
-                    },
-                    {
-                      "name": "set vars for the screening list",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "exec": [
-                              "// Test 1\r",
-                              "pm.test(\"Status code is 200\", function () {\r",
-                              "    pm.response.to.have.status(200);\r",
-                              "});\r",
-                              "\r",
-                              "var schema = {\r",
-                              "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
-                              "  \"type\": \"object\",\r",
-                              "  \"properties\": {\r",
-                              "    \"@odata.context\": {\r",
-                              "      \"type\": \"string\"\r",
-                              "    },\r",
-                              "    \"value\": {\r",
-                              "      \"type\": \"array\",\r",
-                              "      \"items\": {}\r",
-                              "    }\r",
-                              "  },\r",
-                              "  \"required\": [\r",
-                              "    \"@odata.context\",\r",
-                              "    \"value\"\r",
-                              "  ]\r",
-                              "}\r",
-                              "\r",
-                              "// Test 2\r",
-                              "pm.test(\"Schema is valid\", function(){\r",
-                              "    var json= pm.response.json()\r",
-                              "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
-                              "})"
-                            ],
-                            "type": "text/javascript",
-                            "id": "02ac5223-8e4d-4dfc-b14e-a1b244e35d0c"
-                          }
-                        }
-                      ],
-                      "id": "387c5770-726e-4b71-ada8-eda98926ac1e",
-                      "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                      },
-                      "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                          "raw": "{{ApiBaseUrl}}/v1/screening-lists?$expand=Records($expand=Deal)",
-                          "host": [
-                            "{{ApiBaseUrl}}"
-                          ],
-                          "path": [
-                            "v1",
-                            "screening-lists"
-                          ],
-                          "query": [
-                            {
-                              "key": "$expand",
-                              "value": "Records($expand=Deal)"
-                            }
-                          ]
-                        }
                       },
                       "response": []
                     },
