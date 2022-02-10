@@ -38899,6 +38899,610 @@
                   "id": "4a4bde99-e77e-425c-8d53-fa1767d4ea05"
                 },
                 {
+                  "name": "create a screening list with a company Copy",
+                  "item": [
+                    {
+                      "name": "set vars for deal",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "ab1f271b-bc5f-437e-8d30-38aee287fd03",
+                            "exec": [
+                              "// Test 1\r",
+                              "pm.test(\"Status code is 200\", function () {\r",
+                              "    pm.response.to.have.status(200);\r",
+                              "});\r",
+                              "\r",
+                              "var responseJson = JSON.parse(responseBody);\r",
+                              "var a=[];\r",
+                              "var list = (responseJson.value).length;\r",
+                              "for (var i = 0; i < list; i++) \r",
+                              "                  {\r",
+                              "                   var counter = responseJson.value[i];\r",
+                              "                    if (counter.isin !== null){\r",
+                              "                        a.push(counter)\r",
+                              "                    }\r",
+                              "                    \r",
+                              "                   }\r",
+                              "\r",
+                              " for(var i =0;  i < a.length; i++){\r",
+                              "     var companyWithIsin = a[i].companies.find(company => company.isin !== null)\r",
+                              "if (companyWithIsin && companyWithIsin.name) {\r",
+                              "postman.setEnvironmentVariable(\"securitySearchCompanyName\", companyWithIsin ? companyWithIsin.name : \"\");\r",
+                              "postman.setEnvironmentVariable(\"securitySearchCompanyExtarnalId\", companyWithIsin ? companyWithIsin.externalId : \"\");\r",
+                              "postman.setEnvironmentVariable(\"cusip\", companyWithIsin ? companyWithIsin.cusip : \"\");\r",
+                              "postman.setEnvironmentVariable(\"isin\", companyWithIsin ? companyWithIsin.isin : \"\");\r",
+                              "return;\r",
+                              "}\r",
+                              "     console.log(companyWithIsin)\r",
+                              "         \r",
+                              "         \r",
+                              "        \r",
+                              "         console.log(a[i])\r",
+                              "    }\r",
+                              "  \r",
+                              "\r",
+                              "\r",
+                              "function getRandomInt(max) {\r",
+                              "  return Math.floor(Math.random() * max);\r",
+                              "}\r",
+                              "\r",
+                              "var jsonData = JSON.parse(responseBody);\r",
+                              "var valueSize = Object.keys(jsonData.value).length\r",
+                              "var valueId = getRandomInt(valueSize-1);\r",
+                              "var companySize = Object.keys(jsonData.value[valueId].companies).length\r",
+                              "var companyId = getRandomInt(companySize);\r",
+                              "var statusSize = Object.keys(jsonData.value[valueId].status).length\r",
+                              "var statusId = getRandomInt(statusSize-1);\r",
+                              "var complianceStatusSize = Object.keys(jsonData.value[valueId].complianceStatus).length\r",
+                              "var complianceStatusId = getRandomInt(complianceStatusSize-1);\r",
+                              "var restrictionSize = Object.keys(jsonData.value[valueId].restrictions).length\r",
+                              "var restrictionId = getRandomInt(restrictionSize);\r",
+                              "var bool = [true, false];\r",
+                              "var isUrgent = bool[getRandomInt(2)];\r",
+                              "var isDraft = bool[getRandomInt(2)];\r",
+                              "var dealMembersSize = Object.keys(jsonData.value[valueId].dealMembers).length;\r",
+                              "var dealMembersId = getRandomInt(dealMembersSize-1);\r",
+                              "var dealMemebersIdStepTwo = getRandomInt(dealMembersSize-1);\r",
+                              "var dataStatuses = ['NotAvailable', 'Requested', 'Confirmed']\r",
+                              "var dataDestructionStatus = dataStatuses[getRandomInt(0,2)]\r",
+                              "var ndaStatuses = ['NotAvailable', 'Negotiating', 'Executed']\r",
+                              "var ndaStatus = ndaStatuses[getRandomInt(0,2)]\r",
+                              "\r",
+                              "// postman.setEnvironmentVariable(\"dataDestructionStatus\", jsonData.value[valueId].companies[companyId].dataDestructionStatus);\r",
+                              "postman.setEnvironmentVariable(\"dataDestructionStatus\", dataDestructionStatus);\r",
+                              "postman.setEnvironmentVariable(\"ndaStatus\", ndaStatus);\r",
+                              "//postman.setEnvironmentVariable(\"typeId\", jsonData.value[valueId].companies[companyId].typeId);\r",
+                              "postman.setEnvironmentVariable(\"typeId\",\r",
+                              "     jsonData.value[valueId].companies[companyId]\r",
+                              "     ? jsonData.value[valueId].companies[companyId].typeId \r",
+                              "     : null);\r",
+                              "\r",
+                              "postman.setEnvironmentVariable(\"isUrgent\", jsonData.value[valueId].isUrgent);\r",
+                              "postman.setEnvironmentVariable(\"isDraft\", jsonData.value[valueId].isDraft);\r",
+                              "postman.setEnvironmentVariable(\"categoryId\", jsonData.value[valueId].categoryId);\r",
+                              "postman.setEnvironmentVariable(\"dealStatus\", jsonData.value[valueId].status);\r",
+                              "postman.setEnvironmentVariable(\"complianceStatus\", jsonData.value[valueId].complianceStatus);\r",
+                              "postman.setEnvironmentVariable(\"companyStatus\", jsonData.value[valueId].companies[companyId].status);\r",
+                              "postman.setEnvironmentVariable(\"memberIdRecordVisibility\", jsonData.value[valueId].dealMembers[dealMembersId].memberId);\r",
+                              "postman.setEnvironmentVariable(\"memberTypeRecordVisibility\", \"RecordVisibilityUser\");\r",
+                              "postman.setEnvironmentVariable(\"memberId\", jsonData.value[valueId].dealMembers[dealMemebersIdStepTwo].memberId);\r",
+                              "postman.setEnvironmentVariable(\"memberTypeInternalDealLead\", \"InternalDealLeadUser\");\r",
+                              "postman.setEnvironmentVariable(\"employeeRestriction\", \"AllEmployees\");\r",
+                              "postman.setEnvironmentVariable(\"recordTypeDeal\", \"Deal\");\r",
+                              "\r",
+                              "// postman.setEnvironmentVariable(\"employeeRestriction\",\r",
+                              "//      jsonData.value[valueId].restrictions[restrictionId] \r",
+                              "//      ? jsonData.value[valueId].restrictions[restrictionId].employeeRestriction \r",
+                              "//      : null);\r",
+                              "// console.log(jsonData.value[valueId].restrictions[restrictionId] \r",
+                              "//      ? jsonData.value[valueId].restrictions[restrictionId].employeeRestriction \r",
+                              "//      : null)\r",
+                              ""
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "id": "606c45f3-1205-40e3-9969-32b96adfcbce",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{ApiBaseUrl}}/v1/deals?$expand=restrictions,dealMembers,companies",
+                          "host": [
+                            "{{ApiBaseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "deals"
+                          ],
+                          "query": [
+                            {
+                              "key": "$expand",
+                              "value": "restrictions,dealMembers,companies"
+                            }
+                          ]
+                        }
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "create a new deal",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "cb7b2a7e-f39e-41ec-bdce-49e8d13c7056",
+                            "exec": [
+                              "// Test 1\r",
+                              "pm.test(\"Status code is 201\", function () {\r",
+                              "    pm.response.to.have.status(201);\r",
+                              "});\r",
+                              "\r",
+                              "\r",
+                              "var jsonData = JSON.parse(responseBody);\r",
+                              "postman.setEnvironmentVariable(\"dealId\", jsonData.id);\r",
+                              "\r",
+                              "    var jsonData =pm.response.json();\r",
+                              "pm.test(\"The deal status is active\", function(){\r",
+                              "pm.expect(jsonData.isDraft).to.eq(true);\r",
+                              "});\r",
+                              "\r",
+                              "\r",
+                              ""
+                            ],
+                            "type": "text/javascript"
+                          }
+                        },
+                        {
+                          "listen": "prerequest",
+                          "script": {
+                            "id": "eb7839ce-4f14-4df8-94d7-d939da6a51ea",
+                            "exec": [
+                              "",
+                              "",
+                              "pm.environment.set(\"randomDealName\", _.random(1, 1000) +\" \" + \"API deal\")",
+                              "pm.environment.set(\"randomCompanyName1\", _.random(1, 1000) +\" \" + \"API company\")",
+                              "pm.environment.set(\"randomCompanyName2\", _.random(1, 1000) +\" \" + \"API company\")",
+                              "pm.environment.set(\"contactsUnderTentName\", _.random(1, 1000) +\" \" + \"API contact name\")",
+                              "pm.environment.set(\"contactsUnderTentTitle\", _.random(1, 1000) +\" \" + \"API contact title\")",
+                              "pm.environment.set(\"restrictionName\", _.random(1, 1000) +\" \" + \"API  restriction\")",
+                              "",
+                              "",
+                              "",
+                              "const uuid = Math.random().toString(36).substring(2, 15) +",
+                              "        Math.random().toString(36).substring(2, 15);",
+                              "const randomEmail =  uuid + \"@emaill.com\";",
+                              "pm.environment.set(\"randomEmail\", randomEmail)",
+                              "",
+                              "var dateNow= new Date();pm.environment.set(\"randomDealDescription\", dateNow.toISOString() + \" \" + \"API deal description\")",
+                              "var startDate = (Date.now() + 86400000); pm.environment.set('startDate', new Date(startDate).toISOString())",
+                              "var completionDate = (Date.now() + 172800000); pm.environment.set('completionDate', new Date(completionDate).toISOString())",
+                              "var contactAddedDate = (Date.now() + 172800000); pm.environment.set('contactAddedDate', new Date(contactAddedDate).toISOString())",
+                              "var dataDestructionCompletedDate =  (Date.now() + 172800000); pm.environment.set('dataDestructionCompletedDate', new Date(dataDestructionCompletedDate).toISOString())",
+                              "var dataDestructionRequestedDate = (Date.now() + 86400000); pm.environment.set('dataDestructionRequestedDate', new Date(dataDestructionRequestedDate).toISOString())",
+                              "",
+                              "var ndaCompletedDate = (Date.now() + 1864000000); pm.environment.set('ndaCompletedDate', new Date(ndaCompletedDate).toISOString())",
+                              "var ndaRequestedDate = (Date.now() + 86400000); pm.environment.set('ndaRequestedDate', new Date(ndaRequestedDate).toISOString())",
+                              "var restrictionEndDate = (Date.now() + 86400000); pm.environment.set('restrictionEndDate', new Date(restrictionEndDate).toISOString())",
+                              "",
+                              "// pm.sendRequest('https://qa.platform.devacaalpha.com/api/control-room/v1/deals?$expand=restrictions,dealMembers,companies', function (err, res) {",
+                              "//         pm.expect(err).to.not.be.ok;",
+                              "//         pm.expect(res).to.have.property('code', 200);",
+                              "//         pm.expect(res).to.have.property('status', 'OK');",
+                              "//     });"
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "id": "48e0b6a5-28c0-4cca-a631-58b2510ae53b",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\r\n    \"name\": \"{{randomDealName}}\",\r\n    \"description\": \"{{randomDealDescription}}\",\r\n    \"categoryId\": \"{{categoryId}}\",\r\n     \"recordType\": \"{{recordTypeDeal}}\",\r\n    \"status\": \"{{dealStatus}}\",\r\n    \"complianceStatus\": \"{{complianceStatus}}\",\r\n    \"startDate\": \"{{startDate}}\",\r\n    \"completionDate\": \"{{completionDate}}\",\r\n    \"isUrgent\": {{isUrgent}},\r\n    \"isDraft\": false,\r\n     \"companies\": [{\r\n             \"name\": \"{{securitySearchCompanyName}}\",\r\n            \"externalId\": \"{{securitySearchCompanyExtarnalId}}\",\r\n            \"cusip\": \"{{cusip}}\",\r\n            \"isin\": \"{{isin}}\",\r\n            \"externalIdentifierType\": \"SecMasterSecurityId\",\r\n            \"contactsUnderTent\": [],\r\n            \"companyAdvisees\": [],\r\n            \"dataDestructionCompletedDate\": \"{{dataDestructionCompletedDate}}\",\r\n            \"dataDestructionRequestedDate\": \"{{dataDestructionRequestedDate}}\",\r\n            \"dataDestructionStatus\": \"{{dataDestructionStatus}}\",\r\n            \"ndaCompletedDate\": \"{{ndaCompletedDate}}\",\r\n            \"ndaRequestedDate\": \"{{ndaRequestedDate}}\",\r\n            \"ndaStatus\": \"{{ndaStatus}}\",\r\n            \"status\": \"{{companyStatus}}\",\r\n            \"typeId\": \"{{typeId}}\"\r\n        }],\r\n    \"dealMembers\": [\r\n        {\r\n            \"memberId\": \"{{memberIdRecordVisibility}}\",\r\n            \"memberType\": \"{{memberTypeRecordVisibility}}\"\r\n        },\r\n        {\r\n            \"memberId\": \"{{memberId}}\",\r\n            \"memberType\": \"{{memberTypeInternalDealLead}}\"\r\n        }\r\n    ],\r\n    \"restrictions\": [\r\n        {\r\n            \"name\": \"{{restrictionName}}\",\r\n            \"endDate\": \"{{restrictionEndDate}}\",\r\n            \"startDate\": \"{{startDate}}\",\r\n            \"employeeRestriction\": \"{{employeeRestriction}}\",\r\n            \"companyRestrictions\": [{\r\n                \"company\": {\r\n                        \"name\": \"{{securitySearchCompanyName}}\"\r\n                    }\r\n            }\r\n            ],\r\n            \"memberRestrictions\": [\r\n                 {\r\n                    \"userId\": \"{{memberId}}\",\r\n                    \"targetMemberType\": \"{{memberTypeInternalDealLead}}\"\r\n\r\n                    \r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": "{{ApiBaseUrl}}/v1/deals"
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "set vars for the screening list",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "exec": [
+                              "// Test 1\r",
+                              "pm.test(\"Status code is 200\", function () {\r",
+                              "    pm.response.to.have.status(200);\r",
+                              "});\r",
+                              "\r",
+                              "var schema = {\r",
+                              "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                              "  \"type\": \"object\",\r",
+                              "  \"properties\": {\r",
+                              "    \"@odata.context\": {\r",
+                              "      \"type\": \"string\"\r",
+                              "    },\r",
+                              "    \"value\": {\r",
+                              "      \"type\": \"array\",\r",
+                              "      \"items\": {}\r",
+                              "    }\r",
+                              "  },\r",
+                              "  \"required\": [\r",
+                              "    \"@odata.context\",\r",
+                              "    \"value\"\r",
+                              "  ]\r",
+                              "}\r",
+                              "\r",
+                              "// Test 2\r",
+                              "pm.test(\"Schema is valid\", function(){\r",
+                              "    var json= pm.response.json()\r",
+                              "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+                              "})"
+                            ],
+                            "type": "text/javascript",
+                            "id": "b96b18d4-e333-404c-8462-6ea4fd1a4540"
+                          }
+                        }
+                      ],
+                      "id": "5ba4c42d-3b87-4a60-9d17-5be159da0563",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{ApiBaseUrl}}/v1/screening-lists?$expand=Records($expand=Deal)",
+                          "host": [
+                            "{{ApiBaseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "screening-lists"
+                          ],
+                          "query": [
+                            {
+                              "key": "$expand",
+                              "value": "Records($expand=Deal)"
+                            }
+                          ]
+                        }
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "create a new list",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "e48311b9-8100-4a22-a253-b7b592b19c8c",
+                            "exec": [
+                              "// Test 1\r",
+                              "pm.test(\"Status code is 201\", function () {\r",
+                              "    pm.response.to.have.status(201);\r",
+                              "});\r",
+                              "\r",
+                              "// Test 2\r",
+                              "var schema = {\r",
+                              "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                              "  \"type\": \"object\",\r",
+                              "  \"properties\": {\r",
+                              "    \"@odata.context\": {\r",
+                              "      \"type\": \"string\"\r",
+                              "    },\r",
+                              "    \"id\": {\r",
+                              "      \"type\": \"string\"\r",
+                              "    },\r",
+                              "    \"clientId\": {\r",
+                              "      \"type\": \"integer\"\r",
+                              "    },\r",
+                              "    \"name\": {\r",
+                              "      \"type\": \"string\"\r",
+                              "    },\r",
+                              "    \"description\": {\r",
+                              "      \"type\": \"string\"\r",
+                              "    },\r",
+                              "    \"categoryId\": {\r",
+                              "      \"type\": \"string\"\r",
+                              "    },\r",
+                              "    \"status\": {\r",
+                              "      \"type\": \"string\"\r",
+                              "    },\r",
+                              "    \"complianceStatus\": {\r",
+                              "      \"type\": \"string\"\r",
+                              "    },\r",
+                              "    \"startDate\": {\r",
+                              "      \"type\": \"string\"\r",
+                              "    },\r",
+                              "    \"completionDate\": {\r",
+                              "      \"type\": \"string\"\r",
+                              "    },\r",
+                              "    \"isUrgent\": {\r",
+                              "      \"type\": \"boolean\"\r",
+                              "    },\r",
+                              "    \"lastModifiedByUserId\": {\r",
+                              "      \"type\": \"string\"\r",
+                              "    },\r",
+                              "    \"lastModifiedTimestamp\": {\r",
+                              "      \"type\": \"string\"\r",
+                              "    },\r",
+                              "    \"createdByUserId\": {\r",
+                              "      \"type\": \"string\"\r",
+                              "    },\r",
+                              "    \"createdTimestamp\": {\r",
+                              "      \"type\": \"string\"\r",
+                              "    }\r",
+                              "  },\r",
+                              "  \"required\": [\r",
+                              "    \"@odata.context\",\r",
+                              "    \"id\",\r",
+                              "    \"clientId\",\r",
+                              "    \"name\",\r",
+                              "    \"description\",\r",
+                              "    \"categoryId\",\r",
+                              "    \"status\",\r",
+                              "    \"complianceStatus\",\r",
+                              "    \"startDate\",\r",
+                              "    \"completionDate\",\r",
+                              "    \"isUrgent\",\r",
+                              "    \"lastModifiedByUserId\",\r",
+                              "    \"lastModifiedTimestamp\",\r",
+                              "    \"createdByUserId\",\r",
+                              "    \"createdTimestamp\"\r",
+                              "  ]\r",
+                              "}\r",
+                              "\r",
+                              "pm.test(\"Schema is valid\", function(){\r",
+                              "    var jsonData = pm.response.json();\r",
+                              "    pm.expect(tv4.validate(jsonData, schema)).to.be.true;\r",
+                              "})\r",
+                              "\r",
+                              "// Test 3\r",
+                              "pm.test(\"Creation date is today\", function(){\r",
+                              "    var jsonData = pm.response.json();\r",
+                              "\r",
+                              "    var currTime = new Date();\r",
+                              "    var dd = String(currTime.getDate()).padStart(2, '0');\r",
+                              "    var mm = String(currTime.getMonth() + 1).padStart(2, '0');\r",
+                              "    var yyyy = currTime.getFullYear();\r",
+                              "    var hh = currTime.getHours() - 3;\r",
+                              "    currTime = yyyy + '-' + mm + '-' + dd + 'T' + hh + \":\";\r",
+                              "\r",
+                              "    var cretedTimestamp = jsonData.createdTimestamp;\r",
+                              "    \r",
+                              "    pm.expect(cretedTimestamp).to.include(currTime);\r",
+                              "})\r",
+                              "\r",
+                              "var jsonData = pm.response.json();\r",
+                              "postman.setEnvironmentVariable(\"screeningListId\", jsonData.id);"
+                            ],
+                            "type": "text/javascript"
+                          }
+                        },
+                        {
+                          "listen": "prerequest",
+                          "script": {
+                            "id": "2313c65a-8c8a-4ff3-bdb9-80eef008c7a8",
+                            "exec": [
+                              "",
+                              "",
+                              "pm.environment.set(\"randomListName\", _.random(1, 1000) +\" \" + \"API screening list\")",
+                              "",
+                              "",
+                              "var dateNow= new Date();pm.environment.set(\"randomListDescription\", dateNow.toISOString() + \" \" + \"API screening list description\")",
+                              "",
+                              "",
+                              "// pm.sendRequest('https://qa.platform.devacaalpha.com/api/control-room/v1/deals?$expand=restrictions,dealMembers,companies', function (err, res) {",
+                              "//         pm.expect(err).to.not.be.ok;",
+                              "//         pm.expect(res).to.have.property('code', 200);",
+                              "//         pm.expect(res).to.have.property('status', 'OK');",
+                              "//     });"
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "id": "dec0ed73-fbbc-404f-a028-a2b79397baea",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\r\n    \"name\": \"{{randomListName}}\",\r\n    \"description\": \"{{randomListDescription}}\",\r\n    \"timeZone\": \"{{timeZone}}\",\r\n    \"status\": \"{{listStatus}}\",\r\n    \"records\": [\r\n        {\r\n          \r\n          \"externalId\": \"{{securitySearchCompanyExtarnalId}}\",\r\n            \"cusip\": \"{{cusip}}\",\r\n            \"isin\": \"{{isin}}\",\r\n            \"externalIdentifierType\": \"SecMasterSecurityId\",\r\n            \"securityName\": \"{{securitySearchCompanyName}}\",\r\n            \"dealId\": \"{{dealId}}\"\r\n            \r\n        }\r\n    ]\r\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": "{{ApiBaseUrl}}/v1/screening-lists"
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "getById",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "c9ef5a34-e34f-40ab-9354-4a9c96a7a8b2",
+                            "exec": [
+                              "// Test 1\r",
+                              "pm.test(\"Status code is 200\", function () {\r",
+                              "    pm.response.to.have.status(200);\r",
+                              "});\r",
+                              "\r",
+                              "// Test 2\r",
+                              "var schema = {\r",
+                              "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                              "  \"type\": \"object\",\r",
+                              "  \"properties\": {\r",
+                              "    \"queryable\": {\r",
+                              "      \"type\": \"array\",\r",
+                              "      \"items\": [\r",
+                              "        {\r",
+                              "          \"type\": \"object\",\r",
+                              "          \"properties\": {\r",
+                              "            \"id\": {\r",
+                              "              \"type\": \"string\"\r",
+                              "            },\r",
+                              "            \"clientId\": {\r",
+                              "              \"type\": \"integer\"\r",
+                              "            },\r",
+                              "            \"name\": {\r",
+                              "              \"type\": \"string\"\r",
+                              "            },\r",
+                              "            \"description\": {\r",
+                              "              \"type\": \"string\"\r",
+                              "            },\r",
+                              "            \"categoryId\": {\r",
+                              "              \"type\": \"string\"\r",
+                              "            },\r",
+                              "            \"category\": {\r",
+                              "              \"type\": \"null\"\r",
+                              "            },\r",
+                              "            \"status\": {\r",
+                              "              \"type\": \"integer\"\r",
+                              "            },\r",
+                              "            \"complianceStatus\": {\r",
+                              "              \"type\": \"integer\"\r",
+                              "            },\r",
+                              "            \"startDate\": {\r",
+                              "              \"type\": \"string\"\r",
+                              "            },\r",
+                              "            \"completionDate\": {\r",
+                              "              \"type\": \"null\"\r",
+                              "            },\r",
+                              "            \"isUrgent\": {\r",
+                              "              \"type\": \"boolean\"\r",
+                              "            },\r",
+                              "            \"companies\": {\r",
+                              "              \"type\": \"null\"\r",
+                              "            },\r",
+                              "            \"dealMembers\": {\r",
+                              "              \"type\": \"null\"\r",
+                              "            },\r",
+                              "            \"lastModifiedByUserId\": {\r",
+                              "              \"type\": \"string\"\r",
+                              "            },\r",
+                              "            \"lastModifiedBy\": {\r",
+                              "              \"type\": \"null\"\r",
+                              "            },\r",
+                              "            \"lastModifiedTimestamp\": {\r",
+                              "              \"type\": \"string\"\r",
+                              "            },\r",
+                              "            \"createdByUserId\": {\r",
+                              "              \"type\": \"string\"\r",
+                              "            },\r",
+                              "            \"createdBy\": {\r",
+                              "              \"type\": \"null\"\r",
+                              "            },\r",
+                              "            \"createdTimestamp\": {\r",
+                              "              \"type\": \"string\"\r",
+                              "            }\r",
+                              "          },\r",
+                              "          \"required\": [\r",
+                              "            \"id\",\r",
+                              "            \"clientId\",\r",
+                              "            \"name\",\r",
+                              "            \"description\",\r",
+                              "            \"categoryId\",\r",
+                              "            \"category\",\r",
+                              "            \"status\",\r",
+                              "            \"complianceStatus\",\r",
+                              "            \"startDate\",\r",
+                              "            \"completionDate\",\r",
+                              "            \"isUrgent\",\r",
+                              "            \"companies\",\r",
+                              "            \"dealMembers\",\r",
+                              "            \"lastModifiedByUserId\",\r",
+                              "            \"lastModifiedBy\",\r",
+                              "            \"lastModifiedTimestamp\",\r",
+                              "            \"createdByUserId\",\r",
+                              "            \"createdBy\",\r",
+                              "            \"createdTimestamp\"\r",
+                              "          ]\r",
+                              "        }\r",
+                              "      ]\r",
+                              "    }\r",
+                              "  },\r",
+                              "  \"required\": [\r",
+                              "    \"queryable\"\r",
+                              "  ]\r",
+                              "}\r",
+                              "\r",
+                              "pm.test(\"Schema is valid\", function(){\r",
+                              "    var jsonData = pm.response.json();\r",
+                              "    pm.expect(tv4.validate(jsonData, schema)).to.be.true;\r",
+                              "})\r",
+                              "\r",
+                              "// Test 3\r",
+                              "pm.test(\"Response is valid\", function(){\r",
+                              "    var jsonData = pm.response.json();\r",
+                              "    \r",
+                              "    if (jsonData.queryable.length > 0) {\r",
+                              "        var requestId = pm.request.url.path[3];\r",
+                              "        pm.expect(jsonData.queryable[0].id).to.eql(requestId);\r",
+                              "    }\r",
+                              "})"
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "id": "fa1cc596-ee28-4b5f-8087-4613567d083d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{ApiBaseUrl}}/v1/screening-lists/{{screeningListId}}?$expand=Records($expand=Deal)",
+                          "host": [
+                            "{{ApiBaseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "screening-lists",
+                            "{{screeningListId}}"
+                          ],
+                          "query": [
+                            {
+                              "key": "$expand",
+                              "value": "Records($expand=Deal)"
+                            }
+                          ]
+                        }
+                      },
+                      "response": []
+                    }
+                  ],
+                  "id": "d7072465-e532-4120-bd22-a8bad064dcc1"
+                },
+                {
                   "name": "create a screening list without a company",
                   "item": [
                     {
@@ -39547,610 +40151,6 @@
                     }
                   ],
                   "id": "e5f31e45-57c4-421a-b9de-38318b67a168"
-                },
-                {
-                  "name": "create a screening list with a company Copy",
-                  "item": [
-                    {
-                      "name": "set vars for deal",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "id": "ab1f271b-bc5f-437e-8d30-38aee287fd03",
-                            "exec": [
-                              "// Test 1\r",
-                              "pm.test(\"Status code is 200\", function () {\r",
-                              "    pm.response.to.have.status(200);\r",
-                              "});\r",
-                              "\r",
-                              "var responseJson = JSON.parse(responseBody);\r",
-                              "var a=[];\r",
-                              "var list = (responseJson.value).length;\r",
-                              "for (var i = 0; i < list; i++) \r",
-                              "                  {\r",
-                              "                   var counter = responseJson.value[i];\r",
-                              "                    if (counter.isin !== null){\r",
-                              "                        a.push(counter)\r",
-                              "                    }\r",
-                              "                    \r",
-                              "                   }\r",
-                              "\r",
-                              " for(var i =0;  i < a.length; i++){\r",
-                              "     var companyWithIsin = a[i].companies.find(company => company.isin !== null)\r",
-                              "if (companyWithIsin && companyWithIsin.name) {\r",
-                              "postman.setEnvironmentVariable(\"securitySearchCompanyName\", companyWithIsin ? companyWithIsin.name : \"\");\r",
-                              "postman.setEnvironmentVariable(\"securitySearchCompanyExtarnalId\", companyWithIsin ? companyWithIsin.externalId : \"\");\r",
-                              "postman.setEnvironmentVariable(\"cusip\", companyWithIsin ? companyWithIsin.cusip : \"\");\r",
-                              "postman.setEnvironmentVariable(\"isin\", companyWithIsin ? companyWithIsin.isin : \"\");\r",
-                              "return;\r",
-                              "}\r",
-                              "     console.log(companyWithIsin)\r",
-                              "         \r",
-                              "         \r",
-                              "        \r",
-                              "         console.log(a[i])\r",
-                              "    }\r",
-                              "  \r",
-                              "\r",
-                              "\r",
-                              "function getRandomInt(max) {\r",
-                              "  return Math.floor(Math.random() * max);\r",
-                              "}\r",
-                              "\r",
-                              "var jsonData = JSON.parse(responseBody);\r",
-                              "var valueSize = Object.keys(jsonData.value).length\r",
-                              "var valueId = getRandomInt(valueSize-1);\r",
-                              "var companySize = Object.keys(jsonData.value[valueId].companies).length\r",
-                              "var companyId = getRandomInt(companySize);\r",
-                              "var statusSize = Object.keys(jsonData.value[valueId].status).length\r",
-                              "var statusId = getRandomInt(statusSize-1);\r",
-                              "var complianceStatusSize = Object.keys(jsonData.value[valueId].complianceStatus).length\r",
-                              "var complianceStatusId = getRandomInt(complianceStatusSize-1);\r",
-                              "var restrictionSize = Object.keys(jsonData.value[valueId].restrictions).length\r",
-                              "var restrictionId = getRandomInt(restrictionSize);\r",
-                              "var bool = [true, false];\r",
-                              "var isUrgent = bool[getRandomInt(2)];\r",
-                              "var isDraft = bool[getRandomInt(2)];\r",
-                              "var dealMembersSize = Object.keys(jsonData.value[valueId].dealMembers).length;\r",
-                              "var dealMembersId = getRandomInt(dealMembersSize-1);\r",
-                              "var dealMemebersIdStepTwo = getRandomInt(dealMembersSize-1);\r",
-                              "var dataStatuses = ['NotAvailable', 'Requested', 'Confirmed']\r",
-                              "var dataDestructionStatus = dataStatuses[getRandomInt(0,2)]\r",
-                              "var ndaStatuses = ['NotAvailable', 'Negotiating', 'Executed']\r",
-                              "var ndaStatus = ndaStatuses[getRandomInt(0,2)]\r",
-                              "\r",
-                              "// postman.setEnvironmentVariable(\"dataDestructionStatus\", jsonData.value[valueId].companies[companyId].dataDestructionStatus);\r",
-                              "postman.setEnvironmentVariable(\"dataDestructionStatus\", dataDestructionStatus);\r",
-                              "postman.setEnvironmentVariable(\"ndaStatus\", ndaStatus);\r",
-                              "//postman.setEnvironmentVariable(\"typeId\", jsonData.value[valueId].companies[companyId].typeId);\r",
-                              "postman.setEnvironmentVariable(\"typeId\",\r",
-                              "     jsonData.value[valueId].companies[companyId]\r",
-                              "     ? jsonData.value[valueId].companies[companyId].typeId \r",
-                              "     : null);\r",
-                              "\r",
-                              "postman.setEnvironmentVariable(\"isUrgent\", jsonData.value[valueId].isUrgent);\r",
-                              "postman.setEnvironmentVariable(\"isDraft\", jsonData.value[valueId].isDraft);\r",
-                              "postman.setEnvironmentVariable(\"categoryId\", jsonData.value[valueId].categoryId);\r",
-                              "postman.setEnvironmentVariable(\"dealStatus\", jsonData.value[valueId].status);\r",
-                              "postman.setEnvironmentVariable(\"complianceStatus\", jsonData.value[valueId].complianceStatus);\r",
-                              "postman.setEnvironmentVariable(\"companyStatus\", jsonData.value[valueId].companies[companyId].status);\r",
-                              "postman.setEnvironmentVariable(\"memberIdRecordVisibility\", jsonData.value[valueId].dealMembers[dealMembersId].memberId);\r",
-                              "postman.setEnvironmentVariable(\"memberTypeRecordVisibility\", \"RecordVisibilityUser\");\r",
-                              "postman.setEnvironmentVariable(\"memberId\", jsonData.value[valueId].dealMembers[dealMemebersIdStepTwo].memberId);\r",
-                              "postman.setEnvironmentVariable(\"memberTypeInternalDealLead\", \"InternalDealLeadUser\");\r",
-                              "postman.setEnvironmentVariable(\"employeeRestriction\", \"AllEmployees\");\r",
-                              "postman.setEnvironmentVariable(\"recordTypeDeal\", \"Deal\");\r",
-                              "\r",
-                              "// postman.setEnvironmentVariable(\"employeeRestriction\",\r",
-                              "//      jsonData.value[valueId].restrictions[restrictionId] \r",
-                              "//      ? jsonData.value[valueId].restrictions[restrictionId].employeeRestriction \r",
-                              "//      : null);\r",
-                              "// console.log(jsonData.value[valueId].restrictions[restrictionId] \r",
-                              "//      ? jsonData.value[valueId].restrictions[restrictionId].employeeRestriction \r",
-                              "//      : null)\r",
-                              ""
-                            ],
-                            "type": "text/javascript"
-                          }
-                        }
-                      ],
-                      "id": "606c45f3-1205-40e3-9969-32b96adfcbce",
-                      "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                      },
-                      "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                          "raw": "{{ApiBaseUrl}}/v1/deals?$expand=restrictions,dealMembers,companies",
-                          "host": [
-                            "{{ApiBaseUrl}}"
-                          ],
-                          "path": [
-                            "v1",
-                            "deals"
-                          ],
-                          "query": [
-                            {
-                              "key": "$expand",
-                              "value": "restrictions,dealMembers,companies"
-                            }
-                          ]
-                        }
-                      },
-                      "response": []
-                    },
-                    {
-                      "name": "create a new deal",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "id": "cb7b2a7e-f39e-41ec-bdce-49e8d13c7056",
-                            "exec": [
-                              "// Test 1\r",
-                              "pm.test(\"Status code is 201\", function () {\r",
-                              "    pm.response.to.have.status(201);\r",
-                              "});\r",
-                              "\r",
-                              "\r",
-                              "var jsonData = JSON.parse(responseBody);\r",
-                              "postman.setEnvironmentVariable(\"dealId\", jsonData.id);\r",
-                              "\r",
-                              "    var jsonData =pm.response.json();\r",
-                              "pm.test(\"The deal status is active\", function(){\r",
-                              "pm.expect(jsonData.isDraft).to.eq(true);\r",
-                              "});\r",
-                              "\r",
-                              "\r",
-                              ""
-                            ],
-                            "type": "text/javascript"
-                          }
-                        },
-                        {
-                          "listen": "prerequest",
-                          "script": {
-                            "id": "eb7839ce-4f14-4df8-94d7-d939da6a51ea",
-                            "exec": [
-                              "",
-                              "",
-                              "pm.environment.set(\"randomDealName\", _.random(1, 1000) +\" \" + \"API deal\")",
-                              "pm.environment.set(\"randomCompanyName1\", _.random(1, 1000) +\" \" + \"API company\")",
-                              "pm.environment.set(\"randomCompanyName2\", _.random(1, 1000) +\" \" + \"API company\")",
-                              "pm.environment.set(\"contactsUnderTentName\", _.random(1, 1000) +\" \" + \"API contact name\")",
-                              "pm.environment.set(\"contactsUnderTentTitle\", _.random(1, 1000) +\" \" + \"API contact title\")",
-                              "pm.environment.set(\"restrictionName\", _.random(1, 1000) +\" \" + \"API  restriction\")",
-                              "",
-                              "",
-                              "",
-                              "const uuid = Math.random().toString(36).substring(2, 15) +",
-                              "        Math.random().toString(36).substring(2, 15);",
-                              "const randomEmail =  uuid + \"@emaill.com\";",
-                              "pm.environment.set(\"randomEmail\", randomEmail)",
-                              "",
-                              "var dateNow= new Date();pm.environment.set(\"randomDealDescription\", dateNow.toISOString() + \" \" + \"API deal description\")",
-                              "var startDate = (Date.now() + 86400000); pm.environment.set('startDate', new Date(startDate).toISOString())",
-                              "var completionDate = (Date.now() + 172800000); pm.environment.set('completionDate', new Date(completionDate).toISOString())",
-                              "var contactAddedDate = (Date.now() + 172800000); pm.environment.set('contactAddedDate', new Date(contactAddedDate).toISOString())",
-                              "var dataDestructionCompletedDate =  (Date.now() + 172800000); pm.environment.set('dataDestructionCompletedDate', new Date(dataDestructionCompletedDate).toISOString())",
-                              "var dataDestructionRequestedDate = (Date.now() + 86400000); pm.environment.set('dataDestructionRequestedDate', new Date(dataDestructionRequestedDate).toISOString())",
-                              "",
-                              "var ndaCompletedDate = (Date.now() + 1864000000); pm.environment.set('ndaCompletedDate', new Date(ndaCompletedDate).toISOString())",
-                              "var ndaRequestedDate = (Date.now() + 86400000); pm.environment.set('ndaRequestedDate', new Date(ndaRequestedDate).toISOString())",
-                              "var restrictionEndDate = (Date.now() + 86400000); pm.environment.set('restrictionEndDate', new Date(restrictionEndDate).toISOString())",
-                              "",
-                              "// pm.sendRequest('https://qa.platform.devacaalpha.com/api/control-room/v1/deals?$expand=restrictions,dealMembers,companies', function (err, res) {",
-                              "//         pm.expect(err).to.not.be.ok;",
-                              "//         pm.expect(res).to.have.property('code', 200);",
-                              "//         pm.expect(res).to.have.property('status', 'OK');",
-                              "//     });"
-                            ],
-                            "type": "text/javascript"
-                          }
-                        }
-                      ],
-                      "id": "48e0b6a5-28c0-4cca-a631-58b2510ae53b",
-                      "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                      },
-                      "request": {
-                        "method": "POST",
-                        "header": [],
-                        "body": {
-                          "mode": "raw",
-                          "raw": "{\r\n    \"name\": \"{{randomDealName}}\",\r\n    \"description\": \"{{randomDealDescription}}\",\r\n    \"categoryId\": \"{{categoryId}}\",\r\n     \"recordType\": \"{{recordTypeDeal}}\",\r\n    \"status\": \"{{dealStatus}}\",\r\n    \"complianceStatus\": \"{{complianceStatus}}\",\r\n    \"startDate\": \"{{startDate}}\",\r\n    \"completionDate\": \"{{completionDate}}\",\r\n    \"isUrgent\": {{isUrgent}},\r\n    \"isDraft\": false,\r\n     \"companies\": [{\r\n             \"name\": \"{{securitySearchCompanyName}}\",\r\n            \"externalId\": \"{{securitySearchCompanyExtarnalId}}\",\r\n            \"cusip\": \"{{cusip}}\",\r\n            \"isin\": \"{{isin}}\",\r\n            \"externalIdentifierType\": \"SecMasterSecurityId\",\r\n            \"contactsUnderTent\": [],\r\n            \"companyAdvisees\": [],\r\n            \"dataDestructionCompletedDate\": \"{{dataDestructionCompletedDate}}\",\r\n            \"dataDestructionRequestedDate\": \"{{dataDestructionRequestedDate}}\",\r\n            \"dataDestructionStatus\": \"{{dataDestructionStatus}}\",\r\n            \"ndaCompletedDate\": \"{{ndaCompletedDate}}\",\r\n            \"ndaRequestedDate\": \"{{ndaRequestedDate}}\",\r\n            \"ndaStatus\": \"{{ndaStatus}}\",\r\n            \"status\": \"{{companyStatus}}\",\r\n            \"typeId\": \"{{typeId}}\"\r\n        }],\r\n    \"dealMembers\": [\r\n        {\r\n            \"memberId\": \"{{memberIdRecordVisibility}}\",\r\n            \"memberType\": \"{{memberTypeRecordVisibility}}\"\r\n        },\r\n        {\r\n            \"memberId\": \"{{memberId}}\",\r\n            \"memberType\": \"{{memberTypeInternalDealLead}}\"\r\n        }\r\n    ],\r\n    \"restrictions\": [\r\n        {\r\n            \"name\": \"{{restrictionName}}\",\r\n            \"endDate\": \"{{restrictionEndDate}}\",\r\n            \"startDate\": \"{{startDate}}\",\r\n            \"employeeRestriction\": \"{{employeeRestriction}}\",\r\n            \"companyRestrictions\": [{\r\n                \"company\": {\r\n                        \"name\": \"{{securitySearchCompanyName}}\"\r\n                    }\r\n            }\r\n            ],\r\n            \"memberRestrictions\": [\r\n                 {\r\n                    \"userId\": \"{{memberId}}\",\r\n                    \"targetMemberType\": \"{{memberTypeInternalDealLead}}\"\r\n\r\n                    \r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
-                          "options": {
-                            "raw": {
-                              "language": "json"
-                            }
-                          }
-                        },
-                        "url": "{{ApiBaseUrl}}/v1/deals"
-                      },
-                      "response": []
-                    },
-                    {
-                      "name": "set vars for the screening list",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "exec": [
-                              "// Test 1\r",
-                              "pm.test(\"Status code is 200\", function () {\r",
-                              "    pm.response.to.have.status(200);\r",
-                              "});\r",
-                              "\r",
-                              "var schema = {\r",
-                              "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
-                              "  \"type\": \"object\",\r",
-                              "  \"properties\": {\r",
-                              "    \"@odata.context\": {\r",
-                              "      \"type\": \"string\"\r",
-                              "    },\r",
-                              "    \"value\": {\r",
-                              "      \"type\": \"array\",\r",
-                              "      \"items\": {}\r",
-                              "    }\r",
-                              "  },\r",
-                              "  \"required\": [\r",
-                              "    \"@odata.context\",\r",
-                              "    \"value\"\r",
-                              "  ]\r",
-                              "}\r",
-                              "\r",
-                              "// Test 2\r",
-                              "pm.test(\"Schema is valid\", function(){\r",
-                              "    var json= pm.response.json()\r",
-                              "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
-                              "})"
-                            ],
-                            "type": "text/javascript",
-                            "id": "b96b18d4-e333-404c-8462-6ea4fd1a4540"
-                          }
-                        }
-                      ],
-                      "id": "5ba4c42d-3b87-4a60-9d17-5be159da0563",
-                      "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                      },
-                      "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                          "raw": "{{ApiBaseUrl}}/v1/screening-lists?$expand=Records($expand=Deal)",
-                          "host": [
-                            "{{ApiBaseUrl}}"
-                          ],
-                          "path": [
-                            "v1",
-                            "screening-lists"
-                          ],
-                          "query": [
-                            {
-                              "key": "$expand",
-                              "value": "Records($expand=Deal)"
-                            }
-                          ]
-                        }
-                      },
-                      "response": []
-                    },
-                    {
-                      "name": "create a new list",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "id": "e48311b9-8100-4a22-a253-b7b592b19c8c",
-                            "exec": [
-                              "// Test 1\r",
-                              "pm.test(\"Status code is 201\", function () {\r",
-                              "    pm.response.to.have.status(201);\r",
-                              "});\r",
-                              "\r",
-                              "// Test 2\r",
-                              "var schema = {\r",
-                              "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
-                              "  \"type\": \"object\",\r",
-                              "  \"properties\": {\r",
-                              "    \"@odata.context\": {\r",
-                              "      \"type\": \"string\"\r",
-                              "    },\r",
-                              "    \"id\": {\r",
-                              "      \"type\": \"string\"\r",
-                              "    },\r",
-                              "    \"clientId\": {\r",
-                              "      \"type\": \"integer\"\r",
-                              "    },\r",
-                              "    \"name\": {\r",
-                              "      \"type\": \"string\"\r",
-                              "    },\r",
-                              "    \"description\": {\r",
-                              "      \"type\": \"string\"\r",
-                              "    },\r",
-                              "    \"categoryId\": {\r",
-                              "      \"type\": \"string\"\r",
-                              "    },\r",
-                              "    \"status\": {\r",
-                              "      \"type\": \"string\"\r",
-                              "    },\r",
-                              "    \"complianceStatus\": {\r",
-                              "      \"type\": \"string\"\r",
-                              "    },\r",
-                              "    \"startDate\": {\r",
-                              "      \"type\": \"string\"\r",
-                              "    },\r",
-                              "    \"completionDate\": {\r",
-                              "      \"type\": \"string\"\r",
-                              "    },\r",
-                              "    \"isUrgent\": {\r",
-                              "      \"type\": \"boolean\"\r",
-                              "    },\r",
-                              "    \"lastModifiedByUserId\": {\r",
-                              "      \"type\": \"string\"\r",
-                              "    },\r",
-                              "    \"lastModifiedTimestamp\": {\r",
-                              "      \"type\": \"string\"\r",
-                              "    },\r",
-                              "    \"createdByUserId\": {\r",
-                              "      \"type\": \"string\"\r",
-                              "    },\r",
-                              "    \"createdTimestamp\": {\r",
-                              "      \"type\": \"string\"\r",
-                              "    }\r",
-                              "  },\r",
-                              "  \"required\": [\r",
-                              "    \"@odata.context\",\r",
-                              "    \"id\",\r",
-                              "    \"clientId\",\r",
-                              "    \"name\",\r",
-                              "    \"description\",\r",
-                              "    \"categoryId\",\r",
-                              "    \"status\",\r",
-                              "    \"complianceStatus\",\r",
-                              "    \"startDate\",\r",
-                              "    \"completionDate\",\r",
-                              "    \"isUrgent\",\r",
-                              "    \"lastModifiedByUserId\",\r",
-                              "    \"lastModifiedTimestamp\",\r",
-                              "    \"createdByUserId\",\r",
-                              "    \"createdTimestamp\"\r",
-                              "  ]\r",
-                              "}\r",
-                              "\r",
-                              "pm.test(\"Schema is valid\", function(){\r",
-                              "    var jsonData = pm.response.json();\r",
-                              "    pm.expect(tv4.validate(jsonData, schema)).to.be.true;\r",
-                              "})\r",
-                              "\r",
-                              "// Test 3\r",
-                              "pm.test(\"Creation date is today\", function(){\r",
-                              "    var jsonData = pm.response.json();\r",
-                              "\r",
-                              "    var currTime = new Date();\r",
-                              "    var dd = String(currTime.getDate()).padStart(2, '0');\r",
-                              "    var mm = String(currTime.getMonth() + 1).padStart(2, '0');\r",
-                              "    var yyyy = currTime.getFullYear();\r",
-                              "    var hh = currTime.getHours() - 3;\r",
-                              "    currTime = yyyy + '-' + mm + '-' + dd + 'T' + hh + \":\";\r",
-                              "\r",
-                              "    var cretedTimestamp = jsonData.createdTimestamp;\r",
-                              "    \r",
-                              "    pm.expect(cretedTimestamp).to.include(currTime);\r",
-                              "})\r",
-                              "\r",
-                              "var jsonData = pm.response.json();\r",
-                              "postman.setEnvironmentVariable(\"screeningListId\", jsonData.id);"
-                            ],
-                            "type": "text/javascript"
-                          }
-                        },
-                        {
-                          "listen": "prerequest",
-                          "script": {
-                            "id": "2313c65a-8c8a-4ff3-bdb9-80eef008c7a8",
-                            "exec": [
-                              "",
-                              "",
-                              "pm.environment.set(\"randomListName\", _.random(1, 1000) +\" \" + \"API screening list\")",
-                              "",
-                              "",
-                              "var dateNow= new Date();pm.environment.set(\"randomListDescription\", dateNow.toISOString() + \" \" + \"API screening list description\")",
-                              "",
-                              "",
-                              "// pm.sendRequest('https://qa.platform.devacaalpha.com/api/control-room/v1/deals?$expand=restrictions,dealMembers,companies', function (err, res) {",
-                              "//         pm.expect(err).to.not.be.ok;",
-                              "//         pm.expect(res).to.have.property('code', 200);",
-                              "//         pm.expect(res).to.have.property('status', 'OK');",
-                              "//     });"
-                            ],
-                            "type": "text/javascript"
-                          }
-                        }
-                      ],
-                      "id": "dec0ed73-fbbc-404f-a028-a2b79397baea",
-                      "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                      },
-                      "request": {
-                        "method": "POST",
-                        "header": [],
-                        "body": {
-                          "mode": "raw",
-                          "raw": "{\r\n    \"name\": \"{{randomListName}}\",\r\n    \"description\": \"{{randomListDescription}}\",\r\n    \"timeZone\": \"{{timeZone}}\",\r\n    \"status\": \"{{listStatus}}\",\r\n    \"records\": [\r\n        {\r\n          \r\n          \"externalId\": \"{{securitySearchCompanyExtarnalId}}\",\r\n            \"cusip\": \"{{cusip}}\",\r\n            \"isin\": \"{{isin}}\",\r\n            \"externalIdentifierType\": \"SecMasterSecurityId\",\r\n            \"securityName\": \"{{securitySearchCompanyName}}\",\r\n            \"dealId\": \"{{dealId}}\"\r\n            \r\n        }\r\n    ]\r\n}",
-                          "options": {
-                            "raw": {
-                              "language": "json"
-                            }
-                          }
-                        },
-                        "url": "{{ApiBaseUrl}}/v1/screening-lists"
-                      },
-                      "response": []
-                    },
-                    {
-                      "name": "getById",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "id": "c9ef5a34-e34f-40ab-9354-4a9c96a7a8b2",
-                            "exec": [
-                              "// Test 1\r",
-                              "pm.test(\"Status code is 200\", function () {\r",
-                              "    pm.response.to.have.status(200);\r",
-                              "});\r",
-                              "\r",
-                              "// Test 2\r",
-                              "var schema = {\r",
-                              "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
-                              "  \"type\": \"object\",\r",
-                              "  \"properties\": {\r",
-                              "    \"queryable\": {\r",
-                              "      \"type\": \"array\",\r",
-                              "      \"items\": [\r",
-                              "        {\r",
-                              "          \"type\": \"object\",\r",
-                              "          \"properties\": {\r",
-                              "            \"id\": {\r",
-                              "              \"type\": \"string\"\r",
-                              "            },\r",
-                              "            \"clientId\": {\r",
-                              "              \"type\": \"integer\"\r",
-                              "            },\r",
-                              "            \"name\": {\r",
-                              "              \"type\": \"string\"\r",
-                              "            },\r",
-                              "            \"description\": {\r",
-                              "              \"type\": \"string\"\r",
-                              "            },\r",
-                              "            \"categoryId\": {\r",
-                              "              \"type\": \"string\"\r",
-                              "            },\r",
-                              "            \"category\": {\r",
-                              "              \"type\": \"null\"\r",
-                              "            },\r",
-                              "            \"status\": {\r",
-                              "              \"type\": \"integer\"\r",
-                              "            },\r",
-                              "            \"complianceStatus\": {\r",
-                              "              \"type\": \"integer\"\r",
-                              "            },\r",
-                              "            \"startDate\": {\r",
-                              "              \"type\": \"string\"\r",
-                              "            },\r",
-                              "            \"completionDate\": {\r",
-                              "              \"type\": \"null\"\r",
-                              "            },\r",
-                              "            \"isUrgent\": {\r",
-                              "              \"type\": \"boolean\"\r",
-                              "            },\r",
-                              "            \"companies\": {\r",
-                              "              \"type\": \"null\"\r",
-                              "            },\r",
-                              "            \"dealMembers\": {\r",
-                              "              \"type\": \"null\"\r",
-                              "            },\r",
-                              "            \"lastModifiedByUserId\": {\r",
-                              "              \"type\": \"string\"\r",
-                              "            },\r",
-                              "            \"lastModifiedBy\": {\r",
-                              "              \"type\": \"null\"\r",
-                              "            },\r",
-                              "            \"lastModifiedTimestamp\": {\r",
-                              "              \"type\": \"string\"\r",
-                              "            },\r",
-                              "            \"createdByUserId\": {\r",
-                              "              \"type\": \"string\"\r",
-                              "            },\r",
-                              "            \"createdBy\": {\r",
-                              "              \"type\": \"null\"\r",
-                              "            },\r",
-                              "            \"createdTimestamp\": {\r",
-                              "              \"type\": \"string\"\r",
-                              "            }\r",
-                              "          },\r",
-                              "          \"required\": [\r",
-                              "            \"id\",\r",
-                              "            \"clientId\",\r",
-                              "            \"name\",\r",
-                              "            \"description\",\r",
-                              "            \"categoryId\",\r",
-                              "            \"category\",\r",
-                              "            \"status\",\r",
-                              "            \"complianceStatus\",\r",
-                              "            \"startDate\",\r",
-                              "            \"completionDate\",\r",
-                              "            \"isUrgent\",\r",
-                              "            \"companies\",\r",
-                              "            \"dealMembers\",\r",
-                              "            \"lastModifiedByUserId\",\r",
-                              "            \"lastModifiedBy\",\r",
-                              "            \"lastModifiedTimestamp\",\r",
-                              "            \"createdByUserId\",\r",
-                              "            \"createdBy\",\r",
-                              "            \"createdTimestamp\"\r",
-                              "          ]\r",
-                              "        }\r",
-                              "      ]\r",
-                              "    }\r",
-                              "  },\r",
-                              "  \"required\": [\r",
-                              "    \"queryable\"\r",
-                              "  ]\r",
-                              "}\r",
-                              "\r",
-                              "pm.test(\"Schema is valid\", function(){\r",
-                              "    var jsonData = pm.response.json();\r",
-                              "    pm.expect(tv4.validate(jsonData, schema)).to.be.true;\r",
-                              "})\r",
-                              "\r",
-                              "// Test 3\r",
-                              "pm.test(\"Response is valid\", function(){\r",
-                              "    var jsonData = pm.response.json();\r",
-                              "    \r",
-                              "    if (jsonData.queryable.length > 0) {\r",
-                              "        var requestId = pm.request.url.path[3];\r",
-                              "        pm.expect(jsonData.queryable[0].id).to.eql(requestId);\r",
-                              "    }\r",
-                              "})"
-                            ],
-                            "type": "text/javascript"
-                          }
-                        }
-                      ],
-                      "id": "fa1cc596-ee28-4b5f-8087-4613567d083d",
-                      "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                      },
-                      "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                          "raw": "{{ApiBaseUrl}}/v1/screening-lists/{{screeningListId}}?$expand=Records($expand=Deal)",
-                          "host": [
-                            "{{ApiBaseUrl}}"
-                          ],
-                          "path": [
-                            "v1",
-                            "screening-lists",
-                            "{{screeningListId}}"
-                          ],
-                          "query": [
-                            {
-                              "key": "$expand",
-                              "value": "Records($expand=Deal)"
-                            }
-                          ]
-                        }
-                      },
-                      "response": []
-                    }
-                  ],
-                  "id": "d7072465-e532-4120-bd22-a8bad064dcc1"
                 }
               ],
               "id": "e6c5fb1a-72e9-4b86-91f2-e57948d51aba"
