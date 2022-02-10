@@ -37803,11 +37803,6 @@
               "id": "c8f9315a-9985-4cb0-892c-fb3c3fc460fe"
             },
             {
-              "name": "create",
-              "item": [],
-              "id": "e6c5fb1a-72e9-4b86-91f2-e57948d51aba"
-            },
-            {
               "name": "delete",
               "event": [
                 {
