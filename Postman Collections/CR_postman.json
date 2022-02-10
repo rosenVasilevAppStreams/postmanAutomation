@@ -38179,6 +38179,48 @@
                   "id": "d01c661b-8f5a-4fdc-982e-b52c31b8a26a"
                 },
                 {
+                  "name": "getNonExistingId",
+                  "item": [
+                    {
+                      "name": "getById",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "8a27fa5c-fb76-48f2-8304-bac5f6d59f3b",
+                            "exec": [
+                              "// Test 1\r",
+                              "pm.test(\"Status code is 404\", function () {\r",
+                              "    pm.response.to.have.status(404);\r",
+                              "});\r",
+                              "\r",
+                              ""
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "id": "2ed9b3aa-bc5d-4537-b3d1-65c7fe93f862",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": "{{ApiBaseUrl}}/v1/screening-lists(1234567)"
+                      },
+                      "response": []
+                    }
+                  ],
+                  "id": "86e0f34f-35be-48a6-a7e1-4e16324c0c53"
+                }
+              ],
+              "id": "c8f9315a-9985-4cb0-892c-fb3c3fc460fe"
+            },
+            {
+              "name": "create",
+              "item": [
+                {
                   "name": "getExistingId Copy",
                   "item": [
                     {
@@ -38715,48 +38757,6 @@
                   ],
                   "id": "4a4bde99-e77e-425c-8d53-fa1767d4ea05"
                 },
-                {
-                  "name": "getNonExistingId",
-                  "item": [
-                    {
-                      "name": "getById",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "id": "8a27fa5c-fb76-48f2-8304-bac5f6d59f3b",
-                            "exec": [
-                              "// Test 1\r",
-                              "pm.test(\"Status code is 404\", function () {\r",
-                              "    pm.response.to.have.status(404);\r",
-                              "});\r",
-                              "\r",
-                              ""
-                            ],
-                            "type": "text/javascript"
-                          }
-                        }
-                      ],
-                      "id": "2ed9b3aa-bc5d-4537-b3d1-65c7fe93f862",
-                      "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                      },
-                      "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/screening-lists(1234567)"
-                      },
-                      "response": []
-                    }
-                  ],
-                  "id": "86e0f34f-35be-48a6-a7e1-4e16324c0c53"
-                }
-              ],
-              "id": "c8f9315a-9985-4cb0-892c-fb3c3fc460fe"
-            },
-            {
-              "name": "create",
-              "item": [
                 {
                   "name": "create",
                   "event": [
