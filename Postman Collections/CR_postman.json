@@ -41277,7 +41277,75 @@
             },
             {
               "name": "patch",
-              "item": [],
+              "item": [
+                {
+                  "name": "patch",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "exec": [
+                          "// Test 1\r",
+                          "pm.test(\"Status code is 204 or 404\", function () {\r",
+                          "    if (pm.response.code == 204) {\r",
+                          "        pm.response.to.have.status(204);\r",
+                          "    }\r",
+                          "    else {\r",
+                          "        pm.response.to.have.status(404);\r",
+                          "    }\r",
+                          "});\r",
+                          "\r",
+                          "// Test 2\r",
+                          "pm.test(\"Response body is valid\", function () {\r",
+                          "    if (pm.response.code == 404) {\r",
+                          "        pm.expect(pm.response.text()).to.include(\"Entity of type\");\r",
+                          "        pm.expect(pm.response.text()).to.include(\"was not found.\");\r",
+                          "    }\r",
+                          "});"
+                        ],
+                        "type": "text/javascript",
+                        "id": "c60cafa7-9524-4d22-a550-b918f57b21aa"
+                      }
+                    }
+                  ],
+                  "id": "cecbc632-c2ec-4578-af97-09898f940b90",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "PATCH",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"isin\": \"some ISIN PATCH\",\r\n    \"cusip\": \"some CUSIP PATCH\",\r\n    \"dealId\": \"4FA02957-7CC6-4767-BEC5-08D92C2971D8\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{ApiBaseUrl}}/v1/screening-list-records/:screeningListRecordId",
+                      "host": [
+                        "{{ApiBaseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "screening-list-records",
+                        ":screeningListRecordId"
+                      ],
+                      "variable": [
+                        {
+                          "id": "8978ee88-5f95-4209-95ba-5803246cf900",
+                          "key": "screeningListRecordId",
+                          "value": "6D055019-9B90-4A34-E07F-08D9DCCA4994"
+                        }
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ],
               "id": "17ea8fc1-c4fe-45f2-b527-f985df7a8673"
             },
             {
@@ -41332,73 +41400,6 @@
                       "id": "dff5e796-dd31-45c0-905f-a5ec76ca69ae",
                       "key": "screeningListRecordId",
                       "value": null
-                    }
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "patch",
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "exec": [
-                      "// Test 1\r",
-                      "pm.test(\"Status code is 204 or 404\", function () {\r",
-                      "    if (pm.response.code == 204) {\r",
-                      "        pm.response.to.have.status(204);\r",
-                      "    }\r",
-                      "    else {\r",
-                      "        pm.response.to.have.status(404);\r",
-                      "    }\r",
-                      "});\r",
-                      "\r",
-                      "// Test 2\r",
-                      "pm.test(\"Response body is valid\", function () {\r",
-                      "    if (pm.response.code == 404) {\r",
-                      "        pm.expect(pm.response.text()).to.include(\"Entity of type\");\r",
-                      "        pm.expect(pm.response.text()).to.include(\"was not found.\");\r",
-                      "    }\r",
-                      "});"
-                    ],
-                    "type": "text/javascript",
-                    "id": "c60cafa7-9524-4d22-a550-b918f57b21aa"
-                  }
-                }
-              ],
-              "id": "cecbc632-c2ec-4578-af97-09898f940b90",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "PATCH",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n    \"isin\": \"some ISIN PATCH\",\r\n    \"cusip\": \"some CUSIP PATCH\",\r\n    \"dealId\": \"4FA02957-7CC6-4767-BEC5-08D92C2971D8\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "{{ApiBaseUrl}}/v1/screening-list-records/:screeningListRecordId",
-                  "host": [
-                    "{{ApiBaseUrl}}"
-                  ],
-                  "path": [
-                    "v1",
-                    "screening-list-records",
-                    ":screeningListRecordId"
-                  ],
-                  "variable": [
-                    {
-                      "id": "8978ee88-5f95-4209-95ba-5803246cf900",
-                      "key": "screeningListRecordId",
-                      "value": "6D055019-9B90-4A34-E07F-08D9DCCA4994"
                     }
                   ]
                 }
