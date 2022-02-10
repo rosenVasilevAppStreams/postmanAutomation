@@ -39439,6 +39439,7 @@
                         {
                           "listen": "test",
                           "script": {
+                            "id": "a3f6696b-fe6d-445a-a5f9-37feb8e39a0b",
                             "exec": [
                               "// Test 1\r",
                               "pm.test(\"Status code is 200\", function () {\r",
@@ -39467,10 +39468,15 @@
                               "pm.test(\"Schema is valid\", function(){\r",
                               "    var json= pm.response.json()\r",
                               "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
-                              "})"
+                              "})\r",
+                              "\r",
+                              "var jsonData = JSON.parse(responseBody);\r",
+                              "postman.setEnvironmentVariable(\"timeZone\", jsonData.value[0].timeZone);\r",
+                              "postman.setEnvironmentVariable(\"listStatus\", jsonData.value[0].status);\r",
+                              "postman.setEnvironmentVariable(\"someISIN\", \"some ISIN\")\r",
+                              "postman.setEnvironmentVariable(\"someCUSIP\", \"some CUSIP\")"
                             ],
-                            "type": "text/javascript",
-                            "id": "a3f6696b-fe6d-445a-a5f9-37feb8e39a0b"
+                            "type": "text/javascript"
                           }
                         }
                       ],
