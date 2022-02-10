@@ -38969,7 +38969,7 @@
                       "response": []
                     },
                     {
-                      "name": "create a new list without company",
+                      "name": "create a new list",
                       "event": [
                         {
                           "listen": "test",
