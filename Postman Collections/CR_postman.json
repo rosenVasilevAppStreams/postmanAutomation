@@ -39555,7 +39555,7 @@
               "name": "patch",
               "item": [
                 {
-                  "name": "create a screening list with a company Copy",
+                  "name": "change screening lists name",
                   "item": [
                     {
                       "name": "set vars for deal",
