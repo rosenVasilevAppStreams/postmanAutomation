@@ -37937,6 +37937,62 @@
               "id": "e6c5fb1a-72e9-4b86-91f2-e57948d51aba"
             },
             {
+              "name": "patch",
+              "item": [
+                {
+                  "name": "patch",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "id": "4ebc4970-1fa3-403b-a662-c5e2651966e6",
+                        "exec": [
+                          "// Test 1\r",
+                          "pm.test(\"Status code is 204 or 404\", function () {\r",
+                          "    if (pm.response.code == 204) {\r",
+                          "        pm.response.to.have.status(204);\r",
+                          "    }\r",
+                          "    else {\r",
+                          "        pm.response.to.have.status(404);\r",
+                          "    }\r",
+                          "});\r",
+                          "\r",
+                          "// Test 2\r",
+                          "pm.test(\"Response body is valid\", function () {\r",
+                          "    if (pm.response.code == 404) {\r",
+                          "        pm.expect(pm.response.text()).to.include(\"Entity of type\");\r",
+                          "        pm.expect(pm.response.text()).to.include(\"was not found.\");\r",
+                          "    }\r",
+                          "});"
+                        ],
+                        "type": "text/javascript"
+                      }
+                    }
+                  ],
+                  "id": "4fe808fb-8328-4640-8530-cf6b1d668f0e",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "PATCH",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"name\": \"ControlRoom ScreeningList PATCH\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "{{ApiBaseUrl}}/v1/screening-lists/5dbf4e1f-d3e8-4f87-f316-08d9e4898e93"
+                  },
+                  "response": []
+                }
+              ],
+              "id": "9ea29516-51ab-4c65-889d-4da261f7628e"
+            },
+            {
               "name": "delete",
               "event": [
                 {
@@ -37973,56 +38029,6 @@
               "request": {
                 "method": "DELETE",
                 "header": [],
-                "url": "{{ApiBaseUrl}}/v1/screening-lists/5dbf4e1f-d3e8-4f87-f316-08d9e4898e93"
-              },
-              "response": []
-            },
-            {
-              "name": "patch",
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "4ebc4970-1fa3-403b-a662-c5e2651966e6",
-                    "exec": [
-                      "// Test 1\r",
-                      "pm.test(\"Status code is 204 or 404\", function () {\r",
-                      "    if (pm.response.code == 204) {\r",
-                      "        pm.response.to.have.status(204);\r",
-                      "    }\r",
-                      "    else {\r",
-                      "        pm.response.to.have.status(404);\r",
-                      "    }\r",
-                      "});\r",
-                      "\r",
-                      "// Test 2\r",
-                      "pm.test(\"Response body is valid\", function () {\r",
-                      "    if (pm.response.code == 404) {\r",
-                      "        pm.expect(pm.response.text()).to.include(\"Entity of type\");\r",
-                      "        pm.expect(pm.response.text()).to.include(\"was not found.\");\r",
-                      "    }\r",
-                      "});"
-                    ],
-                    "type": "text/javascript"
-                  }
-                }
-              ],
-              "id": "4fe808fb-8328-4640-8530-cf6b1d668f0e",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "PATCH",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n    \"name\": \"ControlRoom ScreeningList PATCH\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
                 "url": "{{ApiBaseUrl}}/v1/screening-lists/5dbf4e1f-d3e8-4f87-f316-08d9e4898e93"
               },
               "response": []
