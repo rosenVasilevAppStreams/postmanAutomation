@@ -42792,7 +42792,7 @@
               "id": "e20dfa90-d332-4750-beec-1e236d0a8c94"
             },
             {
-              "name": "create a record and assign it to a deal Copy",
+              "name": "create a record without screeningListId",
               "item": [
                 {
                   "name": "set vars for deal",
