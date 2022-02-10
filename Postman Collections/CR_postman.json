@@ -43542,6 +43542,7 @@
                         {
                           "listen": "test",
                           "script": {
+                            "id": "c60cafa7-9524-4d22-a550-b918f57b21aa",
                             "exec": [
                               "// Test 1\r",
                               "pm.test(\"Status code is 204 or 404\", function () {\r",
@@ -43561,8 +43562,7 @@
                               "    }\r",
                               "});"
                             ],
-                            "type": "text/javascript",
-                            "id": "c60cafa7-9524-4d22-a550-b918f57b21aa"
+                            "type": "text/javascript"
                           }
                         }
                       ],
@@ -43575,31 +43575,14 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\r\n    \"isin\": \"some ISIN PATCH\",\r\n    \"cusip\": \"some CUSIP PATCH\",\r\n    \"dealId\": \"4FA02957-7CC6-4767-BEC5-08D92C2971D8\"\r\n}",
+                          "raw": "{\r\n    \"isin\": \"{{isin}}\",\r\n    \"cusip\": \"{{cusip}}\",\r\n    \"dealId\": \"{{dealIdForScreeningList}}\"\r\n}",
                           "options": {
                             "raw": {
                               "language": "json"
                             }
                           }
                         },
-                        "url": {
-                          "raw": "{{ApiBaseUrl}}/v1/screening-list-records/:screeningListRecordId",
-                          "host": [
-                            "{{ApiBaseUrl}}"
-                          ],
-                          "path": [
-                            "v1",
-                            "screening-list-records",
-                            ":screeningListRecordId"
-                          ],
-                          "variable": [
-                            {
-                              "id": "8978ee88-5f95-4209-95ba-5803246cf900",
-                              "key": "screeningListRecordId",
-                              "value": "6D055019-9B90-4A34-E07F-08D9DCCA4994"
-                            }
-                          ]
-                        }
+                        "url": "{{ApiBaseUrl}}/v1/screening-list-records/{{screeningListRecordId}}"
                       },
                       "response": []
                     }
