@@ -44265,7 +44265,7 @@
                   "name": "delete non existing record",
                   "item": [
                     {
-                      "name": "delete Copy",
+                      "name": "delete",
                       "event": [
                         {
                           "listen": "test",
@@ -44281,14 +44281,7 @@
                               "        pm.response.to.have.status(404);\r",
                               "    }\r",
                               "});\r",
-                              "\r",
-                              "// Test 2\r",
-                              "pm.test(\"Response body is valid\", function () {\r",
-                              "    if (pm.response.code == 404) {\r",
-                              "        pm.expect(pm.response.text()).to.include(\"Entity of type\");\r",
-                              "        pm.expect(pm.response.text()).to.include(\"was not found.\");\r",
-                              "    }\r",
-                              "});"
+                              ""
                             ],
                             "type": "text/javascript"
                           }
@@ -44301,7 +44294,7 @@
                       "request": {
                         "method": "DELETE",
                         "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/screening-list-records/{{screeningListRecordId}}"
+                        "url": "{{ApiBaseUrl}}/v1/screening-list-records(123456789)"
                       },
                       "response": []
                     }
