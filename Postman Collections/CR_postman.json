@@ -42825,14 +42825,14 @@
                     "header": [],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\r\n    \"screeningListId\": \"5e6e6569-89bb-444f-4df1-08d9e54b50a4\"\r\n}",
+                      "raw": "{\r\n    \"screeningListId\": \"{{screeningListId}}\"\r\n}",
                       "options": {
                         "raw": {
                           "language": "json"
                         }
                       }
                     },
-                    "url": "{{ApiBaseUrl}}/v1/screening-list-records/99a20b64-19b2-4432-8461-08d9e54b5c2d/move-to-screening-list"
+                    "url": "{{ApiBaseUrl}}/v1/screening-list-records/{{screeninglistRecordId}}/move-to-screening-list"
                   },
                   "response": []
                 }
