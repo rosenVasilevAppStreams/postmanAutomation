@@ -42915,7 +42915,7 @@
               "name": "patch",
               "item": [
                 {
-                  "name": "create a record without assigning it to a deal Copy",
+                  "name": "edit a screening list record",
                   "item": [
                     {
                       "name": "set vars for deal",
