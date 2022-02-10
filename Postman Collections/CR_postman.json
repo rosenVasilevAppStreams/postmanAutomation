@@ -37642,7 +37642,7 @@
               "name": "getById",
               "item": [
                 {
-                  "name": "expand all Copy",
+                  "name": "set vars for deal",
                   "event": [
                     {
                       "listen": "test",
@@ -37772,7 +37772,7 @@
                   "response": []
                 },
                 {
-                  "name": "Create a new deal Copy",
+                  "name": "create a new deal",
                   "event": [
                     {
                       "listen": "test",
