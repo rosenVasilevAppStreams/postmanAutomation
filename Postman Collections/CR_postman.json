@@ -37642,7 +37642,7 @@
               "name": "getById",
               "item": [
                 {
-                  "name": "New Folder",
+                  "name": "getExisting",
                   "item": [],
                   "id": "d01c661b-8f5a-4fdc-982e-b52c31b8a26a"
                 },
