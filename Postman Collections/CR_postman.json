@@ -40215,7 +40215,7 @@
               "name": "delete",
               "item": [
                 {
-                  "name": "delete a screening list",
+                  "name": "delete/inactivate a screening list",
                   "item": [
                     {
                       "name": "set vars for deal",
