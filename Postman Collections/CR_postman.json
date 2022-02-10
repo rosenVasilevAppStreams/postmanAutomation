@@ -39555,7 +39555,7 @@
               "name": "patch",
               "item": [
                 {
-                  "name": "change screening lists name",
+                  "name": "edit screening lists",
                   "item": [
                     {
                       "name": "set vars for deal",
