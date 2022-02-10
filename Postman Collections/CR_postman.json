@@ -41541,7 +41541,7 @@
               "name": "create",
               "item": [
                 {
-                  "name": "getById for existing record Copy",
+                  "name": "create a record and assign it to a deal",
                   "item": [
                     {
                       "name": "set vars for deal",
