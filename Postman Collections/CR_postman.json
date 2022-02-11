@@ -5845,7 +5845,13 @@
     },
     {
       "name": "Common functions",
-      "item": [],
+      "item": [
+        {
+          "name": "New Folder",
+          "item": [],
+          "id": "fbf208c5-3848-4ee3-8d02-898e30c1b9a1"
+        }
+      ],
       "id": "c96dc0ad-5951-4426-9a0b-10169dd5c0d5"
     },
     {
