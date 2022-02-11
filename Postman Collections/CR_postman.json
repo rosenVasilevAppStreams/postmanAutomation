@@ -5844,6 +5844,11 @@
       "id": "577e59e2-1279-44ea-82ec-faae6b95961a"
     },
     {
+      "name": "Common functions",
+      "item": [],
+      "id": "c96dc0ad-5951-4426-9a0b-10169dd5c0d5"
+    },
+    {
       "name": "Use cases",
       "item": [
         {
@@ -45605,11 +45610,6 @@
         }
       ],
       "id": "602e6e17-03dd-4ee7-bd21-3045310ccf1e"
-    },
-    {
-      "name": "New Folder",
-      "item": [],
-      "id": "c96dc0ad-5951-4426-9a0b-10169dd5c0d5"
     },
     {
       "name": "$metadata",
