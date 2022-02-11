@@ -26882,7 +26882,7 @@
                         "method": "GET",
                         "header": [],
                         "url": {
-                          "raw": "{{ApiBaseUrl}}/v1/security-master/search?term=ho&top=50&supplementalFields=symbol, exchange, cusip, isin&searchType=",
+                          "raw": "{{ApiBaseUrl}}/v1/security-master/search?term=1&top=2&supplementalFields=symbol, exchange, cusip, isin&searchType=",
                           "host": [
                             "{{ApiBaseUrl}}"
                           ],
@@ -26894,11 +26894,11 @@
                           "query": [
                             {
                               "key": "term",
-                              "value": "ho"
+                              "value": "1"
                             },
                             {
                               "key": "top",
-                              "value": "50"
+                              "value": "2"
                             },
                             {
                               "key": "isFullSearch",
