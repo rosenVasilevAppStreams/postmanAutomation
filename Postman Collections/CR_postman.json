@@ -38068,11 +38068,7 @@
                               "var dateNow= new Date();pm.environment.set(\"randomListDescription\", dateNow.toISOString() + \" \" + \"API screening list description\")",
                               "",
                               "",
-                              "// pm.sendRequest('https://qa.platform.devacaalpha.com/api/control-room/v1/deals?$expand=restrictions,dealMembers,companies', function (err, res) {",
-                              "//         pm.expect(err).to.not.be.ok;",
-                              "//         pm.expect(res).to.have.property('code', 200);",
-                              "//         pm.expect(res).to.have.property('status', 'OK');",
-                              "//     });"
+                              ""
                             ],
                             "type": "text/javascript"
                           }
