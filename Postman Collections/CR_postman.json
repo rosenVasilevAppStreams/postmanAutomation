@@ -26645,7 +26645,7 @@
                         "method": "GET",
                         "header": [],
                         "url": {
-                          "raw": "{{ApiBaseUrl}}/v1/security-master/search?term=ho&top=50&supplementalFields=symbol, exchange&searchType=",
+                          "raw": "{{ApiBaseUrl}}/v1/security-master/search?term=ho&top=50&supplementalFields=symbol, exchange, cusip, isin&searchType=",
                           "host": [
                             "{{ApiBaseUrl}}"
                           ],
@@ -26670,12 +26670,11 @@
                             },
                             {
                               "key": "supplementalFields",
-                              "value": "symbol, exchange"
+                              "value": "symbol, exchange, cusip, isin"
                             },
                             {
                               "key": "searchType",
-                              "value": "",
-                              "type": "text"
+                              "value": ""
                             }
                           ]
                         }
