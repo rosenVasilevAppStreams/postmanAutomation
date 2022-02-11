@@ -5850,7 +5850,7 @@
           "name": "create deal",
           "item": [
             {
-              "name": "create a draft deal with all steps Copy",
+              "name": "create a deal with all steps",
               "item": [
                 {
                   "name": "expand all",
