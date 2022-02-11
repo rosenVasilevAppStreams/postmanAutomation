@@ -45397,31 +45397,23 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "{{ApiBaseUrl}}/v1/issuer-master/search?text=goo&allowedIssuerTypes=Public,Private&top=20&includeDiagnosticInfo=true",
+                  "raw": "{{ApiBaseUrl}}/v1/issuer-master/parents?identifier=001Q57-E&identifierType=FactSetId",
                   "host": [
                     "{{ApiBaseUrl}}"
                   ],
                   "path": [
                     "v1",
                     "issuer-master",
-                    "search"
+                    "parents"
                   ],
                   "query": [
                     {
-                      "key": "text",
-                      "value": "goo"
+                      "key": "identifier",
+                      "value": "001Q57-E"
                     },
                     {
-                      "key": "allowedIssuerTypes",
-                      "value": "Public,Private"
-                    },
-                    {
-                      "key": "top",
-                      "value": "20"
-                    },
-                    {
-                      "key": "includeDiagnosticInfo",
-                      "value": "true"
+                      "key": "identifierType",
+                      "value": "FactSetId"
                     }
                   ]
                 }
