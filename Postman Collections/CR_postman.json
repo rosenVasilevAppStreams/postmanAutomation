@@ -45264,7 +45264,60 @@
               "request": {
                 "method": "GET",
                 "header": [],
-                "url": null
+                "url": {
+                  "raw": "{{ApiBaseUrl}}/v1/issuer-master/details?identifier=003JLG-E&identifierType=FactSetId",
+                  "host": [
+                    "{{ApiBaseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "issuer-master",
+                    "details"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "003JLG-E"
+                    },
+                    {
+                      "key": "identifierType",
+                      "value": "FactSetId"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "get Kosta Copy",
+              "id": "f876cd8c-4cb1-4544-8dea-46f5411d825d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{ApiBaseUrl}}/v1/issuer-master/details?identifier=003JLG-E&identifierType=FactSetId",
+                  "host": [
+                    "{{ApiBaseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "issuer-master",
+                    "details"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "003JLG-E"
+                    },
+                    {
+                      "key": "identifierType",
+                      "value": "FactSetId"
+                    }
+                  ]
+                }
               },
               "response": []
             }
