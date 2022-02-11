@@ -26645,7 +26645,7 @@
                         "method": "GET",
                         "header": [],
                         "url": {
-                          "raw": "{{ApiBaseUrl}}/v1/security-master/search?term=googl&top=5&isFullSearch=false&supplementalFields=cu Si p, ISI n, sYMBol",
+                          "raw": "{{ApiBaseUrl}}/v1/security-master/search?term=ho&top=50&supplementalFields=symbol, exchange&searchType=",
                           "host": [
                             "{{ApiBaseUrl}}"
                           ],
@@ -26657,19 +26657,25 @@
                           "query": [
                             {
                               "key": "term",
-                              "value": "googl"
+                              "value": "ho"
                             },
                             {
                               "key": "top",
-                              "value": "5"
+                              "value": "50"
                             },
                             {
                               "key": "isFullSearch",
-                              "value": "false"
+                              "value": "false",
+                              "disabled": true
                             },
                             {
                               "key": "supplementalFields",
-                              "value": "cu Si p, ISI n, sYMBol"
+                              "value": "symbol, exchange"
+                            },
+                            {
+                              "key": "searchType",
+                              "value": "",
+                              "type": "text"
                             }
                           ]
                         }
