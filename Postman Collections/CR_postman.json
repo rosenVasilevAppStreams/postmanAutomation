@@ -45331,19 +45331,19 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "{{ApiBaseUrl}}/v1/issuer-master/details?identifier=003JLG-E&identifierType=FactSetId",
+                  "raw": "{{ApiBaseUrl}}/v1/issuer-master/parents?identifier=001Q57-E&identifierType=FactSetId",
                   "host": [
                     "{{ApiBaseUrl}}"
                   ],
                   "path": [
                     "v1",
                     "issuer-master",
-                    "details"
+                    "parents"
                   ],
                   "query": [
                     {
                       "key": "identifier",
-                      "value": "003JLG-E"
+                      "value": "001Q57-E"
                     },
                     {
                       "key": "identifierType",
