@@ -45320,6 +45320,39 @@
                 }
               },
               "response": []
+            },
+            {
+              "name": "get Kosta Copy 2",
+              "id": "e29286aa-54d9-4be8-8fca-f6a1c582873c",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{ApiBaseUrl}}/v1/issuer-master/details?identifier=003JLG-E&identifierType=FactSetId",
+                  "host": [
+                    "{{ApiBaseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "issuer-master",
+                    "details"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "003JLG-E"
+                    },
+                    {
+                      "key": "identifierType",
+                      "value": "FactSetId"
+                    }
+                  ]
+                }
+              },
+              "response": []
             }
           ],
           "id": "64192ea4-6187-4e15-92ed-39a7382832bd"
