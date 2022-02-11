@@ -45331,52 +45331,19 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "{{ApiBaseUrl}}/v1/issuer-master/immediate-children?identifier=003JW8-E&identifierType=FactSetId",
+                  "raw": "{{ApiBaseUrl}}/v1/issuer-master/details?identifier=003JLG-E&identifierType=FactSetId",
                   "host": [
                     "{{ApiBaseUrl}}"
                   ],
                   "path": [
                     "v1",
                     "issuer-master",
-                    "immediate-children"
+                    "details"
                   ],
                   "query": [
                     {
                       "key": "identifier",
-                      "value": "003JW8-E"
-                    },
-                    {
-                      "key": "identifierType",
-                      "value": "FactSetId"
-                    }
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "get Kosta Copy 3",
-              "id": "f6ce2cf1-3231-4310-af3e-251a580e0cdc",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "{{ApiBaseUrl}}/v1/issuer-master/parents?identifier=001Q57-E&identifierType=FactSetId",
-                  "host": [
-                    "{{ApiBaseUrl}}"
-                  ],
-                  "path": [
-                    "v1",
-                    "issuer-master",
-                    "parents"
-                  ],
-                  "query": [
-                    {
-                      "key": "identifier",
-                      "value": "001Q57-E"
+                      "value": "003JLG-E"
                     },
                     {
                       "key": "identifierType",
