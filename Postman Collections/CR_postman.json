@@ -6556,7 +6556,7 @@
                         "method": "GET",
                         "header": [],
                         "url": {
-                          "raw": "{{ApiBaseUrl}}/v1/deals?$expand=restrictions,dealMembers,companies",
+                          "raw": "{{ApiBaseUrl}}/v1/deals?$expand=restrictions,dealMembers,companies($expand=screeningLists)",
                           "host": [
                             "{{ApiBaseUrl}}"
                           ],
@@ -6567,7 +6567,7 @@
                           "query": [
                             {
                               "key": "$expand",
-                              "value": "restrictions,dealMembers,companies"
+                              "value": "restrictions,dealMembers,companies($expand=screeningLists)"
                             }
                           ]
                         }
