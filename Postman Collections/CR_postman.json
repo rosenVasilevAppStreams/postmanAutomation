@@ -12785,7 +12785,7 @@
                         "method": "GET",
                         "header": [],
                         "url": {
-                          "raw": "{{ApiBaseUrl}}/v1/deals/{{dealId}}?$expand=restrictions($expand=companyRestrictions,memberRestrictions),dealMembers,companies($expand=contactsUnderTent)",
+                          "raw": "{{ApiBaseUrl}}/v1/deals/{{dealId}}?$expand=restrictions($expand=companyRestrictions,memberRestrictions),dealMembers,companies($expand=contactsUnderTent, screeningLists)",
                           "host": [
                             "{{ApiBaseUrl}}"
                           ],
@@ -12797,7 +12797,7 @@
                           "query": [
                             {
                               "key": "$expand",
-                              "value": "restrictions($expand=companyRestrictions,memberRestrictions),dealMembers,companies($expand=contactsUnderTent)"
+                              "value": "restrictions($expand=companyRestrictions,memberRestrictions),dealMembers,companies($expand=contactsUnderTent, screeningLists)"
                             }
                           ]
                         }
