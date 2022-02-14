@@ -6701,13 +6701,13 @@
                         "method": "GET",
                         "header": [],
                         "url": {
-                          "raw": "{{ApiBaseUrl}}/v1/deals(bc5a5947-eda3-43ce-65c1-08d9938c5765)?$expand=restrictions,dealMembers,companies",
+                          "raw": "{{ApiBaseUrl}}/v1/deals({{dealId}})?$expand=restrictions,dealMembers,companies",
                           "host": [
                             "{{ApiBaseUrl}}"
                           ],
                           "path": [
                             "v1",
-                            "deals(bc5a5947-eda3-43ce-65c1-08d9938c5765)"
+                            "deals({{dealId}})"
                           ],
                           "query": [
                             {
