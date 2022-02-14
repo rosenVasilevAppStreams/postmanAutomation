@@ -6542,6 +6542,8 @@
                               "postman.setEnvironmentVariable(\"memberId\", jsonData.value[valueId].dealMembers[dealMemebersIdStepTwo].memberId);\r",
                               "postman.setEnvironmentVariable(\"memberTypeInternalDealLead\", \"InternalDealLeadUser\");\r",
                               "postman.setEnvironmentVariable(\"employeeRestriction\", jsonData.value[0].restrictions[restrictionId].employeeRestriction);\r",
+                              "postman.setEnvironmentVariable(\"screeningListId\", jsonData.value[valueId].companies[companyId].screeningLists[0].id);\r",
+                              "postman.setEnvironmentVariable(\"screeningListId2\", jsonData.value[valueId].companies[companyId].screeningLists[1].id);\r",
                               "//postman.setEnvironmentVariable(\"businessUserIdQA\", \"e39b693c-6808-432b-806d-45c09d2cbbc0\");"
                             ],
                             "type": "text/javascript"
