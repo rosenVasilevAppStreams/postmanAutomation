@@ -6542,9 +6542,10 @@
                               "postman.setEnvironmentVariable(\"memberId\", jsonData.value[valueId].dealMembers[dealMemebersIdStepTwo].memberId);\r",
                               "postman.setEnvironmentVariable(\"memberTypeInternalDealLead\", \"InternalDealLeadUser\");\r",
                               "postman.setEnvironmentVariable(\"employeeRestriction\", jsonData.value[0].restrictions[restrictionId].employeeRestriction);\r",
-                              "postman.setEnvironmentVariable(\"screeningListId\", jsonData.value[valueId].companies[companyId].screeningLists[0].id);\r",
-                              "postman.setEnvironmentVariable(\"screeningListId2\", jsonData.value[valueId].companies[companyId].screeningLists[1].id);\r",
-                              "//postman.setEnvironmentVariable(\"businessUserIdQA\", \"e39b693c-6808-432b-806d-45c09d2cbbc0\");"
+                              "postman.setEnvironmentVariable(\"screeningListIdQA\", \"c82b663c-1bc6-4e54-6129-08d9ed688ab0\");\r",
+                              "postman.setEnvironmentVariable(\"screeningListIdQA2\", \"34d75cf9-79f4-4b1c-44b9-08d9ed31d53e\");\r",
+                              "\r",
+                              "//postman.setEnvironmentVariable(\"businessUserIdQA\", \"e39b693c-6808-432b-806d-45c09d2cbbc0\")"
                             ],
                             "type": "text/javascript"
                           }
@@ -12771,7 +12772,9 @@
                               "postman.setEnvironmentVariable(\"isSyncToMarketAbuse1\", jsonData.restrictions[0].isSyncToMarketAbuse) \r",
                               "postman.setEnvironmentVariable(\"companyRestrictions1Id\", jsonData.restrictions[0].companyRestrictions[0].id) \r",
                               "postman.setEnvironmentVariable(\"memberRestrictions1Id\", jsonData.restrictions[0].memberRestrictions[0].id) \r",
-                              "postman.setEnvironmentVariable(\"isDraftAlwaysFalse\", \"false\")"
+                              "postman.setEnvironmentVariable(\"isDraftAlwaysFalse\", \"false\")\r",
+                              "postman.setEnvironmentVariable(\"screeningListId\", jsonData.companies[0].screeningLists[0].id) \r",
+                              "postman.setEnvironmentVariable(\"companyIdScreeningList\", jsonData.companies[0].screeningLists[0].companyId)"
                             ],
                             "type": "text/javascript"
                           }
