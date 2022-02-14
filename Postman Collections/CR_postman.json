@@ -7192,6 +7192,8 @@
                               "postman.setEnvironmentVariable(\"memberTypeInternalDealLead\", \"InternalDealLeadUser\");\r",
                               "postman.setEnvironmentVariable(\"employeeRestriction\", \"AllEmployees\");\r",
                               "postman.setEnvironmentVariable(\"recordTypeDeal\", \"Deal\");\r",
+                              "postman.setEnvironmentVariable(\"screeningListIdQA\", \"c82b663c-1bc6-4e54-6129-08d9ed688ab0\");\r",
+                              "postman.setEnvironmentVariable(\"screeningListIdQA2\", \"34d75cf9-79f4-4b1c-44b9-08d9ed31d53e\");\r",
                               "\r",
                               "// postman.setEnvironmentVariable(\"employeeRestriction\",\r",
                               "//      jsonData.value[valueId].restrictions[restrictionId] \r",
