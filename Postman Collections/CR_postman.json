@@ -11586,7 +11586,8 @@
                               "     ? jsonData.value[valueId].restrictions[restrictionId].employeeRestriction \r",
                               "     : null);\r",
                               "\r",
-                              ""
+                              "postman.setEnvironmentVariable(\"screeningListIdQA\", \"c82b663c-1bc6-4e54-6129-08d9ed688ab0\");\r",
+                              "postman.setEnvironmentVariable(\"screeningListIdQA2\", \"34d75cf9-79f4-4b1c-44b9-08d9ed31d53e\");"
                             ],
                             "type": "text/javascript"
                           }
@@ -28613,7 +28614,7 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\r\n    \"name\": \"test-edit-integration\",\r\n    \"status\": \"Active\",\r\n    \"responseTimeOutMinutes\": 88,\r\n    \"webhookUrl\": \"rosen.com\",\r\n    \"integrationType\": \"External\",\r\n    \"integrationRestrictionLists\": [\r\n        {\r\n            \"name\": \"A\",\r\n            \"notes\": \"1\"\r\n        }\r\n    ],\r\n    \"webhooks\": [\r\n        {\r\n            \"webhookDefinitionId\": \"EC305C02-7954-EC11-AB22-0EEE3F322EB9\"\r\n            \r\n        }\r\n    ]\r\n}",
+                          "raw": "{\r\n    \"name\": \"test-edit-integration\",\r\n    \"status\": \"Active\",\r\n    \"responseTimeOutMinutes\": 88,\r\n    \"webhookUrl\": \"https://rosen.com\",\r\n    \"integrationType\": \"External\",\r\n    \"integrationRestrictionLists\": [\r\n        {\r\n            \"name\": \"A\",\r\n            \"notes\": \"1\"\r\n        }\r\n    ],\r\n    \"webhooks\": [\r\n        {\r\n            \"webhookDefinitionId\": \"EC305C02-7954-EC11-AB22-0EEE3F322EB9\"\r\n            \r\n        }\r\n    ]\r\n}",
                           "options": {
                             "raw": {
                               "language": "json"
