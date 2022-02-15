@@ -28626,7 +28626,7 @@
                       "response": []
                     },
                     {
-                      "name": "Internal ingrationType",
+                      "name": "\"integrationType\": \"EmployeeCompliance\"",
                       "event": [
                         {
                           "listen": "test",
