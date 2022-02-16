@@ -46282,7 +46282,7 @@
               "response": []
             },
             {
-              "name": "ntegration-conflict-check",
+              "name": "getAll integration-conflict-check",
               "event": [
                 {
                   "listen": "test",
