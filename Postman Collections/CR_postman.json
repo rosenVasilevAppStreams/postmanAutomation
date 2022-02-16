@@ -46273,7 +46273,7 @@
                       "\r",
                       "\r",
                       "var jsonData = JSON.parse(responseBody);\r",
-                      " postman.setEnvironmentVariable(\"requestId\", jsonData.value[0].id);"
+                      " postman.setEnvironmentVariable(\"conflictCheckIt\", jsonData.value[0].id);"
                     ],
                     "type": "text/javascript"
                   }
