@@ -46428,23 +46428,7 @@
               "request": {
                 "method": "GET",
                 "header": [],
-                "url": {
-                  "raw": "{{ApiBaseUrl}}/v1/integration-conflict-check-requests/:conflictCheckRequestId\n\n",
-                  "host": [
-                    "{{ApiBaseUrl}}"
-                  ],
-                  "path": [
-                    "v1",
-                    "integration-conflict-check-requests",
-                    ":conflictCheckRequestId\n\n"
-                  ],
-                  "variable": [
-                    {
-                      "key": "conflictCheckRequestId\n\n",
-                      "value": null
-                    }
-                  ]
-                }
+                "url": "{{ApiBaseUrl}}/v1/integration-conflict-check-requests/{{requestId}}\n"
               },
               "response": []
             }
