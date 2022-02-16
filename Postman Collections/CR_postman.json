@@ -46122,6 +46122,7 @@
                 {
                   "listen": "test",
                   "script": {
+                    "id": "069fd339-27e5-4e77-bc5d-fc8a2553bb17",
                     "exec": [
                       "// Test 1\r",
                       "pm.test(\"Status code is 200\", function () {\r",
@@ -46242,8 +46243,7 @@
                       "    }\r",
                       "})"
                     ],
-                    "type": "text/javascript",
-                    "id": "069fd339-27e5-4e77-bc5d-fc8a2553bb17"
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -46254,30 +46254,7 @@
               "request": {
                 "method": "GET",
                 "header": [],
-                "url": {
-                  "raw": "{{ApiBaseUrl}}/v1/conflict-check-requests/:Id?$expand=integrationConflictCheckRequests, companies, employees",
-                  "host": [
-                    "{{ApiBaseUrl}}"
-                  ],
-                  "path": [
-                    "v1",
-                    "conflict-check-requests",
-                    ":Id"
-                  ],
-                  "query": [
-                    {
-                      "key": "$expand",
-                      "value": "integrationConflictCheckRequests, companies, employees"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "id": "cca5ed4c-b6e0-4188-9b79-0e0dafad0ca6",
-                      "key": "Id",
-                      "value": "37F038F9-6EBC-4E53-0023-08D9D69A4F28"
-                    }
-                  ]
-                }
+                "url": "{{ApiBaseUrl}}/v1/conflict-check-requests$expand=integrationConflictCheckRequests, companies, employees"
               },
               "response": []
             },
