@@ -46117,7 +46117,7 @@
               "response": []
             },
             {
-              "name": "getAll",
+              "name": "getById Copy",
               "event": [
                 {
                   "listen": "test",
