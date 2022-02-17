@@ -28614,7 +28614,7 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\r\n    \"name\": \"test-create-integration\",\r\n    \"status\": \"Active\",\r\n    \"responseTimeOutMinutes\": 88,\r\n    \"webhookUrl\": \"https://rosen.com\",\r\n    \"authenticationType\": \"Token\",\r\n    \"integrationType\": \"External\",\r\n    \"integrationRestrictionLists\": [\r\n        {\r\n            \"name\": \"A\",\r\n            \"notes\": \"1\"\r\n        }\r\n    ],\r\n    \"webhooks\": [\r\n        {\r\n            \"webhookDefinitionId\": \"eca6d968-e4a0-450d-64d7-08d9aa93ef5a\"\r\n            \r\n        }\r\n    ]\r\n}",
+                          "raw": "{\r\n    \"name\": \"test-create-integration\",\r\n    \"status\": \"Active\",\r\n    \"responseTimeOutMinutes\": 88,\r\n    \"webhookUrl\": \"https://rosen.com\",\r\n    \r\n    \"integrationType\": \"External\",\r\n    \"integrationRestrictionLists\": [\r\n        {\r\n            \"name\": \"A\",\r\n            \"notes\": \"1\"\r\n        }\r\n    ],\r\n    \"webhooks\": [\r\n        {\r\n            \"webhookDefinitionId\": \"eca6d968-e4a0-450d-64d7-08d9aa93ef5a\"\r\n            \r\n        }\r\n    ]\r\n}",
                           "options": {
                             "raw": {
                               "language": "json"
