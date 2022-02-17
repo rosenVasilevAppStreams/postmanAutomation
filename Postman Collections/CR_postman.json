@@ -40727,7 +40727,7 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\r\n    \"name\": \"{{randomListName}}\",\r\n    \"description\": \"{{randomListDescription}}\"\r\n}",
+                          "raw": "{\r\n    \"name\": \"{{randomListName}}\",\r\n    \"description\": \"{{randomListDescription}}\",\r\n    \"timeZone\": \"{{timeZone}}\"\r\n}",
                           "options": {
                             "raw": {
                               "language": "json"
