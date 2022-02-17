@@ -44831,6 +44831,7 @@
                 {
                   "listen": "test",
                   "script": {
+                    "id": "40135a9e-ebb1-42e1-a282-8773de2c2ba2",
                     "exec": [
                       "// Test 1\r",
                       "pm.test(\"Status code is 200\", function () {\r",
@@ -44861,8 +44862,7 @@
                       "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
                       "})"
                     ],
-                    "type": "text/javascript",
-                    "id": "40135a9e-ebb1-42e1-a282-8773de2c2ba2"
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -44873,7 +44873,7 @@
               "request": {
                 "method": "GET",
                 "header": [],
-                "url": "{{ApiBaseUrl}}/v1/webhook-definitions"
+                "url": "{{ApiBaseUrl}}/v1/webhook-integrations"
               },
               "response": []
             },
