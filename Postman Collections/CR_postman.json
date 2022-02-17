@@ -40727,7 +40727,7 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\r\n    \"name\": \"API CR ScreeningList PATCH\",\r\n    \"description\": \"API CR ScreeningList PATCH\"\r\n}",
+                          "raw": "{\r\n    \"name\": \"{{randomListName}}\",\r\n    \"description\": \"{{randomListDescription}}\"\r\n}",
                           "options": {
                             "raw": {
                               "language": "json"
