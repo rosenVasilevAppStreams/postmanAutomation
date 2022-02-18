@@ -19736,7 +19736,7 @@
                   "response": []
                 },
                 {
-                  "name": "Create a new deal Copy",
+                  "name": "conflict check",
                   "event": [
                     {
                       "listen": "test",
