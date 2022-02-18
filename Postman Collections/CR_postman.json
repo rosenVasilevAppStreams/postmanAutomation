@@ -19510,7 +19510,324 @@
         },
         {
           "name": "Send conflict check webhook",
-          "item": [],
+          "item": [
+            {
+              "name": "create a draft deal with all steps Copy",
+              "item": [
+                {
+                  "name": "expand all",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "id": "a3733beb-8749-41d5-a4ec-87b58e222580",
+                        "exec": [
+                          "// Test 1\r",
+                          "pm.test(\"Status code is 200\", function () {\r",
+                          "    pm.response.to.have.status(200);\r",
+                          "});\r",
+                          "\r",
+                          "var responseJson = JSON.parse(responseBody);\r",
+                          "var a=[];\r",
+                          "var list = (responseJson.value).length;\r",
+                          "for (var i = 0; i < list; i++) \r",
+                          "                  {\r",
+                          "                   var counter = responseJson.value[i];\r",
+                          "                    if (counter.isin !== null){\r",
+                          "                        a.push(counter)\r",
+                          "                    }\r",
+                          "                    \r",
+                          "                   }\r",
+                          "\r",
+                          " for(var i =0;  i < a.length; i++){\r",
+                          "     var companyWithIsin = a[i].companies.find(company => company.isin !== null)\r",
+                          "if (companyWithIsin && companyWithIsin.name) {\r",
+                          "postman.setEnvironmentVariable(\"securitySearchCompanyName\", companyWithIsin ? companyWithIsin.name : \"\");\r",
+                          "postman.setEnvironmentVariable(\"securitySearchCompanyExtarnalId\", companyWithIsin ? companyWithIsin.externalId : \"\");\r",
+                          "postman.setEnvironmentVariable(\"cusip\", companyWithIsin ? companyWithIsin.cusip : \"\");\r",
+                          "postman.setEnvironmentVariable(\"isin\", companyWithIsin ? companyWithIsin.isin : \"\");\r",
+                          "return;\r",
+                          "}\r",
+                          "     console.log(companyWithIsin)\r",
+                          "         \r",
+                          "         \r",
+                          "        \r",
+                          "         console.log(a[i])\r",
+                          "    }\r",
+                          "  \r",
+                          "\r",
+                          "\r",
+                          "function getRandomInt(max) {\r",
+                          "  return Math.floor(Math.random() * max);\r",
+                          "}\r",
+                          "\r",
+                          "var jsonData = JSON.parse(responseBody);\r",
+                          "var valueSize = Object.keys(jsonData.value).length\r",
+                          "var valueId = getRandomInt(valueSize-1);\r",
+                          "var companySize = Object.keys(jsonData.value[valueId].companies).length\r",
+                          "var companyId = getRandomInt(companySize);\r",
+                          "var statusSize = Object.keys(jsonData.value[valueId].status).length\r",
+                          "var statusId = getRandomInt(statusSize-1);\r",
+                          "var complianceStatusSize = Object.keys(jsonData.value[valueId].complianceStatus).length\r",
+                          "var complianceStatusId = getRandomInt(complianceStatusSize-1);\r",
+                          "var restrictionSize = Object.keys(jsonData.value[valueId].restrictions).length\r",
+                          "var restrictionId = getRandomInt(restrictionSize);\r",
+                          "var bool = [true, false];\r",
+                          "var isUrgent = bool[getRandomInt(2)];\r",
+                          "var isDraft = bool[getRandomInt(2)];\r",
+                          "var dealMembersSize = Object.keys(jsonData.value[valueId].dealMembers).length;\r",
+                          "var dealMembersId = getRandomInt(dealMembersSize-1);\r",
+                          "var dealMemebersIdStepTwo = getRandomInt(dealMembersSize-1);\r",
+                          "var dataStatuses = ['NotAvailable', 'Requested', 'Confirmed']\r",
+                          "var dataDestructionStatus = dataStatuses[getRandomInt(0,2)]\r",
+                          "var ndaStatuses = ['NotAvailable', 'Negotiating', 'Executed']\r",
+                          "var ndaStatus = ndaStatuses[getRandomInt(0,2)]\r",
+                          "\r",
+                          "// postman.setEnvironmentVariable(\"dataDestructionStatus\", jsonData.value[valueId].companies[companyId].dataDestructionStatus);\r",
+                          "postman.setEnvironmentVariable(\"dataDestructionStatus\", dataDestructionStatus);\r",
+                          "postman.setEnvironmentVariable(\"ndaStatus\", ndaStatus);\r",
+                          "//postman.setEnvironmentVariable(\"typeId\", jsonData.value[valueId].companies[companyId].typeId);\r",
+                          "postman.setEnvironmentVariable(\"typeId\",\r",
+                          "     jsonData.value[valueId].companies[companyId]\r",
+                          "     ? jsonData.value[valueId].companies[companyId].typeId \r",
+                          "     : null);\r",
+                          "\r",
+                          "postman.setEnvironmentVariable(\"isUrgent\", jsonData.value[valueId].isUrgent);\r",
+                          "postman.setEnvironmentVariable(\"isDraft\", jsonData.value[valueId].isDraft);\r",
+                          "postman.setEnvironmentVariable(\"categoryId\", jsonData.value[valueId].categoryId);\r",
+                          "postman.setEnvironmentVariable(\"dealStatus\", jsonData.value[valueId].status);\r",
+                          "postman.setEnvironmentVariable(\"complianceStatus\", jsonData.value[valueId].complianceStatus);\r",
+                          "postman.setEnvironmentVariable(\"companyStatus\", jsonData.value[valueId].companies[companyId].status);\r",
+                          "postman.setEnvironmentVariable(\"memberIdRecordVisibility\", jsonData.value[valueId].dealMembers[dealMembersId].memberId);\r",
+                          "postman.setEnvironmentVariable(\"memberTypeRecordVisibility\", \"RecordVisibilityUser\");\r",
+                          "postman.setEnvironmentVariable(\"memberId\", jsonData.value[valueId].dealMembers[dealMemebersIdStepTwo].memberId);\r",
+                          "postman.setEnvironmentVariable(\"memberTypeInternalDealLead\", \"InternalDealLeadUser\");\r",
+                          "postman.setEnvironmentVariable(\"employeeRestriction\", \"AllEmployees\");\r",
+                          "postman.setEnvironmentVariable(\"recordTypeDeal\", \"Deal\");\r",
+                          "postman.setEnvironmentVariable(\"screeningListIdQA\", \"c82b663c-1bc6-4e54-6129-08d9ed688ab0\");\r",
+                          "postman.setEnvironmentVariable(\"screeningListIdQA2\", \"34d75cf9-79f4-4b1c-44b9-08d9ed31d53e\");\r",
+                          "\r",
+                          "// postman.setEnvironmentVariable(\"employeeRestriction\",\r",
+                          "//      jsonData.value[valueId].restrictions[restrictionId] \r",
+                          "//      ? jsonData.value[valueId].restrictions[restrictionId].employeeRestriction \r",
+                          "//      : null);\r",
+                          "// console.log(jsonData.value[valueId].restrictions[restrictionId] \r",
+                          "//      ? jsonData.value[valueId].restrictions[restrictionId].employeeRestriction \r",
+                          "//      : null)\r",
+                          ""
+                        ],
+                        "type": "text/javascript"
+                      }
+                    }
+                  ],
+                  "id": "5df6ea04-4b38-46b0-a98f-81fe0e34e66f",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{ApiBaseUrl}}/v1/deals?$expand=restrictions,dealMembers,companies",
+                      "host": [
+                        "{{ApiBaseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "deals"
+                      ],
+                      "query": [
+                        {
+                          "key": "$expand",
+                          "value": "restrictions,dealMembers,companies"
+                        }
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "Create a new deal",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "id": "39c78eb5-c9cb-4941-8810-7a835e501230",
+                        "exec": [
+                          "// Test 1\r",
+                          "pm.test(\"Status code is 201\", function () {\r",
+                          "    pm.response.to.have.status(201);\r",
+                          "});\r",
+                          "\r",
+                          "var jsonData = JSON.parse(responseBody);\r",
+                          "postman.setEnvironmentVariable(\"dealId\", jsonData.id);\r",
+                          "\r",
+                          "    var jsonData =pm.response.json();\r",
+                          "pm.test(\"The deal status is active\", function(){\r",
+                          "pm.expect(jsonData.isDraft).to.eq(true);\r",
+                          "});\r",
+                          "\r",
+                          "\r",
+                          ""
+                        ],
+                        "type": "text/javascript"
+                      }
+                    },
+                    {
+                      "listen": "prerequest",
+                      "script": {
+                        "id": "0c4039da-7388-48db-aa84-b86ef00c7ec0",
+                        "exec": [
+                          "",
+                          "",
+                          "pm.environment.set(\"randomDealName\", _.random(1, 1000) +\" \" + \"API deal\")",
+                          "pm.environment.set(\"randomCompanyName1\", _.random(1, 1000) +\" \" + \"API company\")",
+                          "pm.environment.set(\"randomCompanyName2\", _.random(1, 1000) +\" \" + \"API company\")",
+                          "pm.environment.set(\"contactsUnderTentName\", _.random(1, 1000) +\" \" + \"API contact name\")",
+                          "pm.environment.set(\"contactsUnderTentTitle\", _.random(1, 1000) +\" \" + \"API contact title\")",
+                          "pm.environment.set(\"restrictionName\", _.random(1, 1000) +\" \" + \"API  restriction\")",
+                          "",
+                          "",
+                          "",
+                          "const uuid = Math.random().toString(36).substring(2, 15) +",
+                          "        Math.random().toString(36).substring(2, 15);",
+                          "const randomEmail =  uuid + \"@emaill.com\";",
+                          "pm.environment.set(\"randomEmail\", randomEmail)",
+                          "",
+                          "var dateNow= new Date();pm.environment.set(\"randomDealDescription\", dateNow.toISOString() + \" \" + \"API deal description\")",
+                          "var startDate = (Date.now() + 86400000); pm.environment.set('startDate', new Date(startDate).toISOString())",
+                          "var completionDate = (Date.now() + 172800000); pm.environment.set('completionDate', new Date(completionDate).toISOString())",
+                          "var contactAddedDate = (Date.now() + 172800000); pm.environment.set('contactAddedDate', new Date(contactAddedDate).toISOString())",
+                          "var dataDestructionCompletedDate =  (Date.now() + 172800000); pm.environment.set('dataDestructionCompletedDate', new Date(dataDestructionCompletedDate).toISOString())",
+                          "var dataDestructionRequestedDate = (Date.now() + 86400000); pm.environment.set('dataDestructionRequestedDate', new Date(dataDestructionRequestedDate).toISOString())",
+                          "",
+                          "var ndaCompletedDate = (Date.now() + 1864000000); pm.environment.set('ndaCompletedDate', new Date(ndaCompletedDate).toISOString())",
+                          "var ndaRequestedDate = (Date.now() + 86400000); pm.environment.set('ndaRequestedDate', new Date(ndaRequestedDate).toISOString())",
+                          "var restrictionEndDate = (Date.now() + 86400000); pm.environment.set('restrictionEndDate', new Date(restrictionEndDate).toISOString())",
+                          "",
+                          "// pm.sendRequest('https://qa.platform.devacaalpha.com/api/control-room/v1/deals?$expand=restrictions,dealMembers,companies', function (err, res) {",
+                          "//         pm.expect(err).to.not.be.ok;",
+                          "//         pm.expect(res).to.have.property('code', 200);",
+                          "//         pm.expect(res).to.have.property('status', 'OK');",
+                          "//     });"
+                        ],
+                        "type": "text/javascript"
+                      }
+                    }
+                  ],
+                  "id": "bcfe7120-f4d3-4e53-bce0-b6c1f2a1555e",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"name\": \"{{randomDealName}}\",\r\n    \"description\": \"{{randomDealDescription}}\",\r\n    \"categoryId\": \"{{categoryId}}\",\r\n     \"recordType\": \"{{recordTypeDeal}}\",\r\n    \"status\": \"{{dealStatus}}\",\r\n    \"complianceStatus\": \"{{complianceStatus}}\",\r\n    \"startDate\": \"{{startDate}}\",\r\n    \"completionDate\": \"{{completionDate}}\",\r\n    \"isUrgent\": {{isUrgent}},\r\n    \"isDraft\": true,\r\n     \"companies\": [{\r\n             \"name\": \"{{securitySearchCompanyName}}\",\r\n            \"externalId\": \"{{securitySearchCompanyExtarnalId}}\",\r\n            \"cusip\": \"{{cusip}}\",\r\n            \"isin\": \"{{isin}}\",\r\n            \"externalIdentifierType\": \"SecMasterSecurityId\",\r\n            \"contactsUnderTent\": [],\r\n            \"companyAdvisees\": [],\r\n            \"dataDestructionCompletedDate\": \"{{dataDestructionCompletedDate}}\",\r\n            \"dataDestructionRequestedDate\": \"{{dataDestructionRequestedDate}}\",\r\n            \"dataDestructionStatus\": \"{{dataDestructionStatus}}\",\r\n            \"ndaCompletedDate\": \"{{ndaCompletedDate}}\",\r\n            \"ndaRequestedDate\": \"{{ndaRequestedDate}}\",\r\n            \"ndaStatus\": \"{{ndaStatus}}\",\r\n            \"status\": \"{{companyStatus}}\",\r\n            \"typeId\": \"{{typeId}}\",\r\n            \"screeningLists\": [\r\n        {\r\n          \"screeningListId\": \"{{screeningListIdQA}}\"\r\n        },\r\n        {\r\n          \"screeningListId\": \"{{screeningListIdQA2}}\"\r\n        }]\r\n        }],\r\n    \"dealMembers\": [\r\n        {\r\n            \"memberId\": \"{{memberIdRecordVisibility}}\",\r\n            \"memberType\": \"{{memberTypeRecordVisibility}}\"\r\n        },\r\n        {\r\n            \"memberId\": \"{{memberId}}\",\r\n            \"memberType\": \"{{memberTypeInternalDealLead}}\"\r\n        }\r\n    ],\r\n    \"restrictions\": [\r\n        {\r\n            \"name\": \"{{restrictionName}}\",\r\n            \"endDate\": \"{{restrictionEndDate}}\",\r\n            \"startDate\": \"{{startDate}}\",\r\n            \"employeeRestriction\": \"{{employeeRestriction}}\",\r\n            \"companyRestrictions\": [{\r\n                \"company\": {\r\n                        \"name\": \"{{securitySearchCompanyName}}\"\r\n                    }\r\n            }\r\n            ],\r\n            \"memberRestrictions\": [\r\n                 {\r\n                    \"userId\": \"{{memberId}}\",\r\n                    \"targetMemberType\": \"{{memberTypeInternalDealLead}}\"\r\n\r\n                    \r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "{{ApiBaseUrl}}/v1/deals"
+                  },
+                  "response": []
+                },
+                {
+                  "name": "Create a new deal Copy",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "id": "898a7878-6a5b-4d0f-a65e-2aaccc8ab9ef",
+                        "exec": [
+                          "// Test 1\r",
+                          "pm.test(\"Status code is 201\", function () {\r",
+                          "    pm.response.to.have.status(201);\r",
+                          "});\r",
+                          "\r",
+                          "var jsonData = JSON.parse(responseBody);\r",
+                          "postman.setEnvironmentVariable(\"dealId\", jsonData.id);\r",
+                          "\r",
+                          "    var jsonData =pm.response.json();\r",
+                          "pm.test(\"The deal status is active\", function(){\r",
+                          "pm.expect(jsonData.isDraft).to.eq(true);\r",
+                          "});\r",
+                          "\r",
+                          "\r",
+                          ""
+                        ],
+                        "type": "text/javascript"
+                      }
+                    },
+                    {
+                      "listen": "prerequest",
+                      "script": {
+                        "id": "111143ad-3d8d-4342-b4ce-da404d951ed3",
+                        "exec": [
+                          "",
+                          "",
+                          "pm.environment.set(\"randomDealName\", _.random(1, 1000) +\" \" + \"API deal\")",
+                          "pm.environment.set(\"randomCompanyName1\", _.random(1, 1000) +\" \" + \"API company\")",
+                          "pm.environment.set(\"randomCompanyName2\", _.random(1, 1000) +\" \" + \"API company\")",
+                          "pm.environment.set(\"contactsUnderTentName\", _.random(1, 1000) +\" \" + \"API contact name\")",
+                          "pm.environment.set(\"contactsUnderTentTitle\", _.random(1, 1000) +\" \" + \"API contact title\")",
+                          "pm.environment.set(\"restrictionName\", _.random(1, 1000) +\" \" + \"API  restriction\")",
+                          "",
+                          "",
+                          "",
+                          "const uuid = Math.random().toString(36).substring(2, 15) +",
+                          "        Math.random().toString(36).substring(2, 15);",
+                          "const randomEmail =  uuid + \"@emaill.com\";",
+                          "pm.environment.set(\"randomEmail\", randomEmail)",
+                          "",
+                          "var dateNow= new Date();pm.environment.set(\"randomDealDescription\", dateNow.toISOString() + \" \" + \"API deal description\")",
+                          "var startDate = (Date.now() + 86400000); pm.environment.set('startDate', new Date(startDate).toISOString())",
+                          "var completionDate = (Date.now() + 172800000); pm.environment.set('completionDate', new Date(completionDate).toISOString())",
+                          "var contactAddedDate = (Date.now() + 172800000); pm.environment.set('contactAddedDate', new Date(contactAddedDate).toISOString())",
+                          "var dataDestructionCompletedDate =  (Date.now() + 172800000); pm.environment.set('dataDestructionCompletedDate', new Date(dataDestructionCompletedDate).toISOString())",
+                          "var dataDestructionRequestedDate = (Date.now() + 86400000); pm.environment.set('dataDestructionRequestedDate', new Date(dataDestructionRequestedDate).toISOString())",
+                          "",
+                          "var ndaCompletedDate = (Date.now() + 1864000000); pm.environment.set('ndaCompletedDate', new Date(ndaCompletedDate).toISOString())",
+                          "var ndaRequestedDate = (Date.now() + 86400000); pm.environment.set('ndaRequestedDate', new Date(ndaRequestedDate).toISOString())",
+                          "var restrictionEndDate = (Date.now() + 86400000); pm.environment.set('restrictionEndDate', new Date(restrictionEndDate).toISOString())",
+                          "",
+                          "// pm.sendRequest('https://qa.platform.devacaalpha.com/api/control-room/v1/deals?$expand=restrictions,dealMembers,companies', function (err, res) {",
+                          "//         pm.expect(err).to.not.be.ok;",
+                          "//         pm.expect(res).to.have.property('code', 200);",
+                          "//         pm.expect(res).to.have.property('status', 'OK');",
+                          "//     });"
+                        ],
+                        "type": "text/javascript"
+                      }
+                    }
+                  ],
+                  "id": "c5ad7f39-eb3b-4756-90a1-8887185664e7",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"allEmployees\" : false,\r\n    \"employeeIds\": [\r\n        \"DC1EE009-525E-4E85-9B1B-356107F515C6\",\r\n        \"E39B693C-6808-432B-806D-45C09D2CBBC0\",\r\n        \"E4864753-47DD-4F95-893D-75E9D847E23E\",\r\n        \"052B36E0-3DCC-488A-8D8A-BDF326CFDFFF\",\r\n        \"7E3B6908-2971-4E64-A303-E04BAED7626C\",\r\n        \"980D61D4-7833-4161-9646-1E40063440D9\",\r\n        \"93D9D92B-8440-4816-AE19-91237A54184B\",\r\n        \"8D28AC82-0F7A-4AA3-BB94-871903CFBADE\",\r\n        \"7EEF9C20-5692-47AA-BE0F-DAB23A779A05\",\r\n        \"156AAC36-D236-4838-B3BC-7D2367C416AD\",\r\n        \"1E1F6E61-4155-4B64-BA71-027AC864C2CB\",\r\n        \"06F5D48D-F2B6-473D-A714-B270FD1E4752\",\r\n        \"7D6F6E0A-9A9F-471D-94CA-7DCA73E2081E\",\r\n        \"1A6EACBB-464A-4F14-AB19-827986D95B34\",\r\n        \"F7CCD54B-C2EF-4B4A-8C33-B3CFC4896F81\",\r\n        \"9F30CE55-406E-4DA8-ADBB-E7DE036F8B9C\"\r\n    ],\r\n    \"companyTypeIds\": [\r\n       \"470f046f-8b1b-4eb1-b238-cea664b18a6a\"\r\n    ],\r\n    \"webhookIntegrationIds\" : [\r\n        \"91fc6352-a4e9-4685-9d26-08d9e70d1bd4\"\r\n    ],\r\n    \"conflictType\": \"Deal\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "{{ApiBaseUrl}}/v1/deals/{{dealId}}/conflict-check\n"
+                  },
+                  "response": []
+                }
+              ],
+              "id": "86858bde-9758-4be5-bd81-6e866ad467da"
+            }
+          ],
           "id": "1a138821-f989-4ee2-a443-3c44cd593e4b"
         },
         {
