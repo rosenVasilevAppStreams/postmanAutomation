@@ -19512,7 +19512,7 @@
           "name": "Send conflict check webhook",
           "item": [
             {
-              "name": "post",
+              "name": "create a draft deal with all steps Copy",
               "item": [
                 {
                   "name": "expand all",
