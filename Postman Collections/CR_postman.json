@@ -19512,7 +19512,7 @@
           "name": "Send conflict check webhook",
           "item": [
             {
-              "name": "create a draft deal with all steps Copy",
+              "name": "post",
               "item": [
                 {
                   "name": "expand all",
@@ -19820,7 +19820,24 @@
                         }
                       }
                     },
-                    "url": "{{ApiBaseUrl}}/v1/deals/{{dealId}}/conflict-check\n"
+                    "url": {
+                      "raw": "{{ApiBaseUrl}}/v1/deals/:dealId/conflict-check\n",
+                      "host": [
+                        "{{ApiBaseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "deals",
+                        ":dealId",
+                        "conflict-check\n"
+                      ],
+                      "variable": [
+                        {
+                          "key": "dealId",
+                          "value": "ae3aa9bc-6641-41fc-7358-08d9d5955a35"
+                        }
+                      ]
+                    }
                   },
                   "response": []
                 },
