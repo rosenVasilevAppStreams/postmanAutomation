@@ -19823,6 +19823,113 @@
                     "url": "{{ApiBaseUrl}}/v1/deals/{{dealId}}/conflict-check\n"
                   },
                   "response": []
+                },
+                {
+                  "name": "Create a new deal Copy 2",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "id": "b78c928c-8a5e-41b4-9537-7671e4c9d0c4",
+                        "exec": [
+                          "// Test 1\r",
+                          "pm.test(\"Status code is 201\", function () {\r",
+                          "    pm.response.to.have.status(201);\r",
+                          "});\r",
+                          "\r",
+                          "var jsonData = JSON.parse(responseBody);\r",
+                          "postman.setEnvironmentVariable(\"dealId\", jsonData.id);\r",
+                          "\r",
+                          "    var jsonData =pm.response.json();\r",
+                          "pm.test(\"The deal status is active\", function(){\r",
+                          "pm.expect(jsonData.isDraft).to.eq(true);\r",
+                          "});\r",
+                          "\r",
+                          "\r",
+                          ""
+                        ],
+                        "type": "text/javascript"
+                      }
+                    },
+                    {
+                      "listen": "prerequest",
+                      "script": {
+                        "id": "da5a2204-1f39-4f04-8b16-24473f8efda5",
+                        "exec": [
+                          "",
+                          "",
+                          "pm.environment.set(\"randomDealName\", _.random(1, 1000) +\" \" + \"API deal\")",
+                          "pm.environment.set(\"randomCompanyName1\", _.random(1, 1000) +\" \" + \"API company\")",
+                          "pm.environment.set(\"randomCompanyName2\", _.random(1, 1000) +\" \" + \"API company\")",
+                          "pm.environment.set(\"contactsUnderTentName\", _.random(1, 1000) +\" \" + \"API contact name\")",
+                          "pm.environment.set(\"contactsUnderTentTitle\", _.random(1, 1000) +\" \" + \"API contact title\")",
+                          "pm.environment.set(\"restrictionName\", _.random(1, 1000) +\" \" + \"API  restriction\")",
+                          "",
+                          "",
+                          "",
+                          "const uuid = Math.random().toString(36).substring(2, 15) +",
+                          "        Math.random().toString(36).substring(2, 15);",
+                          "const randomEmail =  uuid + \"@emaill.com\";",
+                          "pm.environment.set(\"randomEmail\", randomEmail)",
+                          "",
+                          "var dateNow= new Date();pm.environment.set(\"randomDealDescription\", dateNow.toISOString() + \" \" + \"API deal description\")",
+                          "var startDate = (Date.now() + 86400000); pm.environment.set('startDate', new Date(startDate).toISOString())",
+                          "var completionDate = (Date.now() + 172800000); pm.environment.set('completionDate', new Date(completionDate).toISOString())",
+                          "var contactAddedDate = (Date.now() + 172800000); pm.environment.set('contactAddedDate', new Date(contactAddedDate).toISOString())",
+                          "var dataDestructionCompletedDate =  (Date.now() + 172800000); pm.environment.set('dataDestructionCompletedDate', new Date(dataDestructionCompletedDate).toISOString())",
+                          "var dataDestructionRequestedDate = (Date.now() + 86400000); pm.environment.set('dataDestructionRequestedDate', new Date(dataDestructionRequestedDate).toISOString())",
+                          "",
+                          "var ndaCompletedDate = (Date.now() + 1864000000); pm.environment.set('ndaCompletedDate', new Date(ndaCompletedDate).toISOString())",
+                          "var ndaRequestedDate = (Date.now() + 86400000); pm.environment.set('ndaRequestedDate', new Date(ndaRequestedDate).toISOString())",
+                          "var restrictionEndDate = (Date.now() + 86400000); pm.environment.set('restrictionEndDate', new Date(restrictionEndDate).toISOString())",
+                          "",
+                          "// pm.sendRequest('https://qa.platform.devacaalpha.com/api/control-room/v1/deals?$expand=restrictions,dealMembers,companies', function (err, res) {",
+                          "//         pm.expect(err).to.not.be.ok;",
+                          "//         pm.expect(res).to.have.property('code', 200);",
+                          "//         pm.expect(res).to.have.property('status', 'OK');",
+                          "//     });"
+                        ],
+                        "type": "text/javascript"
+                      }
+                    }
+                  ],
+                  "id": "df6b7dee-2308-4755-a6e3-3e4640d59d5e",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"allEmployees\" : false,\r\n    \"employeeIds\": [\r\n        \"DC1EE009-525E-4E85-9B1B-356107F515C6\",\r\n        \"E39B693C-6808-432B-806D-45C09D2CBBC0\",\r\n        \"E4864753-47DD-4F95-893D-75E9D847E23E\",\r\n        \"052B36E0-3DCC-488A-8D8A-BDF326CFDFFF\",\r\n        \"7E3B6908-2971-4E64-A303-E04BAED7626C\",\r\n        \"980D61D4-7833-4161-9646-1E40063440D9\",\r\n        \"93D9D92B-8440-4816-AE19-91237A54184B\",\r\n        \"8D28AC82-0F7A-4AA3-BB94-871903CFBADE\",\r\n        \"7EEF9C20-5692-47AA-BE0F-DAB23A779A05\",\r\n        \"156AAC36-D236-4838-B3BC-7D2367C416AD\",\r\n        \"1E1F6E61-4155-4B64-BA71-027AC864C2CB\",\r\n        \"06F5D48D-F2B6-473D-A714-B270FD1E4752\",\r\n        \"7D6F6E0A-9A9F-471D-94CA-7DCA73E2081E\",\r\n        \"1A6EACBB-464A-4F14-AB19-827986D95B34\",\r\n        \"F7CCD54B-C2EF-4B4A-8C33-B3CFC4896F81\",\r\n        \"9F30CE55-406E-4DA8-ADBB-E7DE036F8B9C\"\r\n    ],\r\n    \"companyTypeIds\": [\r\n       \"470f046f-8b1b-4eb1-b238-cea664b18a6a\"\r\n    ],\r\n    \"webhookIntegrationIds\" : [\r\n        \"91fc6352-a4e9-4685-9d26-08d9e70d1bd4\"\r\n    ],\r\n    \"conflictType\": \"Deal\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{ApiBaseUrl}}/v1/deals/:dealId/conflict-check\n",
+                      "host": [
+                        "{{ApiBaseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "deals",
+                        ":dealId",
+                        "conflict-check\n"
+                      ],
+                      "variable": [
+                        {
+                          "id": "f757c98e-35c0-4b7f-b93d-5a40f08e69f4",
+                          "key": "dealId",
+                          "value": "ae3aa9bc-6641-41fc-7358-08d9d5955a35"
+                        }
+                      ]
+                    }
+                  },
+                  "response": []
                 }
               ],
               "id": "86858bde-9758-4be5-bd81-6e866ad467da"
