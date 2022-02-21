@@ -30729,13 +30729,13 @@
                         "method": "GET",
                         "header": [],
                         "url": {
-                          "raw": "{{ApiBaseUrl}}/v3/integration-restrictions?$expand=employeeLevelRestrictions",
+                          "raw": "{{ApiBaseUrl}}/v1/integration-restriction-lists?$expand=employeeLevelRestrictions",
                           "host": [
                             "{{ApiBaseUrl}}"
                           ],
                           "path": [
-                            "v3",
-                            "integration-restrictions"
+                            "v1",
+                            "integration-restriction-lists"
                           ],
                           "query": [
                             {
