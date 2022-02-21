@@ -27121,7 +27121,7 @@
                       "request": {
                         "method": "DELETE",
                         "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/company-types/{{defaultType}}"
+                        "url": "{{ApiBaseUrl}}/v3/company-types/{{defaultType}}"
                       },
                       "response": []
                     }
