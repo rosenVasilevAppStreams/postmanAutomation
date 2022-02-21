@@ -30677,7 +30677,7 @@
                   "name": "integration-restrictions",
                   "item": [
                     {
-                      "name": "getAlл",
+                      "name": "getAll",
                       "event": [
                         {
                           "listen": "test",
