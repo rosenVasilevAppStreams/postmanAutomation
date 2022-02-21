@@ -41707,6 +41707,7 @@
                         {
                           "listen": "test",
                           "script": {
+                            "id": "5bca20b8-058a-4697-a3b9-5302754dbae5",
                             "exec": [
                               "// Test 1\r",
                               "pm.test(\"Status code is 200\", function () {\r",
@@ -41737,8 +41738,7 @@
                               "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
                               "})"
                             ],
-                            "type": "text/javascript",
-                            "id": "5bca20b8-058a-4697-a3b9-5302754dbae5"
+                            "type": "text/javascript"
                           }
                         }
                       ],
@@ -41750,12 +41750,12 @@
                         "method": "GET",
                         "header": [],
                         "url": {
-                          "raw": "{{ApiBaseUrl}}/v1/screening-lists?$expand=Records($expand=Deal)",
+                          "raw": "{{ApiBaseUrl}}/v3/screening-lists?$expand=Records($expand=Deal)",
                           "host": [
                             "{{ApiBaseUrl}}"
                           ],
                           "path": [
-                            "v1",
+                            "v3",
                             "screening-lists"
                           ],
                           "query": [
