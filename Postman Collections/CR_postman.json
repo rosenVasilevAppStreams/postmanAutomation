@@ -26087,7 +26087,7 @@
                       "request": {
                         "method": "GET",
                         "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/company-types/(123456789)"
+                        "url": "{{ApiBaseUrl}}/v3/company-types/(123456789)"
                       },
                       "response": []
                     }
