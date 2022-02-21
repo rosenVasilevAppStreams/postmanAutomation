@@ -30624,7 +30624,7 @@
                       "response": []
                     },
                     {
-                      "name": "put",
+                      "name": "patch",
                       "id": "1d1d1c6a-4fb9-4031-a60e-6ef498071974",
                       "protocolProfileBehavior": {
                         "disableBodyPruning": true
