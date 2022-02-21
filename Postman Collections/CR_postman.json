@@ -30634,7 +30634,7 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\r\n    \"name\": \"UPDATED integration\",\r\n    \"webhookUrl\": \"https://a.com\",\r\n    \"id\": \"{{webhookId}}\",\r\n    \"responseTimeOutMinutes\": 0,\r\n    \"integrationRestrictionLists\": [\r\n        {\r\n            \"name\": \"a-test\",\r\n            \"notes\": \"1\"\r\n        }\r\n    ],\r\n    \r\n    \"webhooks\": [\r\n        {\r\n            \"id\" : \"{{Id}}\",\r\n            \"webhookDefinitionId\": \"{{definitionId}}\",\r\n            \"webhookSubscriptionId\": \"{{webhookId}}\"\r\n        }\r\n    ]\r\n}",
+                          "raw": "{\r\n    \"id\": \"{{webhookId}}\",\r\n    \"name\": \"Test АGP-6135\",\r\n    \"webhookUrl\": \"https://qa.coe.devacaalpha.com/api/fd/v1/control-room/webhook-process\",\r\n    \"emails\": \"asdsw@asdas.com, asldkjasdklas@abv.bg\",\r\n    \"status\": \"Active\",\r\n    \"responseTimeOutMinutes\": 1\r\n}",
                           "options": {
                             "raw": {
                               "language": "json"
