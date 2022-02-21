@@ -27037,7 +27037,7 @@
                       "request": {
                         "method": "DELETE",
                         "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/company-types/{{companyTypeId}}"
+                        "url": "{{ApiBaseUrl}}/v3/company-types/{{companyTypeId}}"
                       },
                       "response": []
                     }
@@ -27087,7 +27087,7 @@
                       "request": {
                         "method": "GET",
                         "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/company-types"
+                        "url": "{{ApiBaseUrl}}/v3/company-types"
                       },
                       "response": []
                     },
@@ -27121,7 +27121,7 @@
                       "request": {
                         "method": "DELETE",
                         "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/company-types/{{defaultType}}"
+                        "url": "{{ApiBaseUrl}}/v3/company-types/{{defaultType}}"
                       },
                       "response": []
                     }
@@ -27161,7 +27161,7 @@
                       "request": {
                         "method": "DELETE",
                         "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/company-types/(123456789)"
+                        "url": "{{ApiBaseUrl}}/v3/company-types/(123456789)"
                       },
                       "response": []
                     }
