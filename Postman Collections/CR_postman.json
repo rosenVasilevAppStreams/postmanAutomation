@@ -19809,6 +19809,12 @@
                     "disableBodyPruning": true
                   },
                   "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": {
+                        "token": "{{complianceToken1}}"
+                      }
+                    },
                     "method": "POST",
                     "header": [],
                     "body": {
@@ -19834,7 +19840,7 @@
                       "variable": [
                         {
                           "key": "dealId",
-                          "value": "fde97b04-bd68-47d6-85d1-08d9f509c92e"
+                          "value": "05644973-24d7-4d3b-7026-08d951915f5d"
                         }
                       ]
                     }
