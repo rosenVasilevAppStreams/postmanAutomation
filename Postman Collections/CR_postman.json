@@ -26507,225 +26507,6 @@
               "id": "f6538001-563e-42ab-a73d-54f41c410dfb"
             },
             {
-              "name": "delete",
-              "item": [
-                {
-                  "name": "delete custom company type",
-                  "item": [
-                    {
-                      "name": "Create active custom company type",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "id": "1a6d03bf-ca34-4a29-a3c6-60b0ea02ea46",
-                            "exec": [
-                              "// Test 1\r",
-                              "pm.test(\"Status code is 201\", function () {\r",
-                              "    pm.response.to.have.status(201);\r",
-                              "});\r",
-                              "\r",
-                              "\r",
-                              "\r",
-                              "var jsonData = JSON.parse(responseBody);\r",
-                              "postman.setEnvironmentVariable(\"companyTypeId\", jsonData.id);\r",
-                              "\r",
-                              "pm.test(\"The status is active\", function(){\r",
-                              "    var jsonData =pm.response.json();\r",
-                              "pm.expect(jsonData.status).to.eq('active');\r",
-                              "});\r",
-                              "\r",
-                              ""
-                            ],
-                            "type": "text/javascript"
-                          }
-                        }
-                      ],
-                      "id": "e5f87aa7-5b2d-47f6-ac98-935be465675e",
-                      "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                      },
-                      "request": {
-                        "method": "POST",
-                        "header": [],
-                        "body": {
-                          "mode": "raw",
-                          "raw": "{\r\n    \"name\": \"ControlRoom CompanyType\",\r\n    \"status\": \"Active\",\r\n    \"isSystem\": false\r\n}",
-                          "options": {
-                            "raw": {
-                              "language": "json"
-                            }
-                          }
-                        },
-                        "url": "{{ApiBaseUrl}}/v1/company-types"
-                      },
-                      "response": []
-                    },
-                    {
-                      "name": "delete",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "id": "cc884da9-23df-478c-9e26-2aa6dd8f6c54",
-                            "exec": [
-                              "// Test 1\r",
-                              "pm.test(\"Status code is 204 or 404\", function () {\r",
-                              "    if (pm.response.code == 204) {\r",
-                              "        pm.response.to.have.status(204);\r",
-                              "    }\r",
-                              "    else {\r",
-                              "        pm.response.to.have.status(404);\r",
-                              "    }\r",
-                              "});\r",
-                              ""
-                            ],
-                            "type": "text/javascript"
-                          }
-                        }
-                      ],
-                      "id": "c6137460-ffdf-4880-b412-bce0fa888660",
-                      "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                      },
-                      "request": {
-                        "method": "DELETE",
-                        "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/company-types/{{companyTypeId}}"
-                      },
-                      "response": []
-                    }
-                  ],
-                  "id": "073dc64a-4bf7-456b-bfe6-e147a51e9668"
-                },
-                {
-                  "name": "delete default company type",
-                  "item": [
-                    {
-                      "name": "list the default categories Copy",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "id": "b644a649-8db2-4a35-9c10-8e3c8f671d10",
-                            "exec": [
-                              "var responseJson = JSON.parse(responseBody);\r",
-                              "\r",
-                              "var a=[];\r",
-                              "var list = (responseJson.value).length;\r",
-                              "for (var i = 0; i < list; i++) \r",
-                              "                  {\r",
-                              "                   var counter = responseJson.value[i];\r",
-                              "                    if (counter.isSystem === true){\r",
-                              "                        a.push(counter)\r",
-                              "                    }\r",
-                              "                    \r",
-                              "                   }\r",
-                              "\r",
-                              "\r",
-                              " \r",
-                              " for(var i =0;  i < a.length; i++){\r",
-                              "        \r",
-                              "         postman.setEnvironmentVariable(\"defaultType\", a[i].id);\r",
-                              "         console.log(a[i])\r",
-                              "    }"
-                            ],
-                            "type": "text/javascript"
-                          }
-                        }
-                      ],
-                      "id": "763087c8-9908-4353-8e63-2ede29b2733a",
-                      "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                      },
-                      "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/company-types"
-                      },
-                      "response": []
-                    },
-                    {
-                      "name": "delete",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "id": "f04ea69b-51a4-4ba6-93d7-6dff58270591",
-                            "exec": [
-                              "// Test 1\r",
-                              "pm.test(\"Status code is 403 or 404\", function () {\r",
-                              "    if (pm.response.code == 403) {\r",
-                              "        pm.response.to.have.status(403);\r",
-                              "    }\r",
-                              "    else {\r",
-                              "        pm.response.to.have.status(404);\r",
-                              "    }\r",
-                              "});\r",
-                              ""
-                            ],
-                            "type": "text/javascript"
-                          }
-                        }
-                      ],
-                      "id": "10ae2a27-7ef4-463b-802f-e08fce4f5289",
-                      "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                      },
-                      "request": {
-                        "method": "DELETE",
-                        "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/company-types/{{defaultType}}"
-                      },
-                      "response": []
-                    }
-                  ],
-                  "id": "f9dc4acc-f2a1-4c9d-bdb2-c4ec13e58fe2"
-                },
-                {
-                  "name": "delete non existent company type",
-                  "item": [
-                    {
-                      "name": "delete",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "id": "7d8d8299-cd9a-4da4-abca-45e66974a32b",
-                            "exec": [
-                              "// Test 1\r",
-                              "pm.test(\"Status code is 403 or 404\", function () {\r",
-                              "    if (pm.response.code == 403) {\r",
-                              "        pm.response.to.have.status(403);\r",
-                              "    }\r",
-                              "    else {\r",
-                              "        pm.response.to.have.status(404);\r",
-                              "    }\r",
-                              "});\r",
-                              ""
-                            ],
-                            "type": "text/javascript"
-                          }
-                        }
-                      ],
-                      "id": "c1671037-da54-4daf-937f-b58662a763fb",
-                      "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                      },
-                      "request": {
-                        "method": "DELETE",
-                        "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/company-types/(123456789)"
-                      },
-                      "response": []
-                    }
-                  ],
-                  "id": "47b7576c-4ae2-4f03-aeb9-bad502ebc8d0"
-                }
-              ],
-              "id": "ded43387-bf3e-4b61-9c36-a8ab9dc29e35"
-            },
-            {
               "name": "patch",
               "item": [
                 {
@@ -27170,6 +26951,225 @@
                 }
               ],
               "id": "a38492a5-ac33-4d0b-8554-696761e4bf56"
+            },
+            {
+              "name": "delete",
+              "item": [
+                {
+                  "name": "delete custom company type",
+                  "item": [
+                    {
+                      "name": "Create active custom company type",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "1a6d03bf-ca34-4a29-a3c6-60b0ea02ea46",
+                            "exec": [
+                              "// Test 1\r",
+                              "pm.test(\"Status code is 201\", function () {\r",
+                              "    pm.response.to.have.status(201);\r",
+                              "});\r",
+                              "\r",
+                              "\r",
+                              "\r",
+                              "var jsonData = JSON.parse(responseBody);\r",
+                              "postman.setEnvironmentVariable(\"companyTypeId\", jsonData.id);\r",
+                              "\r",
+                              "pm.test(\"The status is active\", function(){\r",
+                              "    var jsonData =pm.response.json();\r",
+                              "pm.expect(jsonData.status).to.eq('active');\r",
+                              "});\r",
+                              "\r",
+                              ""
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "id": "e5f87aa7-5b2d-47f6-ac98-935be465675e",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\r\n    \"name\": \"ControlRoom CompanyType\",\r\n    \"status\": \"Active\",\r\n    \"isSystem\": false\r\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": "{{ApiBaseUrl}}/v1/company-types"
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "delete",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "cc884da9-23df-478c-9e26-2aa6dd8f6c54",
+                            "exec": [
+                              "// Test 1\r",
+                              "pm.test(\"Status code is 204 or 404\", function () {\r",
+                              "    if (pm.response.code == 204) {\r",
+                              "        pm.response.to.have.status(204);\r",
+                              "    }\r",
+                              "    else {\r",
+                              "        pm.response.to.have.status(404);\r",
+                              "    }\r",
+                              "});\r",
+                              ""
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "id": "c6137460-ffdf-4880-b412-bce0fa888660",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": "{{ApiBaseUrl}}/v1/company-types/{{companyTypeId}}"
+                      },
+                      "response": []
+                    }
+                  ],
+                  "id": "073dc64a-4bf7-456b-bfe6-e147a51e9668"
+                },
+                {
+                  "name": "delete default company type",
+                  "item": [
+                    {
+                      "name": "list the default categories Copy",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "b644a649-8db2-4a35-9c10-8e3c8f671d10",
+                            "exec": [
+                              "var responseJson = JSON.parse(responseBody);\r",
+                              "\r",
+                              "var a=[];\r",
+                              "var list = (responseJson.value).length;\r",
+                              "for (var i = 0; i < list; i++) \r",
+                              "                  {\r",
+                              "                   var counter = responseJson.value[i];\r",
+                              "                    if (counter.isSystem === true){\r",
+                              "                        a.push(counter)\r",
+                              "                    }\r",
+                              "                    \r",
+                              "                   }\r",
+                              "\r",
+                              "\r",
+                              " \r",
+                              " for(var i =0;  i < a.length; i++){\r",
+                              "        \r",
+                              "         postman.setEnvironmentVariable(\"defaultType\", a[i].id);\r",
+                              "         console.log(a[i])\r",
+                              "    }"
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "id": "763087c8-9908-4353-8e63-2ede29b2733a",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": "{{ApiBaseUrl}}/v1/company-types"
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "delete",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "f04ea69b-51a4-4ba6-93d7-6dff58270591",
+                            "exec": [
+                              "// Test 1\r",
+                              "pm.test(\"Status code is 403 or 404\", function () {\r",
+                              "    if (pm.response.code == 403) {\r",
+                              "        pm.response.to.have.status(403);\r",
+                              "    }\r",
+                              "    else {\r",
+                              "        pm.response.to.have.status(404);\r",
+                              "    }\r",
+                              "});\r",
+                              ""
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "id": "10ae2a27-7ef4-463b-802f-e08fce4f5289",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": "{{ApiBaseUrl}}/v1/company-types/{{defaultType}}"
+                      },
+                      "response": []
+                    }
+                  ],
+                  "id": "f9dc4acc-f2a1-4c9d-bdb2-c4ec13e58fe2"
+                },
+                {
+                  "name": "delete non existent company type",
+                  "item": [
+                    {
+                      "name": "delete",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "7d8d8299-cd9a-4da4-abca-45e66974a32b",
+                            "exec": [
+                              "// Test 1\r",
+                              "pm.test(\"Status code is 403 or 404\", function () {\r",
+                              "    if (pm.response.code == 403) {\r",
+                              "        pm.response.to.have.status(403);\r",
+                              "    }\r",
+                              "    else {\r",
+                              "        pm.response.to.have.status(404);\r",
+                              "    }\r",
+                              "});\r",
+                              ""
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "id": "c1671037-da54-4daf-937f-b58662a763fb",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": "{{ApiBaseUrl}}/v1/company-types/(123456789)"
+                      },
+                      "response": []
+                    }
+                  ],
+                  "id": "47b7576c-4ae2-4f03-aeb9-bad502ebc8d0"
+                }
+              ],
+              "id": "ded43387-bf3e-4b61-9c36-a8ab9dc29e35"
             },
             {
               "name": "List all company types",
