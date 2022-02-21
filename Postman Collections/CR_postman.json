@@ -45417,24 +45417,7 @@
               "request": {
                 "method": "GET",
                 "header": [],
-                "url": {
-                  "raw": "{{ApiBaseUrl}}/v3/webhook-definitions/:webhookId",
-                  "host": [
-                    "{{ApiBaseUrl}}"
-                  ],
-                  "path": [
-                    "v3",
-                    "webhook-definitions",
-                    ":webhookId"
-                  ],
-                  "variable": [
-                    {
-                      "id": "24bc5ec4-36da-4741-9267-1207f0eaba3e",
-                      "key": "webhookId",
-                      "value": "eca6d968-e4a0-450d-64d7-08d9aa93ef5a"
-                    }
-                  ]
-                }
+                "url": "{{ApiBaseUrl}}/v3/webhook-definitions"
               },
               "response": []
             },
