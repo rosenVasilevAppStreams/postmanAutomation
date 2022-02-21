@@ -26838,7 +26838,7 @@
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v1/company-types/(1234567)"
+                        "url": "{{ApiBaseUrl}}/v3/company-types/(1234567)"
                       },
                       "response": []
                     }
