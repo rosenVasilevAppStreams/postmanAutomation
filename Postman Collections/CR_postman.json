@@ -27233,12 +27233,12 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "{{ApiBaseUrl}}/v3/company-types?$expand=Companies",
+                  "raw": "{{ApiBaseUrl}}/v1/company-types?$expand=Companies",
                   "host": [
                     "{{ApiBaseUrl}}"
                   ],
                   "path": [
-                    "v3",
+                    "v1",
                     "company-types"
                   ],
                   "query": [
