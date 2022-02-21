@@ -30746,6 +30746,77 @@
                         }
                       },
                       "response": []
+                    },
+                    {
+                      "name": "getAll Copy",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "916ead72-4b7e-424b-8f8b-b8227d72d32f",
+                            "exec": [
+                              "// Test 1\r",
+                              "pm.test(\"Status code is 200\", function () {\r",
+                              "    pm.response.to.have.status(200);\r",
+                              "});\r",
+                              "\r",
+                              "var schema = {\r",
+                              "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                              "  \"type\": \"object\",\r",
+                              "  \"properties\": {\r",
+                              "    \"@odata.context\": {\r",
+                              "      \"type\": \"string\"\r",
+                              "    },\r",
+                              "    \"value\": {\r",
+                              "      \"type\": \"array\",\r",
+                              "      \"items\": {}\r",
+                              "    }\r",
+                              "  },\r",
+                              "  \"required\": [\r",
+                              "    \"@odata.context\",\r",
+                              "    \"value\"\r",
+                              "  ]\r",
+                              "}\r",
+                              "\r",
+                              "// Test 2\r",
+                              "pm.test(\"Schema is valid\", function(){\r",
+                              "    var json= pm.response.json()\r",
+                              "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+                              "})\r",
+                              "\r",
+                              "\r",
+                              "var jsonData = JSON.parse(responseBody);\r",
+                              "postman.setEnvironmentVariable(\"integrationRestrictionListId\", jsonData.value[0].id);"
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "id": "2d785071-91ad-4955-8796-c335ab55fa6c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{ApiBaseUrl}}/v3/integration-restrictions?$expand=employeeLevelRestrictions",
+                          "host": [
+                            "{{ApiBaseUrl}}"
+                          ],
+                          "path": [
+                            "v3",
+                            "integration-restrictions"
+                          ],
+                          "query": [
+                            {
+                              "key": "$expand",
+                              "value": "employeeLevelRestrictions"
+                            }
+                          ]
+                        }
+                      },
+                      "response": []
                     }
                   ],
                   "id": "eb72ceff-ac75-478c-b38e-2a82399e5ca4"
