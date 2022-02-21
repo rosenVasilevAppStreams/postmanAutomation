@@ -26012,14 +26012,14 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\r\n    \"name\": \"ControlRoom CompanyType API \",\r\n    \"status\": \"Active\",\r\n    \"isSystem\": false\r\n}",
+                          "raw": "{\r\n    \"name\": \"ControlRoom CompanyType API V3\",\r\n    \"status\": \"Active\",\r\n    \"isSystem\": false\r\n}",
                           "options": {
                             "raw": {
                               "language": "json"
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v1/company-types"
+                        "url": "{{ApiBaseUrl}}/v3/company-types"
                       },
                       "response": []
                     },
@@ -26049,7 +26049,7 @@
                       "request": {
                         "method": "GET",
                         "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/company-types/{{companyTypeId}}"
+                        "url": "{{ApiBaseUrl}}/v3/company-types/{{companyTypeId}}"
                       },
                       "response": []
                     }
