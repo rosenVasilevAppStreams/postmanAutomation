@@ -25263,7 +25263,7 @@
                       "request": {
                         "method": "DELETE",
                         "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/deal-categories/{{defaultCat}}"
+                        "url": "{{ApiBaseUrl}}/v3/deal-categories/{{defaultCat}}"
                       },
                       "response": []
                     }
