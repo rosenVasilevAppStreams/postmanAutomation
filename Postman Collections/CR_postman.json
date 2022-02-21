@@ -19834,7 +19834,7 @@
                       "variable": [
                         {
                           "key": "dealId",
-                          "value": "67d02a51-503a-43f1-c29d-08d9f2c53786"
+                          "value": "6dabed28-9211-4fe4-85cc-08d9f509c92e"
                         }
                       ]
                     }
@@ -19915,7 +19915,7 @@
                     "disableBodyPruning": true
                   },
                   "request": {
-                    "method": "POST",
+                    "method": "GET",
                     "header": [],
                     "body": {
                       "mode": "raw",
@@ -19927,7 +19927,7 @@
                       }
                     },
                     "url": {
-                      "raw": "{{ApiBaseUrl}}/v1/deals/:dealId/conflict-check\n",
+                      "raw": "{{ApiBaseUrl}}/v1/deals/:dealId/conflict-state",
                       "host": [
                         "{{ApiBaseUrl}}"
                       ],
@@ -19935,13 +19935,12 @@
                         "v1",
                         "deals",
                         ":dealId",
-                        "conflict-check\n"
+                        "conflict-state"
                       ],
                       "variable": [
                         {
-                          "id": "f757c98e-35c0-4b7f-b93d-5a40f08e69f4",
                           "key": "dealId",
-                          "value": "ae3aa9bc-6641-41fc-7358-08d9d5955a35"
+                          "value": "67d02a51-503a-43f1-c29d-08d9f2c53786a"
                         }
                       ]
                     }
