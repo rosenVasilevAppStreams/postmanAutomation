@@ -19809,6 +19809,12 @@
                     "disableBodyPruning": true
                   },
                   "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": {
+                        "token": "{{complianceToken1}}"
+                      }
+                    },
                     "method": "POST",
                     "header": [],
                     "body": {
@@ -19820,24 +19826,7 @@
                         }
                       }
                     },
-                    "url": {
-                      "raw": "{{ApiBaseUrl}}/v1/deals/:dealId/conflict-check",
-                      "host": [
-                        "{{ApiBaseUrl}}"
-                      ],
-                      "path": [
-                        "v1",
-                        "deals",
-                        ":dealId",
-                        "conflict-check"
-                      ],
-                      "variable": [
-                        {
-                          "key": "dealId",
-                          "value": "6dabed28-9211-4fe4-85cc-08d9f509c92e"
-                        }
-                      ]
-                    }
+                    "url": "{{ApiBaseUrl}}/v1/deals/{{dealId}}/conflict-check"
                   },
                   "response": []
                 },
@@ -25852,7 +25841,7 @@
                       "request": {
                         "method": "GET",
                         "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/deal-categories"
+                        "url": "{{ApiBaseUrl}}/v3/deal-categories"
                       },
                       "response": []
                     },
@@ -25888,7 +25877,7 @@
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v1/deal-categories/{{defaultDealCat}}"
+                        "url": "{{ApiBaseUrl}}/v3/deal-categories/{{defaultDealCat}}"
                       },
                       "response": []
                     }
@@ -25908,12 +25897,12 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "{{ApiBaseUrl}}/v1/deal-categories?$expand=Deals",
+                  "raw": "{{ApiBaseUrl}}/v3/deal-categories?$expand=Deals",
                   "host": [
                     "{{ApiBaseUrl}}"
                   ],
                   "path": [
-                    "v1",
+                    "v3",
                     "deal-categories"
                   ],
                   "query": [
