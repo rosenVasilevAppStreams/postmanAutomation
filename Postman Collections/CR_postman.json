@@ -30966,7 +30966,7 @@
                         "disableBodyPruning": true
                       },
                       "request": {
-                        "method": "PUT",
+                        "method": "PATCH",
                         "header": [],
                         "body": {
                           "mode": "raw",
