@@ -29799,7 +29799,7 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\r\n    \"name\": \"webhook test API\",\r\n    \"status\": \"Active\",\r\n    \"responseTimeOutMinutes\": 60,\r\n    \"webhookUrl\": \"https://a.com\",\r\n    \"integrationType\": \"External\",\r\n    \"emails\": \"rosen@rosen.rosen\",\r\n    \"integrationRestrictionLists\": [\r\n        \r\n    ],\r\n    \"webhooks\": [\r\n        {\r\n            \"webhookDefinitionId\": \"37575620-7f48-ec11-ab22-0eafc1b4db39\"\r\n            \r\n        }\r\n    ]\r\n}",
+                          "raw": "{\r\n    \"name\": \"webhook test API\",\r\n    \"status\": \"Active\",\r\n    \"responseTimeOutMinutes\": 60,\r\n    \"webhookUrl\": \"https://a.com\",\r\n    \"integrationType\": \"External\",\r\n    \"emails\": \"rosen@rosen.rosen\",\r\n    \"integrationRestrictionLists\": [\r\n        {\r\n            \"name\": \"a-test\",\r\n            \"notes\": \"1\"\r\n        }\r\n        \r\n    ],\r\n    \"webhooks\": [\r\n        {\r\n            \"webhookDefinitionId\": \"37575620-7f48-ec11-ab22-0eafc1b4db39\"\r\n            \r\n        }\r\n    ]\r\n}",
                           "options": {
                             "raw": {
                               "language": "json"
