@@ -24561,7 +24561,7 @@
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v1/deal-categories"
+                        "url": "{{ApiBaseUrl}}/v3/deal-categories"
                       },
                       "response": []
                     },
@@ -24694,7 +24694,7 @@
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v1/deal-categories"
+                        "url": "{{ApiBaseUrl}}/v3/deal-categories"
                       },
                       "response": []
                     },
@@ -24902,7 +24902,7 @@
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v1/deal-categories"
+                        "url": "{{ApiBaseUrl}}/v3/deal-categories"
                       },
                       "response": []
                     }
@@ -25057,7 +25057,7 @@
                         "auth": {
                           "type": "bearer",
                           "bearer": {
-                            "token": "{{complianceUserToken}}"
+                            "token": "{{complianceToken1}}"
                           }
                         },
                         "method": "POST",
