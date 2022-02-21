@@ -26482,14 +26482,14 @@
                         "auth": {
                           "type": "bearer",
                           "bearer": {
-                            "token": "{{complianceUserToken}}"
+                            "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJqdGkiOiIyYjRlZmJiMC05NGEyLTQ5NjQtOTc1NC1jNTA4MDNiM2U3NzAiLCJpYXQiOjE2NDU0Mjk1NjksImV4cCI6MTY0NTQ3Mjc2OSwiVXNlciI6IjcxOTAiLCJTdGF5TG9nZ2VkSW4iOiJGYWxzZSIsIklzU3VwcG9ydCI6IkZhbHNlIiwiSXNSZXZpZXdBZG1pbiI6IkZhbHNlIiwiSXNQb3J0Zm9saW9PdmVyc2lnaHRBZG1pbiI6IkZhbHNlIiwiVG9rZW5UeXBlIjoiQXBwbGljYXRpb24iLCJVc2VyR3VpZCI6ImUzOWI2OTNjLTY4MDgtNDMyYi04MDZkLTQ1YzA5ZDJjYmJjMCIsIkNsaWVudCI6IjMzOTYiLCJDbGllbnRHdWlkIjoiMGY2YTEwMDItZGFkYi00OWNhLWIzMDItMTQxNzU4MjY0NGUyIiwic2NvcGUiOlsiRkM3MDc5RTktNTQ0Qy00RDNCLTlFMTUtN0ZGRkI4MDYwMEJDIiwiNUI0QTQ5QTAtMzk3MS00NDM3LTk1REYtM0IzRkE0RDJENjA4IiwiNUI0QTQ5QTAtMzk3MS00NDM3LTk1REYtM0IzRkE0RDJENjA4IiwiMjk4ZmMwMGUtMjQ4Ny00ODNhLWI1ODYtNThmYjA3ZjU1ZDc0IiwiMjk4ZmMwMGUtMjQ4Ny00ODNhLWI1ODYtNThmYjA3ZjU1ZDc0IiwiQTU4OTE2QjItNTYxRi00MTg5LTgyRjYtMkUxOEQ2RTVBODYzIiwiOTc0NzIzMjMtNTQ3Ni00NDAwLUIzQUUtRjkxNkM1Njg1NUM5IiwiNzlDMDk5QzItMTBDOS00MkQ2LTk4RTYtOTdBQUUyRjgxMTA0IiwiQ0JEMThDMkQtREI3Mi00RDY1LUE5NTUtNkNEMDFGQTkyNTE5IiwiNjlERjk0NUUtQzZERi00MjBFLTlBRkMtNTA0RjhCMTkyNTcxIiwiNThFQ0NDQ0UtN0VEOC00MzlFLUI3NzAtODY2QjhGMjgzQkJBIiwiQzM0RDFDMzUtMzQ3NC00RUY0LUJCRTAtMzg2RTEwRUI4QTc1Il0sImNsaWVudC11c2VyLXByb2R1Y3QtZGVsdGEiOlsiOTREOEVDMzAtNjUwRi00QUIxLUEzMzYtMDhEQTkxMkE2NzVEIiwiMzNCRTMzMzktOTQ0MC00MkExLUEwQTQtOERBQTEzNTM5QUNFIiwiMjY1MDIyM0YtNUMyQS00NkNGLTg3M0QtNzEyMzZGQTEzNzIwIiwiOTREOEVDMzAtNjUwRi00QUIxLUEzMzYtMDhEQTkxMkE2NzVEIl0sIklzVXNlck1hbmFnZXIiOiJGYWxzZSIsIm5iZiI6MTY0NTQyOTU2OSwiaXNzIjoiQ29tcGxpYW5jZUFscGhhIiwiYXVkIjoiQ29tcGxpYW5jZUFscGhhIn0.aAnZWMpUy3RjogidNz9XcloGrY-Aj25BsqZkgWz1-05ypTm0PdTxAHqo1iX6HZARZA2f774mPMqYDWEgtQyxkQ"
                           }
                         },
                         "method": "POST",
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\r\n   \r\n    \"status\": \"Active\",\r\n    \"isSystem\": false\r\n}",
+                          "raw": "{\r\n   \"name\": \"BU\",\r\n    \"status\": \"Active\",\r\n    \"isSystem\": false\r\n}",
                           "options": {
                             "raw": {
                               "language": "json"
