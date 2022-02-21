@@ -40865,12 +40865,12 @@
                         "method": "GET",
                         "header": [],
                         "url": {
-                          "raw": "{{ApiBaseUrl}}/v1/screening-lists?$expand=Records($expand=Deal)",
+                          "raw": "{{ApiBaseUrl}}/v3/screening-lists?$expand=Records($expand=Deal)",
                           "host": [
                             "{{ApiBaseUrl}}"
                           ],
                           "path": [
-                            "v1",
+                            "v3",
                             "screening-lists"
                           ],
                           "query": [
@@ -41032,7 +41032,7 @@
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v1/screening-lists"
+                        "url": "{{ApiBaseUrl}}/v3/screening-lists"
                       },
                       "response": []
                     },
