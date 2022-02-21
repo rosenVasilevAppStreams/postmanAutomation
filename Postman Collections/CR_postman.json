@@ -24985,14 +24985,14 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": " {\n            \n            \"status\": \"Active\"\n        }",
+                          "raw": " {\n            \"name\": \"Active\",\n            \"status\": \"Active\"\n        }",
                           "options": {
                             "raw": {
                               "language": "json"
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v1/deal-categories"
+                        "url": "{{ApiBaseUrl}}/v3/deal-categories"
                       },
                       "response": []
                     }
