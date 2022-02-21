@@ -25908,12 +25908,12 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "{{ApiBaseUrl}}/v3/deal-categories?$expand=Deals",
+                  "raw": "{{ApiBaseUrl}}/v1/deal-categories?$expand=Deals",
                   "host": [
                     "{{ApiBaseUrl}}"
                   ],
                   "path": [
-                    "v3",
+                    "v1",
                     "deal-categories"
                   ],
                   "query": [
