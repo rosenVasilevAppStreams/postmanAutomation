@@ -24561,7 +24561,7 @@
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v3/deal-categories"
+                        "url": "{{ApiBaseUrl}}/v1/deal-categories"
                       },
                       "response": []
                     },
@@ -24638,7 +24638,7 @@
                       "request": {
                         "method": "GET",
                         "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/deal-categories/(999999999)"
+                        "url": "{{ApiBaseUrl}}/v3/deal-categories/(999999999)"
                       },
                       "response": []
                     }
@@ -24729,7 +24729,7 @@
                       "request": {
                         "method": "GET",
                         "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/deal-categories/{{dealCategoryId}}"
+                        "url": "{{ApiBaseUrl}}/v3/deal-categories/{{dealCategoryId}}"
                       },
                       "response": []
                     }
@@ -24779,7 +24779,7 @@
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v1/deal-categories"
+                        "url": "{{ApiBaseUrl}}/v3/deal-categories"
                       },
                       "response": []
                     },
@@ -24812,7 +24812,7 @@
                       "request": {
                         "method": "GET",
                         "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/deal-categories/{{dealCategoryId}}"
+                        "url": "{{ApiBaseUrl}}/v3/deal-categories/{{dealCategoryId}}"
                       },
                       "response": []
                     }
@@ -24857,7 +24857,7 @@
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v1/deal-categories"
+                        "url": "{{ApiBaseUrl}}/v3/deal-categories"
                       },
                       "response": []
                     }
@@ -24947,7 +24947,7 @@
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v1/deal-categories"
+                        "url": "{{ApiBaseUrl}}/v3/deal-categories"
                       },
                       "response": []
                     }
@@ -24985,14 +24985,14 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": " {\n            \n            \"status\": \"Active\"\n        }",
+                          "raw": " {\n            \"name\": \"Active\",\n            \"status\": \"Active\"\n        }",
                           "options": {
                             "raw": {
                               "language": "json"
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v1/deal-categories"
+                        "url": "{{ApiBaseUrl}}/v3/deal-categories"
                       },
                       "response": []
                     }
@@ -25054,18 +25054,24 @@
                         "disableBodyPruning": true
                       },
                       "request": {
+                        "auth": {
+                          "type": "bearer",
+                          "bearer": {
+                            "token": "{{complianceUserToken}}"
+                          }
+                        },
                         "method": "POST",
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": " {\n            \n            \"status\": \"Active\"\n        }",
+                          "raw": " {\n            \"name\": \"Active\",\n            \"status\": \"Active\"\n        }",
                           "options": {
                             "raw": {
                               "language": "json"
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v1/deal-categories"
+                        "url": "{{ApiBaseUrl}}/v3/deal-categories"
                       },
                       "response": []
                     }
