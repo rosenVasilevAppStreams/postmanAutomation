@@ -30677,6 +30677,11 @@
                   "name": "integration-restrictions",
                   "item": [
                     {
+                      "name": "getAll",
+                      "item": [],
+                      "id": "ba867e00-66aa-4449-ace3-9cec4efe762b"
+                    },
+                    {
                       "name": "getById",
                       "event": [
                         {
