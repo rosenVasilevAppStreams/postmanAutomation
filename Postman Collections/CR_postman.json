@@ -30754,11 +30754,6 @@
                       "id": "ba867e00-66aa-4449-ace3-9cec4efe762b"
                     },
                     {
-                      "name": "New Folder",
-                      "item": [],
-                      "id": "30dd9f47-1a37-4116-98f9-f98c7afd8cec"
-                    },
-                    {
                       "name": "getById",
                       "event": [
                         {
