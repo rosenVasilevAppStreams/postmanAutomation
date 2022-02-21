@@ -29806,7 +29806,7 @@
                             }
                           }
                         },
-                        "url": "https://uat.platform.devacaalpha.com/api/control-room/v1/deals/bd3526e9-b31b-4332-c293-08d9bae0cb75/audit"
+                        "url": "{{ApiBaseUrl}}/v1/webhook-integrations"
                       },
                       "response": []
                     },
