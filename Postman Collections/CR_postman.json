@@ -30748,6 +30748,77 @@
                     }
                   },
                   "response": []
+                },
+                {
+                  "name": "getAll Copy",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "id": "45723cfe-d5db-4123-a331-4a0b9301a8bf",
+                        "exec": [
+                          "// Test 1\r",
+                          "pm.test(\"Status code is 200\", function () {\r",
+                          "    pm.response.to.have.status(200);\r",
+                          "});\r",
+                          "\r",
+                          "var schema = {\r",
+                          "  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+                          "  \"type\": \"object\",\r",
+                          "  \"properties\": {\r",
+                          "    \"@odata.context\": {\r",
+                          "      \"type\": \"string\"\r",
+                          "    },\r",
+                          "    \"value\": {\r",
+                          "      \"type\": \"array\",\r",
+                          "      \"items\": {}\r",
+                          "    }\r",
+                          "  },\r",
+                          "  \"required\": [\r",
+                          "    \"@odata.context\",\r",
+                          "    \"value\"\r",
+                          "  ]\r",
+                          "}\r",
+                          "\r",
+                          "// Test 2\r",
+                          "pm.test(\"Schema is valid\", function(){\r",
+                          "    var json= pm.response.json()\r",
+                          "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
+                          "})\r",
+                          "\r",
+                          "\r",
+                          "var jsonData = JSON.parse(responseBody);\r",
+                          "postman.setEnvironmentVariable(\"integrationRestrictionListId\", jsonData.value[0].id);"
+                        ],
+                        "type": "text/javascript"
+                      }
+                    }
+                  ],
+                  "id": "2c7a5752-247c-4e52-9bae-f770832d7b6a",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{ApiBaseUrl}}/v1/integration-restriction-lists?$expand=employeeLevelRestrictions",
+                      "host": [
+                        "{{ApiBaseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "integration-restriction-lists"
+                      ],
+                      "query": [
+                        {
+                          "key": "$expand",
+                          "value": "employeeLevelRestrictions"
+                        }
+                      ]
+                    }
+                  },
+                  "response": []
                 }
               ],
               "id": "764ad04e-97fe-4ce8-b150-5546db29cce2"
