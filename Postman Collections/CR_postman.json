@@ -41917,7 +41917,7 @@
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v1/screening-lists"
+                        "url": "{{ApiBaseUrl}}/v3/screening-lists"
                       },
                       "response": []
                     },
