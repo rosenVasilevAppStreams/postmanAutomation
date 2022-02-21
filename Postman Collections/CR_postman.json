@@ -19821,7 +19821,7 @@
                       }
                     },
                     "url": {
-                      "raw": "{{ApiBaseUrl}}/v1/deals/:dealId/conflict-check\n",
+                      "raw": "{{ApiBaseUrl}}/v1/deals/:dealId/conflict-check",
                       "host": [
                         "{{ApiBaseUrl}}"
                       ],
@@ -19829,7 +19829,7 @@
                         "v1",
                         "deals",
                         ":dealId",
-                        "conflict-check\n"
+                        "conflict-check"
                       ],
                       "variable": [
                         {
