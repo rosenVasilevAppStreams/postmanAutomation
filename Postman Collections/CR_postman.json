@@ -26247,7 +26247,7 @@
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v1/company-types"
+                        "url": "{{ApiBaseUrl}}/v3/company-types"
                       },
                       "response": []
                     }
