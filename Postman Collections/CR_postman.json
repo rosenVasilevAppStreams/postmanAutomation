@@ -25054,6 +25054,12 @@
                         "disableBodyPruning": true
                       },
                       "request": {
+                        "auth": {
+                          "type": "bearer",
+                          "bearer": {
+                            "token": "{{complianceUserToken}}"
+                          }
+                        },
                         "method": "POST",
                         "header": [],
                         "body": {
