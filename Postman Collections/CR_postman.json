@@ -30436,7 +30436,7 @@
               "id": "60b44b44-c9bf-4854-a38b-bfc4829c9132"
             },
             {
-              "name": "put Copy",
+              "name": "patch",
               "item": [
                 {
                   "name": "update the current webhook",
