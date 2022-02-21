@@ -25038,8 +25038,7 @@
                           "script": {
                             "id": "7d06cc27-323d-4cce-a843-0058419dd1b8",
                             "exec": [
-                              "var jsonData = JSON.parse(responseBody);",
-                              "postman.setEnvironmentVariable(\"dealCategoryId\", jsonData.id);",
+                              "",
                               "",
                               "pm.test(\"Status code is 403\", function () {",
                               "    pm.response.to.have.status(403);",
