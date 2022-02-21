@@ -30728,22 +30728,7 @@
                       "request": {
                         "method": "GET",
                         "header": [],
-                        "url": {
-                          "raw": "{{ApiBaseUrl}}/v3/integration-restrictions?$expand=employeeLevelRestrictions",
-                          "host": [
-                            "{{ApiBaseUrl}}"
-                          ],
-                          "path": [
-                            "v3",
-                            "integration-restrictions"
-                          ],
-                          "query": [
-                            {
-                              "key": "$expand",
-                              "value": "employeeLevelRestrictions"
-                            }
-                          ]
-                        }
+                        "url": "{{ApiBaseUrl}}/v3/integration-restrictions/{{integrationRestrictionListId}}"
                       },
                       "response": []
                     },
