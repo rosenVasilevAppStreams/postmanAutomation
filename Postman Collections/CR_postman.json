@@ -30748,7 +30748,7 @@
                       "response": []
                     },
                     {
-                      "name": "getAll Copy",
+                      "name": "getById",
                       "event": [
                         {
                           "listen": "test",
