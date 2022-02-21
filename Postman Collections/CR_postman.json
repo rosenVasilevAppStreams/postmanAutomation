@@ -27177,7 +27177,6 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "5ccaad08-6bae-485e-bf4b-ffaf811fec72",
                     "exec": [
                       "// Test 1\r",
                       "pm.test(\"Status code is 200\", function () {\r",
@@ -27208,7 +27207,8 @@
                       "    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
                       "})"
                     ],
-                    "type": "text/javascript"
+                    "type": "text/javascript",
+                    "id": "5ccaad08-6bae-485e-bf4b-ffaf811fec72"
                   }
                 }
               ],
@@ -27219,7 +27219,7 @@
               "request": {
                 "method": "GET",
                 "header": [],
-                "url": "{{ApiBaseUrl}}/v3/company-types"
+                "url": "{{ApiBaseUrl}}/v1/company-types"
               },
               "response": []
             },
