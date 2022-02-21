@@ -24516,54 +24516,6 @@
                     }
                   ],
                   "id": "1105f20f-da50-44ae-8c9a-67c8480a64f3"
-                },
-                {
-                  "name": "check if the deal categories have clientIds",
-                  "item": [
-                    {
-                      "name": "List all deal categories",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "id": "87ece825-ae9e-45ab-bf51-da51fc917ce2",
-                            "exec": [
-                              "// Test 1\r",
-                              "pm.test(\"Status code is 200\", function () {\r",
-                              "    pm.response.to.have.status(200);\r",
-                              "});\r",
-                              "\r",
-                              "function getRandomInt(max) {\r",
-                              "  return Math.floor(Math.random() * max);\r",
-                              "}\r",
-                              "\r",
-                              "var jsonData = JSON.parse(responseBody);\r",
-                              "var valueSize = Object.keys(jsonData.value).length\r",
-                              "var valueId = getRandomInt(valueSize-1);\r",
-                              "\r",
-                              "postman.setEnvironmentVariable(\"categoryName\", jsonData.value[valueId].name);\r",
-                              "\r",
-                              "pm.test(\"Response property matches environment variable\", function () {\r",
-                              "  pm.expect(pm.response.json().value[valueId].name).to.eql(pm.environment.get(\"categoryName\"));\r",
-                              "});"
-                            ],
-                            "type": "text/javascript"
-                          }
-                        }
-                      ],
-                      "id": "837ec39a-26b6-47b8-933c-53241e0374fd",
-                      "protocolProfileBehavior": {
-                        "disableBodyPruning": true
-                      },
-                      "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/deal-categories"
-                      },
-                      "response": []
-                    }
-                  ],
-                  "id": "79390a6d-76f8-400c-99df-97ba403aacc3"
                 }
               ],
               "id": "0df51339-94af-4b02-a58c-40d8e04e6fbe"
