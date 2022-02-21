@@ -39990,7 +39990,7 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\r\n    \"name\": \"{{randomListName}}\",\r\n    \"description\": \"{{randomListDescription}}\",\r\n    \"timeZone\": \"{{timeZone}}\",\r\n    \"status\": \"{{listStatus}}\",\r\n    \"records\": [\r\n        {\r\n          \r\n          \"externalId\": \"{{securitySearchCompanyExtarnalId}}\",\r\n            \"cusip\": \"{{cusip}}\",\r\n            \"isin\": \"{{isin}}\",\r\n            \"externalIdentifierType\": \"SecMasterSecurityId\",\r\n            \"securityName\": \"{{securitySearchCompanyName}}\",\r\n            \"dealId\": \"{{dealId}}\"\r\n            \r\n        }\r\n    ]\r\n}",
+                          "raw": "{\r\n    \"name\": \"{{randomListName}}\",\r\n    \"description\": \"{{randomListDescription}}\",\r\n    \"timeZone\": \"{{timeZone}}\",\r\n    \"status\": \"{{listStatus}}\"\r\n}",
                           "options": {
                             "raw": {
                               "language": "json"
