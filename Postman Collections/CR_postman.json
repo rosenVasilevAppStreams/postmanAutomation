@@ -30728,7 +30728,7 @@
                       "request": {
                         "method": "GET",
                         "header": [],
-                        "url": "{{ApiBaseUrl}}/v3/integration-restrictions/{{integrationRestrictionListId}}"
+                        "url": "{{ApiBaseUrl}}/v1/integration-restrictions/{{integrationRestrictionListId}}"
                       },
                       "response": []
                     },
