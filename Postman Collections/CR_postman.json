@@ -24554,14 +24554,14 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": " {\n            \n            \"name\": \"API deal\"\n        }",
+                          "raw": " {\n            \n            \"name\": \"API deal V3\"\n        }",
                           "options": {
                             "raw": {
                               "language": "json"
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v1/deal-categories"
+                        "url": "{{ApiBaseUrl}}/v3/deal-categories"
                       },
                       "response": []
                     },
@@ -24605,7 +24605,7 @@
                       "request": {
                         "method": "GET",
                         "header": [],
-                        "url": "{{ApiBaseUrl}}/v1/deal-categories/{{dealCategoryId}}"
+                        "url": "{{ApiBaseUrl}}/v3/deal-categories/{{dealCategoryId}}"
                       },
                       "response": []
                     }
