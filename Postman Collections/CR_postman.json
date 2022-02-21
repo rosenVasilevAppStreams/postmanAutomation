@@ -26438,7 +26438,7 @@
                         "header": [],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\r\n   \r\n    \"status\": \"Active\",\r\n    \"isSystem\": false\r\n}",
+                          "raw": "{\r\n   \"name\": \"BU\",\r\n    \"status\": \"Active\",\r\n    \"isSystem\": false\r\n}",
                           "options": {
                             "raw": {
                               "language": "json"
