@@ -42125,7 +42125,7 @@
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v1/screening-lists/{{screeningListId}}"
+                        "url": "{{ApiBaseUrl}}/v3/screening-lists/{{screeningListId}}"
                       },
                       "response": []
                     }
