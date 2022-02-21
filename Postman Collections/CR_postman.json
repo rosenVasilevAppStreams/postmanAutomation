@@ -28511,7 +28511,7 @@
               "name": "create",
               "item": [
                 {
-                  "name": "create without integrationRestrictionLists",
+                  "name": "create with duplicate emails",
                   "item": [
                     {
                       "name": "create",
