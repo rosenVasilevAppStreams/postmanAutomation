@@ -25852,7 +25852,7 @@
                       "request": {
                         "method": "GET",
                         "header": [],
-                        "url": "{{ApiBaseUrl}}/v3/deal-categories"
+                        "url": "{{ApiBaseUrl}}/v1/deal-categories"
                       },
                       "response": []
                     },
@@ -25888,7 +25888,7 @@
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v3/deal-categories/{{defaultDealCat}}"
+                        "url": "{{ApiBaseUrl}}/v1/deal-categories/{{defaultDealCat}}"
                       },
                       "response": []
                     }
@@ -25908,12 +25908,12 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "{{ApiBaseUrl}}/v3/deal-categories?$expand=Deals",
+                  "raw": "{{ApiBaseUrl}}/v1/deal-categories?$expand=Deals",
                   "host": [
                     "{{ApiBaseUrl}}"
                   ],
                   "path": [
-                    "v3",
+                    "v1",
                     "deal-categories"
                   ],
                   "query": [
