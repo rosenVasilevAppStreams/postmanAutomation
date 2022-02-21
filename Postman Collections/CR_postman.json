@@ -25576,7 +25576,7 @@
                             }
                           }
                         },
-                        "url": "{{ApiBaseUrl}}/v3/deal-categories"
+                        "url": "{{ApiBaseUrl}}/v1/deal-categories"
                       },
                       "response": []
                     },
@@ -25639,7 +25639,7 @@
                       "request": {
                         "method": "GET",
                         "header": [],
-                        "url": "{{ApiBaseUrl}}/v3/deal-categories/{{dealCategoryId}}"
+                        "url": "{{ApiBaseUrl}}/v1/deal-categories/{{dealCategoryId}}"
                       },
                       "response": []
                     }
