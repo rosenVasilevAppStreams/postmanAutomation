@@ -45285,6 +45285,7 @@
                 {
                   "listen": "test",
                   "script": {
+                    "id": "209d29af-5ab0-422e-8051-1aec82781a5c",
                     "exec": [
                       "// Test 1\r",
                       "pm.test(\"Status code is 200\", function () {\r",
@@ -45405,8 +45406,7 @@
                       "    }\r",
                       "})"
                     ],
-                    "type": "text/javascript",
-                    "id": "209d29af-5ab0-422e-8051-1aec82781a5c"
+                    "type": "text/javascript"
                   }
                 }
               ],
@@ -45418,12 +45418,12 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "{{ApiBaseUrl}}/v1/webhook-definitions/:webhookId",
+                  "raw": "{{ApiBaseUrl}}/v3/webhook-definitions/:webhookId",
                   "host": [
                     "{{ApiBaseUrl}}"
                   ],
                   "path": [
-                    "v1",
+                    "v3",
                     "webhook-definitions",
                     ":webhookId"
                   ],
