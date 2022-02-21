@@ -45422,7 +45422,7 @@
               "response": []
             },
             {
-              "name": "getById Copy",
+              "name": "getById",
               "event": [
                 {
                   "listen": "test",
