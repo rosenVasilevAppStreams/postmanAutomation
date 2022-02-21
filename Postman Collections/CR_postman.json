@@ -45280,7 +45280,7 @@
               "response": []
             },
             {
-              "name": "getById",
+              "name": "getAllDefinitions",
               "event": [
                 {
                   "listen": "test",
