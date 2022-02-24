@@ -7324,7 +7324,7 @@
                       "response": []
                     },
                     {
-                      "name": "Create a new deal Copy",
+                      "name": "UI payload deal",
                       "event": [
                         {
                           "listen": "test",
