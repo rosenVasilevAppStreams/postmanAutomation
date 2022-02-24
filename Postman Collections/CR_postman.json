@@ -12963,7 +12963,7 @@
                       "response": []
                     },
                     {
-                      "name": "update Copy",
+                      "name": "UI update",
                       "event": [
                         {
                           "listen": "test",
