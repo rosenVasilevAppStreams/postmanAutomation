@@ -7322,6 +7322,95 @@
                         "url": "{{ApiBaseUrl}}/v1/deals"
                       },
                       "response": []
+                    },
+                    {
+                      "name": "Create a new deal Copy",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "ec532a99-dd32-48f1-b7d3-2ed4fce9d388",
+                            "exec": [
+                              "// Test 1\r",
+                              "pm.test(\"Status code is 201\", function () {\r",
+                              "    pm.response.to.have.status(201);\r",
+                              "});\r",
+                              "\r",
+                              "var jsonData = JSON.parse(responseBody);\r",
+                              "postman.setEnvironmentVariable(\"dealId\", jsonData.id);\r",
+                              "\r",
+                              "    var jsonData =pm.response.json();\r",
+                              "pm.test(\"The deal status is active\", function(){\r",
+                              "pm.expect(jsonData.isDraft).to.eq(true);\r",
+                              "});\r",
+                              "\r",
+                              "\r",
+                              ""
+                            ],
+                            "type": "text/javascript"
+                          }
+                        },
+                        {
+                          "listen": "prerequest",
+                          "script": {
+                            "id": "7dbcc623-b03e-4d5e-9f4a-1854fcfc7e9a",
+                            "exec": [
+                              "",
+                              "",
+                              "pm.environment.set(\"randomDealName\", _.random(1, 1000) +\" \" + \"API deal\")",
+                              "pm.environment.set(\"randomCompanyName1\", _.random(1, 1000) +\" \" + \"API company\")",
+                              "pm.environment.set(\"randomCompanyName2\", _.random(1, 1000) +\" \" + \"API company\")",
+                              "pm.environment.set(\"contactsUnderTentName\", _.random(1, 1000) +\" \" + \"API contact name\")",
+                              "pm.environment.set(\"contactsUnderTentTitle\", _.random(1, 1000) +\" \" + \"API contact title\")",
+                              "pm.environment.set(\"restrictionName\", _.random(1, 1000) +\" \" + \"API  restriction\")",
+                              "",
+                              "",
+                              "",
+                              "const uuid = Math.random().toString(36).substring(2, 15) +",
+                              "        Math.random().toString(36).substring(2, 15);",
+                              "const randomEmail =  uuid + \"@emaill.com\";",
+                              "pm.environment.set(\"randomEmail\", randomEmail)",
+                              "",
+                              "var dateNow= new Date();pm.environment.set(\"randomDealDescription\", dateNow.toISOString() + \" \" + \"API deal description\")",
+                              "var startDate = (Date.now() + 86400000); pm.environment.set('startDate', new Date(startDate).toISOString())",
+                              "var completionDate = (Date.now() + 172800000); pm.environment.set('completionDate', new Date(completionDate).toISOString())",
+                              "var contactAddedDate = (Date.now() + 172800000); pm.environment.set('contactAddedDate', new Date(contactAddedDate).toISOString())",
+                              "var dataDestructionCompletedDate =  (Date.now() + 172800000); pm.environment.set('dataDestructionCompletedDate', new Date(dataDestructionCompletedDate).toISOString())",
+                              "var dataDestructionRequestedDate = (Date.now() + 86400000); pm.environment.set('dataDestructionRequestedDate', new Date(dataDestructionRequestedDate).toISOString())",
+                              "",
+                              "var ndaCompletedDate = (Date.now() + 1864000000); pm.environment.set('ndaCompletedDate', new Date(ndaCompletedDate).toISOString())",
+                              "var ndaRequestedDate = (Date.now() + 86400000); pm.environment.set('ndaRequestedDate', new Date(ndaRequestedDate).toISOString())",
+                              "var restrictionEndDate = (Date.now() + 86400000); pm.environment.set('restrictionEndDate', new Date(restrictionEndDate).toISOString())",
+                              "",
+                              "// pm.sendRequest('https://qa.platform.devacaalpha.com/api/control-room/v1/deals?$expand=restrictions,dealMembers,companies', function (err, res) {",
+                              "//         pm.expect(err).to.not.be.ok;",
+                              "//         pm.expect(res).to.have.property('code', 200);",
+                              "//         pm.expect(res).to.have.property('status', 'OK');",
+                              "//     });"
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "id": "247f624f-203c-4b28-b35c-6975d778a53f",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\r\n    \"name\": \"{{randomDealName}}\",\r\n    \"description\": \"{{randomDealDescription}}\",\r\n    \"categoryId\": \"{{categoryId}}\",\r\n     \"recordType\": \"{{recordTypeDeal}}\",\r\n    \"status\": \"{{dealStatus}}\",\r\n    \"complianceStatus\": \"{{complianceStatus}}\",\r\n    \"startDate\": \"{{startDate}}\",\r\n    \"completionDate\": \"{{completionDate}}\",\r\n    \"isUrgent\": {{isUrgent}},\r\n    \"isDraft\": true,\r\n     \"companies\": [{\r\n             \"name\": \"{{securitySearchCompanyName}}\",\r\n            \"externalId\": \"{{securitySearchCompanyExtarnalId}}\",\r\n            \"cusip\": \"{{cusip}}\",\r\n            \"isin\": \"{{isin}}\",\r\n            \"externalIdentifierType\": \"SecMasterSecurityId\",\r\n            \"contactsUnderTent\": [],\r\n            \"companyAdvisees\": [],\r\n            \"dataDestructionCompletedDate\": \"{{dataDestructionCompletedDate}}\",\r\n            \"dataDestructionRequestedDate\": \"{{dataDestructionRequestedDate}}\",\r\n            \"dataDestructionStatus\": \"{{dataDestructionStatus}}\",\r\n            \"ndaCompletedDate\": \"{{ndaCompletedDate}}\",\r\n            \"ndaRequestedDate\": \"{{ndaRequestedDate}}\",\r\n            \"ndaStatus\": \"{{ndaStatus}}\",\r\n            \"status\": \"{{companyStatus}}\",\r\n            \"typeId\": \"{{typeId}}\",\r\n            \"screeningLists\": [\r\n        {\r\n          \"screeningListId\": \"{{screeningListIdQA}}\"\r\n        },\r\n        {\r\n          \"screeningListId\": \"{{screeningListIdQA2}}\"\r\n        }]\r\n        }],\r\n    \"dealMembers\": [\r\n        {\r\n            \"memberId\": \"{{memberIdRecordVisibility}}\",\r\n            \"memberType\": \"{{memberTypeRecordVisibility}}\"\r\n        },\r\n        {\r\n            \"memberId\": \"{{memberId}}\",\r\n            \"memberType\": \"{{memberTypeInternalDealLead}}\"\r\n        }\r\n    ],\r\n    \"restrictions\": [\r\n        {\r\n            \"name\": \"{{restrictionName}}\",\r\n            \"endDate\": \"{{restrictionEndDate}}\",\r\n            \"startDate\": \"{{startDate}}\",\r\n            \"employeeRestriction\": \"{{employeeRestriction}}\",\r\n            \"companyRestrictions\": [{\r\n                \"company\": {\r\n                        \"name\": \"{{securitySearchCompanyName}}\"\r\n                    }\r\n            }\r\n            ],\r\n            \"memberRestrictions\": [\r\n                 {\r\n                    \"userId\": \"{{memberId}}\",\r\n                    \"targetMemberType\": \"{{memberTypeInternalDealLead}}\"\r\n\r\n                    \r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": "{{ApiBaseUrl}}/v1/deals"
+                      },
+                      "response": []
                     }
                   ],
                   "id": "f579c0fd-3697-47c2-b6b8-7bd05d6529c4"
